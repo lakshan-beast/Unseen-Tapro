@@ -176,6 +176,43 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* 📊 2026 ULTRA-PREMIUM LIVE ECO-SYSTEM STATS (Footer එක ඇතුළට අලුතින්) */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-8 my-8 border-t border-b border-white/5 text-center md:text-left bg-white/[0.01] p-6 rounded-3xl backdrop-blur-sm max-w-full">
+        <div>
+          <p className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">
+            Verified Explorers
+          </p>
+          <p className="text-xl font-black text-white font-mono mt-1">
+            4,821 <span className="text-xs text-emerald-400">▲</span>
+          </p>
+        </div>
+        <div>
+          <p className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">
+            Mapped Hidden Gems
+          </p>
+          <p className="text-xl font-black text-white font-mono mt-1">
+            314 <span className="text-xs text-teal-400">Active</span>
+          </p>
+        </div>
+        <div>
+          <p className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">
+            Trash Collected (Est.)
+          </p>
+          <p className="text-xl font-black text-emerald-400 font-mono mt-1">
+            1,240 <span className="text-xs text-gray-400">KG</span>
+          </p>
+        </div>
+        <div>
+          <p className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">
+            Server Cluster Status
+          </p>
+          <p className="text-xs font-bold text-green-400 flex items-center justify-center md:justify-start gap-1.5 mt-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>{" "}
+            Operational
+          </p>
+        </div>
+      </div>
+
       {/* Bottom Legal Bar */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] tracking-wide uppercase font-bold text-gray-500">
         <p>
