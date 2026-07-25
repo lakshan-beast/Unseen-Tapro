@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import { GiMountainClimbing } from "react-icons/gi";
 import { GiWaterfall } from "react-icons/gi";
 import { GiPoolDive } from "react-icons/gi";
-// import { GiBeachBucket } from "react-icons/gi";
 import { FaUmbrellaBeach } from "react-icons/fa6";
 import { GiPineTree } from "react-icons/gi";
 import { GiUndergroundCave } from "react-icons/gi";
@@ -11,42 +10,6 @@ import { HiLocationMarker } from "react-icons/hi";
 export default function Home() {
   const navigate = useNavigate();
 
-  // 🗺️ 2026 Premium Categories List
-  //   const travelCategories = [
-  //     {
-  //       id: "mountain",
-  //       title: "Mountains & Ridges",
-  //       count: "12+ Peaks",
-  //       icon: "⛰️",
-  //       image: "/images/hero/slide3.jpg",
-  //       desc: "Mist-covered summits and challenging ridge treks.",
-  //     },
-  //     {
-  //       id: "waterfall",
-  //       title: "Hidden Waterfalls",
-  //       count: "18+ Falls",
-  //       icon: "🌊",
-  //       image: "/images/hero/slide3.jpg",
-  //       desc: "Pristine natural pools and secret jungle cascades.",
-  //     },
-  //     {
-  //       id: "beach",
-  //       title: "Secret Beaches",
-  //       count: "8+ Shores",
-  //       icon: "🏖️",
-  //       image: "/images/hero/slide3.jpg",
-  //       desc: "Untouched coastal hideouts away from crowds.",
-  //     },
-  //     {
-  //       id: "camping",
-  //       title: "Wild Camping Sites",
-  //       count: "15+ Spots",
-  //       icon: "⛺",
-  //       image: "/images/hero/slide3.jpg",
-  //       desc: "Starry night flatlands and deep forest campsites.",
-  //     },
-  //   ];
-
   const travelCategories = [
     {
       id: "mountain",
@@ -54,7 +17,7 @@ export default function Home() {
       count: "12+ Peaks",
       // icon: "🏔️",
       icon: <GiMountainClimbing />,
-      image: "/images/hero/slide1.jpg", // ⛰️ මීදුම් පිරුණු කඳු සහ ප්‍රපාත දර්ශනයක්
+      image: "/images/hero/slide1.jpg",
       desc: "Mist-covered summits, dangerous edge drops, and challenging ridge treks.",
     },
     {
@@ -63,7 +26,7 @@ export default function Home() {
       count: "18+ Falls",
       // icon: "🌊",
       icon: <GiWaterfall />,
-      image: "/images/hero/slide2.jpg", // 🌊 කැලෑව මැද හැංගිච්ච දියඇලි දර්ශනයක්
+      image: "/images/hero/slide2.jpg",
       desc: "Pristine secret jungle cascades hidden away from commercial paths.",
     },
     {
@@ -72,7 +35,7 @@ export default function Home() {
       count: "10+ Pools",
       // icon: "🏞️",
       icon: <GiPoolDive />,
-      image: "/images/hero/slide3.jpg", // 🏞️ ගල් අතරින් හැදුණු පිරිසිදු දියකඩක්
+      image: "/images/hero/slide3.jpg",
       desc: "Crystal-clear infinity rock pools and safe swimming spots deep inside the wild.",
     },
     {
@@ -81,7 +44,7 @@ export default function Home() {
       count: "8+ Shores",
       // icon: "🏖️",
       icon: <FaUmbrellaBeach />,
-      image: "/images/hero/slide4.jpg", // 🏖️ නිස්කලංක සෙනඟ නැති වෙරළක්
+      image: "/images/hero/slide4.jpg",
       desc: "Untouched, serene coastal hideouts and wild shorelines away from crowds.",
     },
     {
@@ -90,7 +53,7 @@ export default function Home() {
       count: "6+ Woods",
       // icon: "🌲",
       icon: <GiPineTree />,
-      image: "/images/hero/slide5.jpg", // 🌲 සීතල මීදුම් පිරුණු පයින් වනාන්තරයක්
+      image: "/images/hero/slide5.jpg",
       desc: "Lose yourself in the cold, silent, and misty depths of high-altitude woodlands.",
     },
     {
@@ -99,28 +62,33 @@ export default function Home() {
       count: "7+ Secrets",
       // icon: "🕳️",
       icon: <GiUndergroundCave />,
-      image: "/images/hero/caves.jpeg", // 🕳️ අඳුරු අභිරහස් ගල් කුළු සහ ගුහා දර්ශනයක්
+      image: "/images/hero/caves.jpeg",
       desc: "Unearth ancient history and subterranean trails buried deep within rock tunnels.",
     },
   ];
 
   return (
     <div className="relative min-h-screen bg-zinc-950 text-white overflow-hidden">
-      {/* ... (කලින් තිබ්බ Hero Slider, Trust Bar, Widgets ඔක්කොම එලෙසම තිබෙන්න හරින්න) ... */}
+      <section className="max-w-7xl mx-auto px-6 md:px-12 py-16 ">
+        <div className="mb-12 text-center sm:text-left flex justify-between">
+          <div>
+            <span className="text-emerald-400 font-bold text-xs tracking-widest uppercase mb-2 flex gap-1 items-center ">
+              <HiLocationMarker className="size-4.5 text-emerald-200 " /> Expedition Categories
+            </span>
+            <h2 className="text-2xl md:text-4xl font-black text-white uppercase tracking-tight">
+              Select Your Vibe
+            </h2>
+            <p className="text-gray-400 text-xs md:text-sm font-light mt-1">
+              Click on a category to explore all verified hidden locations
+              across Sri Lanka.
+            </p>
+          </div>
 
-      {/* 🔮 2026 PREMIUM CATEGORY BENTO GRID SECTION */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12 py-16">
-        <div className="mb-12 text-center sm:text-left">
-          <span className="text-emerald-400 font-bold text-xs tracking-widest uppercase mb-2 block">
-             <HiLocationMarker /> Expedition Categories
-          </span>
-          <h2 className="text-2xl md:text-4xl font-black text-white uppercase tracking-tight">
-            Select Your Vibe
-          </h2>
-          <p className="text-gray-400 text-xs md:text-sm font-light mt-1">
-            Click on a category to explore all verified hidden locations across
-            Sri Lanka.
-          </p>
+          <div>
+            <button className="w-full md:w-auto bg-white/5 hover:bg-emerald-500 hover:text-black border border-white/10 text-white font-bold px-6 py-3 rounded-2xl text-xs tracking-wider uppercase transition-all duration-300 shadow-xl active:scale-95">
+              Explore All Places →
+            </button>
+          </div>
         </div>
 
         {/* Bento Layout Grid */}

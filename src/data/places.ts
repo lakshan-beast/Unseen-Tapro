@@ -32,7 +32,7 @@ export const mockPlaces: Place[] = [
       "A breathtaking hidden waterfall tucked deep inside the Kalthota wilderness, featuring a mystical hidden cave behind the water curtain.",
     longDescription:
       "Kalthota Duwili Ella is a pristine waterfall hidden within dense jungles. Its most unique feature is the natural cave located directly behind the falling water, offering hikers a mesmerizing, misty 360-degree view of the valley below.",
-    image: "https://picsum.photos",
+    image: "places/duwili-ella.jpg",
     likes: 142,
     commentsCount: 24,
     authorName: "Kasun Perera",
@@ -80,7 +80,7 @@ export const mockPlaces: Place[] = [
       "One of the highest viewpoints in Pussellawa, offering a panoramic 360-degree view of Kotmale reservoir and endless tea estates.",
     longDescription:
       "Rising 1,518 meters above sea level, Peacock Hill provides stunning unobstructed views of Kotmale Reservoir, Navalapitiya town, and mountain ranges. It is an ideal spot for early morning cloud chasing.",
-    image: "https://picsum.photos",
+    image: "places/peacock-hill.jpg",
     likes: 98,
     commentsCount: 11,
     authorName: "Chathura Silva",
