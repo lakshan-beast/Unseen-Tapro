@@ -23,5 +23,5 @@ export const sriLankaDistricts: string[] = [
   "Puttalam",
   "Ratnapura",
   "Trincomalee",
-  "Vavuniya"
+  "Vavuniya",
 ];
