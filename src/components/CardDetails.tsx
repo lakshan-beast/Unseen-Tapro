@@ -55,7 +55,7 @@ export default function CardDetails() {
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent"></div>
 
         {/* Floating Identity Content */}
-        <div className="absolute bottom-8 left-0 w-full px-6 md:px-12 max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div className="absolute bottom-8 left-0 w-full px-6 md:px-12 max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-end justify-between gap-4 ">
           <div>
             <span className="bg-emerald-500 text-black text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full shadow-lg font-mono">
               📍 {place.district} District
