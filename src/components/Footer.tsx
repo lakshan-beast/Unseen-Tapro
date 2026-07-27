@@ -25,21 +25,21 @@
 //   return (
 //     // return (
 //     // 🌟 FULL WIDTH BACKGROUND IMAGE FOOTER WITH MODERN OVERLAY
-//     <footer className="relative bg-zinc-950 text-gray-400 border-t border-white/5 pt-16 pb-8 mt-24 overflow-hidden w-full ">
-//       {/* 📸 Full Width Background Image Overlay */}
-//       <div className="absolute inset-0 z-0">
-//         <img
-//           src="/images/hero/footer.jpg"
-//           alt="Footer Background"
-//           className="w-full h-full object-cover opacity-0.95"
-//           //   className="w-full h-full object-cover opacity-0.55 grayscale contrast-125"
-//         />
-//         {/* පින්තූරය උඩින් කළු පාට Gradient එකක් දාලා අකුරු ලස්සනට කැපිලා පේන්න හදනවා */}
-//         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-zinc-950/40"></div>
-//       </div>
+// <footer className="relative bg-zinc-950 text-gray-400 border-t border-white/5 pt-16 pb-8 mt-24 overflow-hidden w-full ">
+//   {/* 📸 Full Width Background Image Overlay */}
+//   <div className="absolute inset-0 z-0">
+//     <img
+//       src="/images/hero/footer.jpg"
+//       alt="Footer Background"
+//       className="w-full h-full object-cover opacity-0.95"
+//       //   className="w-full h-full object-cover opacity-0.55 grayscale contrast-125"
+//     />
+//     {/* පින්තූරය උඩින් කළු පාට Gradient එකක් දාලා අකුරු ලස්සනට කැපිලා පේන්න හදනවා */}
+//     <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-zinc-950/40"></div>
+//   </div>
 
-//       {/* 🟢 Background Neon Glow Effect (අර කලින් තිබ්බ ලයිට් එක) */}
-//       <div className="absolute bottom-0 right-0 w-[100] h-[50] bg-emerald-500/5 rounded-full blur-[150px] pointer-events-none z-10"></div>
+//   {/* 🟢 Background Neon Glow Effect (අර කලින් තිබ්බ ලයිට් එක) */}
+//   <div className="absolute bottom-0 right-0 w-[100] h-[50] bg-emerald-500/5 rounded-full blur-[150px] pointer-events-none z-10"></div>
 
 //       {/* 🎛️ MAIN CONTENT CONTENT: (Z-10 දාලා පින්තූරයට උඩින් පෙන්වනවා) */}
 //       <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-white/5">
@@ -223,14 +223,16 @@
 // }
 
 import { Link } from "react-router-dom";
+
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa6";
 import { FaGlobe } from "react-icons/fa6";
 import { LuShieldAlert } from "react-icons/lu";
 import { GoHeartFill } from "react-icons/go";
-import { MdPhotoCamera } from "react-icons/md";
+// import { MdPhotoCamera } from "react-icons/md";
+import { RiCopyrightLine } from "react-icons/ri";
+
 
 export default function Footer() {
-  // 📸 පින්තූර සහ විස්තර ලබාදුන් අයගේ ලින්ක්ස් (Credits)
   const contentCredits = [
     { name: "Sri Lanka Travel Culture", url: "https://facebook.com" },
     { name: "Ceylon Wild Photography", url: "https://Instagram.com" },
@@ -238,9 +240,21 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-zinc-950 border-t border-white/5 pt-16 pb-8 relative overflow-hidden">
-      {/* Background සැරසිලි ආලෝකයක් */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-emerald-500/5 rounded-full blur-[120px] pointer-events-none"></div>
+    <footer className="relative bg-zinc-950 text-gray-400 border-t border-white/5 pt-16 pb-8 overflow-hidden w-full ">
+      {/* 📸 Full Width Background Image Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/images/hero/footer.jpg"
+          alt="Footer Background"
+          className="w-full h-full object-cover opacity-0.95"
+          //   className="w-full h-full object-cover opacity-0.55 grayscale contrast-125"
+        />
+        {/* පින්තූරය උඩින් කළු පාට Gradient එකක් දාලා අකුරු ලස්සනට කැපිලා පේන්න හදනවා */}
+        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-zinc-950/40"></div>
+      </div>
+
+      {/* 🟢 Background Neon Glow Effect (අර කලින් තිබ්බ ලයිට් එක) */}
+      <div className="absolute bottom-0 right-0 w-[100] h-[50] bg-emerald-500/5 rounded-full blur-[150px] pointer-events-none z-10"></div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12 relative z-10">
         {/* Column 1: Brand & Socials */}
@@ -277,7 +291,7 @@ export default function Footer() {
         {/* Column 2: Quick Links */}
         <div>
           <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
-            <FaGlobe size={14} className="text-emerald-400" />
+            <FaGlobe size={16} className="text-emerald-400" />
             Explore
           </h4>
           <ul className="flex flex-col gap-2.5 text-xs text-gray-400">
@@ -313,10 +327,10 @@ export default function Footer() {
         {/* Column 3: Content Credits (ඔයා කියපු සුපිරි කොටස) */}
         <div>
           <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
-            <GoHeartFill size={14} className="text-emerald-400 animate-pulse" />
+            <GoHeartFill size={16} className="text-emerald-400 animate-pulse" />
             Content Credits
           </h4>
-          <p className="text-[11px] text-gray-500 font-light mb-3 leading-relaxed">
+          <p className="text-[12px] text-white-500 font-light mb-3 leading-relaxed">
             Special thanks to our media partners for authentic Sri Lankan travel
             imagery & data:
           </p>
@@ -327,8 +341,8 @@ export default function Footer() {
                   href={credit.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-emerald-400 underline decoration-white/10 hover:decoration-emerald-400/40 transition-all block truncate">
-                  <MdPhotoCamera />
+                  className="hover:text-emerald-400 underline decoration-white/10 hover:decoration-emerald-400/40 transition-all block truncate block">
+                  {/* <MdPhotoCamera /> */}
                   {credit.name}
                 </a>
               </li>
@@ -339,7 +353,7 @@ export default function Footer() {
         {/* Column 4: Emergency Assistance */}
         <div>
           <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
-            <LuShieldAlert size={14} className="text-emerald-400" />
+            <LuShieldAlert size={16} className="text-emerald-400" />
             Safety First
           </h4>
           <p className="text-gray-400 text-xs font-light leading-relaxed mb-4">
@@ -347,19 +361,19 @@ export default function Footer() {
           </p>
           <Link
             to="/services"
-            className="inline-flex items-center justify-center bg-red-500/10 hover:bg-red-500 text-red-400 hover:text-white font-bold border border-red-500/20 text-[10px] tracking-wider uppercase px-4 py-2.5 rounded-xl transition-all w-full text-center">
-            🚨 Access SOS Hotlines
+            className="inline-flex items-center justify-center bg-red-500/10 hover:bg-red-500/20  text-red-400 hover:text-white-600 font-bold border border-red-500/20 text-[10px] tracking-wider uppercase px-4 py-2.5 rounded-xl transition-all w-full text-center">
+             Access SOS Hotlines
           </Link>
         </div>
       </div>
 
       {/* Copyright Line */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-gray-500 relative z-10">
-        <p>© {new Date().getFullYear()} UNSEEN.TAPRO. All Rights Reserved.</p>
+        <p className="flex items-center"><RiCopyrightLine size={15} className="mr-2" /> {new Date().getFullYear()} UNSEEN.TAPRO. All Rights Reserved.</p>
         <p className="flex items-center gap-1">
           Made with{" "}
           <GoHeartFill
-            size={10}
+            size={15}
             className="text-emerald-400 fill-emerald-400"
           />
           for Sri Lankan Tourism.
