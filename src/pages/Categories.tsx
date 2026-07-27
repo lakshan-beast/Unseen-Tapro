@@ -68,7 +68,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-zinc-950 text-white overflow-hidden">
+    <div className="relative min-h-screen bg-[#01030f] text-white overflow-hidden">
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-16 ">
         <div className="mb-12 text-center sm:text-left flex justify-between">
           <div>
