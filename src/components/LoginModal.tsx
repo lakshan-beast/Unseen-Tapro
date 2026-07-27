@@ -218,14 +218,14 @@ export default function LoginModal({
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 ">
       {/* 🌑 Background Backdrop */}
       <div
         className="absolute inset-0 bg-black/70 backdrop-blur-md"
         onClick={onClose}></div>
 
       {/* 🔮 GLASSMORPHISM CARD */}
-      <div className="relative bg-zinc-950/80 border border-white/10 rounded-[2.5rem] p-8 max-w-lg w-full shadow-2xl backdrop-blur-2xl text-center z-10 animate-[fadeIn_0.2s_ease-out]">
+      <div className="relative bg-[#01030f] border border-white/10 rounded-[2.5rem] p-8 max-w-lg w-full shadow-2xl backdrop-blur-2xl text-center z-10 animate-[fadeIn_0.2s_ease-out]">
         {/* Close Button */}
         <button
           onClick={onClose}
