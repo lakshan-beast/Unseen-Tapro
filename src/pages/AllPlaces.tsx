@@ -119,7 +119,7 @@ export default function AllPlaces() {
     });
 
   return (
-    <div className="pt-32 min-h-screen bg-zinc-950 text-white pb-16">
+    <div className="pt-32 min-h-screen bg-[#01030f] text-white pb-16">
       {/* 🗺️ PAGE HEADER & LIVE WEATHER/SAFETY ALERT BOX */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 mb-12">
         <span className="text-emerald-400 font-bold text-xs tracking-widest uppercase mb-2 block">
