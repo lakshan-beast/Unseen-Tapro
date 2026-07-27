@@ -7,6 +7,7 @@ import {
   FaChevronRight,
   FaUser,
 } from "react-icons/fa6";
+import { FaHandshakeSimple } from "react-icons/fa6";
 
 const contributors = [
   {
@@ -67,15 +68,17 @@ export default function ContributorsSlider() {
   };
 
   return (
-    <section className="w-full bg-zinc-950 py-24 relative overflow-hidden">
+    <section className="w-full bg-[#01030f] py-24 relative overflow-hidden">
       <div className="absolute top-1/2 right-0 w-80 h-80 bg-emerald-500/5 rounded-full blur-[120px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
-            <span className="text-emerald-400 font-bold text-[10px] tracking-widest uppercase mb-2 block">
-              The Minds Behind The Lens
+            <span className="text-emerald-400 font-bold text-xs tracking-widest uppercase mb-2 flex gap-1 items-center ">
+              <FaHandshakeSimple className="size-4.5 text-emerald-200 mr-1" /> The
+              Minds Behind The Lens
             </span>
+            {/* <span className="text-emerald-400 font-bold text-[10px] tracking-widest uppercase mb-2 block"></span> */}
             <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">
               Our Content <span className="text-emerald-400">Guardians</span>
             </h2>
