@@ -54,7 +54,7 @@ export default function Dashboard() {
   const expLvl = getExplorerLevel(userProfile.explorerVotes);
 
   return (
-    <div className="pt-32 min-h-screen bg-zinc-950 text-white pb-16">
+    <div className="pt-32 min-h-screen bg-[#01030f] text-white pb-16">
       {/* 👑 ROW 1: TOP PROFILE BENTO GRID (කොටස් 3) */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
         {/* Bento 1: User Profile Card */}
