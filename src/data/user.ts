@@ -3,7 +3,8 @@ export interface UserProfile {
   name: string;
   email: string;
   profilePic: string;
-  role: "Tourist" | "Tourist & Explorer" | "Local Guide";
+  // role: "Tourist" | "Tourist & Explorer" | "Local Guide";
+  role: "Tourist" | "Local Guide" | "Merchant";
   explorerVotes: number; // Explorer Trust Score එක සඳහා ලැබී ඇති ඡන්ද
   ecoPoints: number; // Eco-Traveler Score එක සඳහා ලැබී ඇති ලකුණු
 

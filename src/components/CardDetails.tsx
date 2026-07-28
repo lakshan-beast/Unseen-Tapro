@@ -52,7 +52,7 @@ export default function CardDetails() {
           alt={place.title}
           className="w-full h-full object-cover opacity-60"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent"></div>
+        <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/40 to-transparent"></div>
 
         {/* Floating Identity Content */}
         <div className="absolute bottom-8 left-0 w-full px-6 md:px-12 max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-end justify-between gap-4 ">
@@ -80,7 +80,7 @@ export default function CardDetails() {
         {/* LEFT COLUMN: INTEL, ALERTS & TIMELINE ROUTES */}
         <div className="lg:col-span-2 space-y-8">
           {/* 📝 2. FIELD INTELLIGENCE (LONG DESCRIPTION) */}
-          <div className="bg-zinc-900/20 border border-white/5 p-6 md:p-8 rounded-[2rem] backdrop-blur-xl">
+          <div className="bg-zinc-900/20 border border-white/5 p-6 md:p-8 rounded-4xl backdrop-blur-xl">
             <h3 className="text-sm font-black uppercase tracking-widest text-gray-400 mb-4">
               Field Intelligence
             </h3>
@@ -99,7 +99,7 @@ export default function CardDetails() {
             </div>
           </div>
           {/* 🚨 3. ENVIRONMENTAL RISK ALERTS (RED WARNING BOX) */}
-          <div className="bg-zinc-900/20 border border-red-500/10 p-6 md:p-8 rounded-[2rem] backdrop-blur-xl">
+          <div className="bg-zinc-900/20 border border-red-500/10 p-6 md:p-8 rounded-4xl backdrop-blur-xl">
             <div className="flex items-center gap-2 text-red-400 font-bold text-xs tracking-widest uppercase mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
               Critical Safety & Risk Guidelines
@@ -117,7 +117,7 @@ export default function CardDetails() {
           </div>
 
           {/* 🗺️ 4. ROUTE MAPPING TIMELINE (STEP-BY-STEP PATH) */}
-          <div className="bg-zinc-900/20 border border-white/5 p-6 md:p-8 rounded-[2rem] backdrop-blur-xl">
+          <div className="bg-zinc-900/20 border border-white/5 p-6 md:p-8  rounded-4xl backdrop-blur-xl">
             <h3 className="text-sm font-black uppercase tracking-widest text-gray-400 mb-6">
               Waypoint Expedition Track
             </h3>
@@ -127,7 +127,7 @@ export default function CardDetails() {
               {place.routes.map((route) => (
                 <div key={route.step} className="relative pl-8 group">
                   {/* Timeline Node Point */}
-                  <div className="absolute -left-[9px] top-1 w-4 h-4 bg-zinc-950 border-2 border-emerald-400 rounded-full flex items-center justify-center text-[8px] font-black font-mono text-emerald-400 shadow-md">
+                  <div className="absolute -left-2.25 top-1 w-4 h-4 bg-zinc-950 border-2 border-emerald-400 rounded-full flex items-center justify-center text-[8px] font-black font-mono text-emerald-400 shadow-md">
                     {route.step}
                   </div>
                   <div>
@@ -147,7 +147,7 @@ export default function CardDetails() {
         {/* RIGHT COLUMN: AUTHOR INFO, SATELLITE LINKS & CREDITS */}
         <div className="space-y-6">
           {/* Scout Identity Box */}
-          <div className="bg-zinc-900/20 border border-white/5 p-6 rounded-[2rem] backdrop-blur-xl">
+          <div className="bg-zinc-900/20 border border-white/5 p-6 rounded-4xl backdrop-blur-xl">
             <p className="text-[10px] text-gray-500 uppercase font-black tracking-wider mb-4">
               Sourced By Scout
             </p>
@@ -168,7 +168,7 @@ export default function CardDetails() {
           </div>
 
           {/* 📍 5. LIVE GPS COORDINATES BUTTON */}
-          <div className="bg-zinc-900/20 border border-white/5 p-6 rounded-[2rem] backdrop-blur-xl space-y-4">
+          <div className="bg-zinc-900/20 border border-white/5 p-6 rounded-4xl backdrop-blur-xl space-y-4">
             <p className="text-[10px] text-gray-500 uppercase font-black tracking-wider">
               Satellite Navigation
             </p>
@@ -182,7 +182,7 @@ export default function CardDetails() {
           </div>
 
           {/* Sourced Resources/Credits Mention */}
-          <div className="bg-zinc-900/20 border border-white/5 p-6 rounded-[2rem] backdrop-blur-xl text-center">
+          <div className="bg-zinc-900/20 border border-white/5 p-6 rounded-4xl backdrop-blur-xl text-center">
             <p className="text-[10px] text-gray-500 uppercase font-black tracking-wider mb-2">
               Archive Integrity Credits
             </p>

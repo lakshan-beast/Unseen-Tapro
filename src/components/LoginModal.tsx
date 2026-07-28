@@ -152,7 +152,7 @@ import { GiCompass } from "react-icons/gi";
 import { IoStorefrontOutline } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
 import { MdOutlineShareLocation } from "react-icons/md";
- import { FcGoogle } from "react-icons/fc";
+import { FcGoogle } from "react-icons/fc";
 
 interface LoginModalProps {
   onClose: () => void;
@@ -218,7 +218,7 @@ export default function LoginModal({
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 ">
+    <div className="fixed inset-0 flex items-center justify-center p-4 ">
       {/* 🌑 Background Backdrop */}
       <div
         className="absolute inset-0 bg-black/70 backdrop-blur-md"
@@ -250,7 +250,7 @@ export default function LoginModal({
                 ? "bg-emerald-500 text-black shadow-lg shadow-emerald-500/20"
                 : "text-gray-400 hover:text-white hover:bg-white/5"
             }`}>
-            <MdOutlineShareLocation 
+            <MdOutlineShareLocation
               size={16}
               className={selectedRole === "Tourist" ? "animate-spin-slow" : ""}
             />
@@ -286,26 +286,23 @@ export default function LoginModal({
         <div className="text-gray-400 text-xs font-light leading-relaxed mb-8 px-2 h-14 flex items-center justify-center">
           {selectedRole === "Tourist" && (
             <p className="animate-fadeIn">
-               Discover hidden paradise spots, save your favorite trails, and
+              Discover hidden paradise spots, save your favorite trails, and
               connect with fellow explorers safely.
             </p>
           )}
           {selectedRole === "Local Guide" && (
             <p className="animate-fadeIn">
-               List your Tuk/Jeep tours, share expert location knowledge, and
-              get direct bookings from global tourists.
+              List your Tuk/Jeep tours, share expert location knowledge, and get
+              direct bookings from global tourists.
             </p>
           )}
           {selectedRole === "Merchant" && (
             <p className="animate-fadeIn">
-               Sell camping gears, travel equipment, or promote your
+              Sell camping gears, travel equipment, or promote your
               hotel/homestay rooms directly on our marketplace.
             </p>
           )}
         </div>
-
-       
-
 
         {/* 🌐 GOOGLE SIGN-IN BUTTON */}
         <button
