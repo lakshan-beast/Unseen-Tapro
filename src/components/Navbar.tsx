@@ -263,6 +263,17 @@ export default function Navbar() {
 
         if (userDocSnap.exists()) {
           setUserProfile(userDocSnap.data() as UserProfile);
+          // } else {
+          //   // Firestore එකේ profile එක තවම නැත්නම් Firebase Auth එකෙන් data ගන්නවා
+          //   setUserProfile({
+          //     uid: firebaseUser.uid,
+          //     name: firebaseUser.displayName || "Traveler",
+          //     email: firebaseUser.email || "",
+          //     profilePic: firebaseUser.photoURL || <FaUserCircle />,
+          //     role: "user",
+          //   } as UserProfile);
+          // }
+          // 🔄 Navbar.tsx ඇතුළේ useEffect එක මැද තියෙන else කොටස මේ විදිහට වෙනස් කරන්න:
         } else {
           // Firestore එකේ profile එක තවම නැත්නම් Firebase Auth එකෙන් data ගන්නවා
           setUserProfile({
@@ -270,7 +281,9 @@ export default function Navbar() {
             name: firebaseUser.displayName || "Traveler",
             email: firebaseUser.email || "",
             profilePic: firebaseUser.photoURL || <FaUserCircle />,
-            role: "user",
+            role: "Tourist", // 👈 'user' වෙනුවට 'Tourist' ලෙස නිවැරදි කලා
+            explorerVotes: 0, // 👈 අලුතින් එක් කලා
+            ecoPoints: 0, // 👈 අලුතින් එක් කලා
           } as UserProfile);
         }
       } else {
