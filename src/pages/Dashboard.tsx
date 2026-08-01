@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import AddPlaceModal from "../components/AddPlaceForm";
+import AddPlaceModal from "../components/forms/AddPlaceForm";
 
 export default function Dashboard() {
   const [isAddPlaceOpen, setIsAddPlaceOpen] = useState(false);

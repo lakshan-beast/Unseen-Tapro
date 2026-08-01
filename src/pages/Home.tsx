@@ -5,8 +5,8 @@ import { useState, useEffect } from "react";
 // import { mockPlaces } from "../data/places";
 
 import Categories from "./Categories";
-import Weather from "../components/Weather";
-import BentoWidgets from "../components/BentoWidgets";
+import Weather from "../components/ui/Weather";
+import BentoWidgets from "../components/ui/BentoWidgets";
 
 // import { BsStars } from "react-icons/bs";
 // import { MdOutlineWifiCalling3 } from "react-icons/md";
@@ -16,9 +16,9 @@ import BentoWidgets from "../components/BentoWidgets";
 // import { HiLocationMarker } from "react-icons/hi";
 
 // import { FaCarSide } from "react-icons/fa";
-import ContributorsSlider from "../components/ContributorsSlider";
-import CommunityBanner from "../components/CommunityBanner";
-import TrustFeatures from "../components/TrustFeatures";
+import ContributorsSlider from "../components/layout/ContributorsSlider";
+import CommunityBanner from "../components/layout/CommunityBanner";
+import TrustFeatures from "../components/layout/TrustFeatures";
 
 const sliderSlides = [
   {
@@ -75,7 +75,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#01030f] text-white overflow-hidden">
+    <div className="relative min-h-screen bg-[#01030f] text-white overflow-hidden font-body">
       <section className="relative h-screen w-full flex flex-col justify-between overflow-hidden">
         <div className="absolute inset-0 z-0">
           {sliderSlides.map((slide, index) => (
@@ -100,7 +100,7 @@ export default function Home() {
           <div
             key={currentSlide}
             className="transition-all duration-700 ease-out">
-            <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 uppercase">
+            <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 uppercase font-heading ">
               {sliderSlides[currentSlide].title} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">
                 {sliderSlides[currentSlide].highlight}
@@ -114,7 +114,7 @@ export default function Home() {
             </p>
           </div>
 
-          <Weather />
+          {/* <Weather /> */}
 
           {/* SLIDER DOTS INDICATORS (යටින් තියෙන පොඩි ඉරි කෑලි 3) */}
           <div className="flex gap-2 mt-12">

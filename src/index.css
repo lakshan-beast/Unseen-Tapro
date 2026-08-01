@@ -1,1 +1,60 @@
+/* @import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/* <style> */
+/* @import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+/* </style> */
+
+/* Main Tailwind v4 import 
 @import "tailwindcss";
+
+/* Custom Font Utilities in v4 
+@theme {
+  --font-heading: "Exo 2", sans-serif;
+  --font-body: "Inter", sans-serif;
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Exo 2", sans-serif;
+  --font-body: "Montserrat", sans-serif;
+}
+
+@layer base {
+  /* 1. Scrollbar Styles */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  h1,
+  h2,
+  h3,
+  button {
+    @apply font-heading;
+  }
+
+  /* 3. HTML & Body Resets */
+  html,
+  body {
+    scroll-behavior: smooth;
+    @apply font-body;
+  }
+}

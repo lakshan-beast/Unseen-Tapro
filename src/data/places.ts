@@ -35,7 +35,7 @@ export const mockPlaces: Place[] = [
     image: "places/duwili-ella.jpg",
     likes: 142,
     commentsCount: 24,
-    authorName: "Kasun Perera",
+    authorName: "",
     authorVotes: 120, // Elite Guide
     category: "waterfall",
     routes: [

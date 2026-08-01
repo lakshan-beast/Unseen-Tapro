@@ -239,10 +239,10 @@
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { auth, db, logoutUser } from "../lib/firebase";
+import { auth, db, logoutUser } from "../../lib/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
-import type { UserProfile } from "../data/user";
+import type { UserProfile } from "../../data/user";
 import LoginModal from "./LoginModal";
 
 import { FaUserCircle } from "react-icons/fa";
@@ -303,12 +303,12 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur-md border-b border-white/5 transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 group">
+      <nav className="fixed top-0 left-0 z-50 w-full bg-white/20 backdrop-blur-md border-b border-white/5 transition-all duration-300">
+        <div className=" mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
+          <Link to="/" className="flex items-center gap-2 group font-heading">
             <span className="text-xl md:text-2xl font-black tracking-[0.2em] text-white group-hover:text-emerald-400 transition-colors duration-300">
               UNSEEN
-              <span className="text-emerald-400 group-hover:text-white">
+              <span className="text-emerald-400 group-hover:text-white lowercase tracking-[0.08rem]">
                 .TAPRO
               </span>
             </span>
@@ -322,7 +322,7 @@ export default function Navbar() {
                 to={link.path}
                 className={`px-6 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 ${
                   isActive(link.path)
-                    ? "bg-emerald-500 text-black shadow-md"
+                    ? "bg-emerald-500 text-white shadow-md"
                     : "text-gray-300 hover:text-white hover:bg-white/5"
                 }`}>
                 {link.name}
@@ -352,7 +352,7 @@ export default function Navbar() {
             ) : (
               <button
                 onClick={() => setIsLoginOpen(true)}
-                className="bg-emerald-500 text-black font-extrabold px-6 py-2.5 rounded-full text-xs tracking-wider uppercase hover:bg-emerald-600 transition-all active:scale-95 shadow-lg shadow-emerald-500/10 cursor-pointer">
+                className="bg-emerald-500 text-white font-extrabold px-6 py-2.5 rounded-full text-xs tracking-wider uppercase hover:bg-emerald-400 transition-all active:scale-95 shadow-lg shadow-emerald-500/10 cursor-pointer">
                 Login
               </button>
             )}

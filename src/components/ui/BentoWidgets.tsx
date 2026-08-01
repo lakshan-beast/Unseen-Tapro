@@ -1,14 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 // 🎨 Font Awesome 6 Icons පමණක් භාවිතා කර ඇත
-import {
-  FaPhone,
-  FaTruckMedical,
-  FaCarRear,
-  FaPlane,
-  FaCopy,
-  FaCheck,
-} from "react-icons/fa6";
+import { FaPhone, FaTruckMedical, FaCopy, FaCheck } from "react-icons/fa6";
 
 export default function EmergencyMobilityWidgets() {
   // 🌍 සජීවී Coordinates තබා ගැනීමට States
@@ -105,7 +98,7 @@ export default function EmergencyMobilityWidgets() {
         <div className="bg-zinc-900/30 border border-white/5 p-6 md:p-8 rounded-[2rem] backdrop-blur-xl flex flex-col justify-between gap-6 group hover:border-emerald-500/10 transition-all duration-300">
           <div>
             <div className="flex items-center gap-2 text-emerald-400 font-bold text-xs tracking-widest uppercase mb-4">
-              <FaCarRear size={12} /> Mobility Hub
+              Mobility Hub
             </div>
             <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tight mb-2">
               Book Rides & Air Transit
@@ -117,26 +110,31 @@ export default function EmergencyMobilityWidgets() {
             </p>
 
             {/* Mobility Options Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 ">
               <a
                 href="pickme://ride"
-                className="bg-yellow-400 hover:bg-yellow-500 text-black font-black p-4 rounded-2xl text-xs tracking-wider uppercase flex items-center justify-center gap-2 transition-all duration-300 shadow-lg shadow-yellow-400/8 cursor-pointer ">
-                <img src="/images/hero/pick_me.png" alt="" />
-                {/* Dispatch via PickMe */}
+                className="bg-yellow-600 hover:bg-yellow-500 h-20 text-black font-black px-2 py-1 rounded-2xl text-xs tracking-wider uppercase flex items-center justify-between gap-2 transition-all duration-300 shadow-lg shadow-yellow-400/8 cursor-pointer ">
+                <img
+                  src="/images/hero/pick_me.png"
+                  alt=""
+                  width={"90px"}
+                  height={"45px"}
+                />
+                Dispatch via PickMe
               </a>
               <a
                 href="uber://?action=setPickup"
-                className="bg-white text-black font-black p-4 rounded-2xl text-xs tracking-wider uppercase flex items-center justify-center gap-2 transition-all duration-300 cursor-pointer">
-                <img src="/images/hero/uber.png" alt="" />
-                {/* Request an Uber */}
+                className="bg-white text-black h-20 font-black px-2 py-1 rounded-2xl text-xs tracking-wider uppercase flex items-center justify-between gap-2 transition-all duration-300 cursor-pointer">
+                <img src="/images/hero/uber.png" alt="" width={"60px"} />
+                Request an Uber
               </a>
             </div>
-
-            <Link to="/services"></Link>
           </div>
 
+          <Link to="/services" className="w-full md:w-auto bg-white/5 text-center hover:bg-emerald-800 hover:text-white/700 border border-white/10 text-white font-bold px-6 py-3 rounded-2xl text-xs tracking-wider uppercase transition-all duration-300 shadow-xl active:scale-95" >All Services</Link>
+
           {/* Premium Air Travel Integration */}
-          <div className="bg-black/20 p-4 rounded-2xl border border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
+          {/* <div className="bg-black/20 p-4 rounded-2xl border border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="text-center sm:text-left">
               <p className="text-gray-400 text-[11px] font-medium uppercase tracking-wider mb-1 flex items-center justify-center sm:justify-start gap-2">
                 <FaPlane className="text-emerald-400" size={12} /> Premium
@@ -162,7 +160,7 @@ export default function EmergencyMobilityWidgets() {
                 Cinnamon Air
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

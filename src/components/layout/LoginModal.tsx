@@ -141,10 +141,10 @@
 // }
 
 import { useState } from "react";
-import { loginWithGoogle } from "../lib/firebase";
+import { loginWithGoogle } from "../../lib/firebase";
 import { doc, getDoc, setDoc } from "firebase/firestore";
-import { db } from "../lib/firebase";
-import type { UserProfile } from "../data/user";
+import { db } from "../../lib/firebase";
+import type { UserProfile } from "../../data/user";
 // 🎨 Lucide Icons Import කිරීම
 // import { Compass, Compass as TravelerIcon, Store, X } from 'lucide-react';
 
@@ -225,7 +225,7 @@ export default function LoginModal({
         onClick={onClose}></div>
 
       {/* 🔮 GLASSMORPHISM CARD */}
-      <div className="relative bg-[#01030f] border border-white/10 rounded-[2.5rem] p-8 max-w-lg w-full shadow-2xl backdrop-blur-2xl text-center z-10 animate-[fadeIn_0.2s_ease-out]">
+      <div className="relative bg-[#01030f] border border-white/10 rounded-[2.5rem] p-8 max-w-lg w-full shadow-2xl backdrop-blur-lg text-center z-10 animate-[fadeIn_0.2s_ease-out]">
         {/* Close Button */}
         <button
           onClick={onClose}

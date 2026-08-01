@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { auth } from "../lib/firebase"; // Firebase Auth සහ DB Import කිරීම
+import { auth } from "../../lib/firebase"; // Firebase Auth සහ DB Import කිරීම
 import { FaRegStar } from "react-icons/fa6";
 // import  from "./LoginModal";
 import LoginModal from "./LoginModal"; // අපි කලින් හදපු Login Modal එක
-import type { UserProfile } from "../data/user";
+import type { UserProfile } from "../../data/user";
 
 export default function CommunityBanner() {
   const [isFormOpen, setIsFormOpen] = useState(false);

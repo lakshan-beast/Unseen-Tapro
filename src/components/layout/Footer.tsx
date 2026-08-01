@@ -231,7 +231,6 @@ import { GoHeartFill } from "react-icons/go";
 // import { MdPhotoCamera } from "react-icons/md";
 import { RiCopyrightLine } from "react-icons/ri";
 
-
 export default function Footer() {
   const contentCredits = [
     { name: "Sri Lanka Travel Culture", url: "https://facebook.com" },
@@ -240,7 +239,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-zinc-950 text-gray-400 border-t border-white/5 pt-16 pb-8 overflow-hidden w-full ">
+    <footer className="w-full relative bg-zinc-950 text-gray-400 border-t border-white/5 pt-16 pb-8 overflow-hidden w-full ">
       {/* 📸 Full Width Background Image Overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -256,13 +255,16 @@ export default function Footer() {
       {/* 🟢 Background Neon Glow Effect (අර කලින් තිබ්බ ලයිට් එක) */}
       <div className="absolute bottom-0 right-0 w-[100] h-[50] bg-emerald-500/5 rounded-full blur-[150px] pointer-events-none z-10"></div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12 relative z-10">
+      <div className=" mx-auto px-16 md:px-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12 relative z-10">
         {/* Column 1: Brand & Socials */}
         <div className="flex flex-col gap-4">
           <Link
             to="/"
-            className="text-xl font-black tracking-[0.2em] text-white">
-            UNSEEN<span className="text-emerald-400">.TAPRO</span>
+            className="text-xl font-black tracking-[0.2em] text-white font-heading">
+            UNSEEN
+            <span className="text-emerald-400 lowercase tracking-[0.08rem]">
+              .TAPRO
+            </span>
           </Link>
           <p className="text-gray-400 text-xs font-light leading-relaxed">
             Exploring the untouched paradises of Sri Lanka while ensuring
@@ -273,17 +275,17 @@ export default function Footer() {
             <a
               href="#"
               className="text-gray-400 hover:text-emerald-400 transition-colors p-2 rounded-lg hover:bg-white/5">
-              <FaFacebook size={16} />
+              <FaFacebook size={20} />
             </a>
             <a
               href="#"
               className="text-gray-400 hover:text-emerald-400 transition-colors p-2 rounded-lg hover:bg-white/5">
-              <FaInstagram size={16} />
+              <FaInstagram size={20} />
             </a>
             <a
               href="#"
               className="text-gray-400 hover:text-emerald-400 transition-colors p-2 rounded-lg hover:bg-white/5">
-              <FaYoutube size={16} />
+              <FaYoutube size={20} />
             </a>
           </div>
         </div>
@@ -291,7 +293,7 @@ export default function Footer() {
         {/* Column 2: Quick Links */}
         <div>
           <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
-            <FaGlobe size={16} className="text-emerald-400" />
+            {/* <FaGlobe size={16} className="text-emerald-400" /> */}
             Explore
           </h4>
           <ul className="flex flex-col gap-2.5 text-xs text-gray-400">
@@ -327,7 +329,7 @@ export default function Footer() {
         {/* Column 3: Content Credits (ඔයා කියපු සුපිරි කොටස) */}
         <div>
           <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
-            <GoHeartFill size={16} className="text-emerald-400 animate-pulse" />
+            {/* <GoHeartFill size={16} className="text-emerald-400 animate-pulse" /> */}
             Content Credits
           </h4>
           <p className="text-[12px] text-white-500 font-light mb-3 leading-relaxed">
@@ -353,7 +355,7 @@ export default function Footer() {
         {/* Column 4: Emergency Assistance */}
         <div>
           <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
-            <LuShieldAlert size={16} className="text-emerald-400" />
+            {/* <LuShieldAlert size={16} className="text-emerald-400" /> */}
             Safety First
           </h4>
           <p className="text-gray-400 text-xs font-light leading-relaxed mb-4">
@@ -362,14 +364,17 @@ export default function Footer() {
           <Link
             to="/services"
             className="inline-flex items-center justify-center bg-red-500/10 hover:bg-red-500/20  text-red-400 hover:text-white-600 font-bold border border-red-500/20 text-[10px] tracking-wider uppercase px-4 py-2.5 rounded-xl transition-all w-full text-center">
-             Access SOS Hotlines
+            Access SOS Hotlines
           </Link>
         </div>
       </div>
 
       {/* Copyright Line */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-gray-500 relative z-10">
-        <p className="flex items-center"><RiCopyrightLine size={15} className="mr-2" /> {new Date().getFullYear()} UNSEEN.TAPRO. All Rights Reserved.</p>
+        <p className="flex items-center">
+          <RiCopyrightLine size={15} className="mr-2" />{" "}
+          {new Date().getFullYear()} UNSEEN.TAPRO. All Rights Reserved.
+        </p>
         <p className="flex items-center gap-1">
           Made with{" "}
           <GoHeartFill

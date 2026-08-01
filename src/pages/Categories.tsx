@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { GiMountainClimbing } from "react-icons/gi";
 import { GiWaterfall } from "react-icons/gi";
 import { GiPoolDive } from "react-icons/gi";
@@ -85,9 +85,9 @@ export default function Home() {
           </div>
 
           <div>
-            <button className="w-full md:w-auto bg-white/5 hover:bg-emerald-500 hover:text-black border border-white/10 text-white font-bold px-6 py-3 rounded-2xl text-xs tracking-wider uppercase transition-all duration-300 shadow-xl active:scale-95">
+            <Link to="/destinations" className="w-full md:w-auto bg-white/5 hover:bg-emerald-500 hover:text-black border border-white/10 text-white font-bold px-6 py-3 rounded-2xl text-xs tracking-wider uppercase transition-all duration-300 shadow-xl active:scale-95">
               Explore All Places →
-            </button>
+            </Link>
           </div>
         </div>
 
