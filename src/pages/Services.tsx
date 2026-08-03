@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // store data
 import { districtHelplines } from "../data/services";
@@ -24,9 +25,17 @@ export default function Services() {
     return matchesDistrict && matchesSearch;
   });
 
+  const navigate = useNavigate();
+
   return (
-    <div className="pt-32 min-h-screen bg-[#01030f] text-white pb-16">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-12">
+    <div className="pt-28 min-h-screen bg-[#01030f] text-white pb-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-12 mt-0">
+        <button
+          onClick={() => navigate(-1)}
+          className="flex items-center gap-2 bg-white-900/60 backdrop-blur-md border border-white/30 hover:bg-white/20 hover:text-white text-white px-4 py-2 rounded-xl text-xs font-semibold tracking-wider transition-all active:scale-95 mb-4 mt-0">
+          ← Back to Home
+        </button>
+
         <span className="text-emerald-400 font-bold text-xs tracking-widest uppercase mb-2 block">
           Utility & Safety Command
         </span>
@@ -161,7 +170,7 @@ export default function Services() {
       </section>
 
       {/* 📋 SECTION 4: DIRECTORY GRID LIST */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12">
+      <section className="max-w-7xl mx-auto px-6 md:px-12 max-h-167.5 overflow-x-scroll scrollbar-none">
         <div className="bg-zinc-900/30 border border-white/5 rounded-3xl overflow-hidden backdrop-blur-xl">
           <div className="divide-y divide-white/5">
             {filteredHelplines.length > 0 ? (
