@@ -271,7 +271,7 @@ export default function CardDetails() {
         <div className="absolute bottom-6 left-0 right-0 px-6 md:px-12 max-w-7xl mx-auto">
           <div className="flex flex-wrap items-center gap-2 mb-3">
             <span className="bg-emerald-500 text-zinc-950 text-[10px] font-extrabold tracking-widest uppercase px-3 py-1 rounded-md shadow-lg">
-               {place.district} District
+              {place.district} District
             </span>
             <span className="bg-zinc-800/80 border border-white/10 text-zinc-300 text-[10px] font-medium tracking-wider uppercase px-3 py-1 rounded-md backdrop-blur-md">
               {place.category}
@@ -398,13 +398,23 @@ export default function CardDetails() {
             <span className="text-[10px] text-zinc-500 uppercase font-bold tracking-wider block">
               Live Satellite Navigation
             </span>
-            <a
+            {/* <a
               href={place.googleMapUrl}
               target="_blank"
               rel="noreferrer"
-              className="w-full bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-extrabold py-3.5 px-4 rounded-xl text-xs tracking-wider uppercase text-center flex items-center justify-center gap-2 transition-all shadow-lg shadow-emerald-500/10 active:scale-95">
-              <span>🛰️</span> Launch Google Maps
-            </a>
+              className="w-full bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-extrabold py-3.5 px-4 rounded-xl text-xs tracking-wider uppercase text-center flex items-center justify-center gap-2 transition-all shadow-lg shadow-emerald-500/10 active:scale-95"> */}
+              {/* <span>🛰️</span> Launch Google Maps
+            </a> */}
+
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10368.657034104852!2d80.61518731646036!3d7.0838703741378986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae370aabbb4a969%3A0x80d4504592d49848!2sMonara%20Gala%20Mountain%20(Peacock%20Hill)!5e0!3m2!1sen!2slk!4v1785735339161!5m2!1sen!2slk"
+              width="300"
+              height="300"
+              className="w-full border-0 rounded-2xl"
+              // allowfullscreen=""
+              loading="lazy"
+              // referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
           </div>
 
           {/* Credits / Metadata */}

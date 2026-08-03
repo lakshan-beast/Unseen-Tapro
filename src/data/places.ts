@@ -1644,52 +1644,52 @@ export const mockPlaces: Place[] = [
   },
 
   // Hanthana Mountain Range & Pine Forest
-{
-  id: "33",
-  title: "Hanthana Mountain Range & Pine Forest",
-  district: "Kandy",
-  shortDescription:
-    "A legendary seven-peak mountain range flanking Kandy city, renowned for its dense pine slopes and breathtaking valley viewpoints.",
-  longDescription:
-    "Rising dramatically above the hill capital of Kandy and the University of Peradeniya campus, the Hanthana Mountain Range is one of Sri Lanka's most popular hiking destinations. The lower to mid-elevation slopes feature sprawling pine plantations with soft, pine-needle-covered paths that lead hikers up to Seven Peaks (Ura Kanda being the highest at 1,240m). It provides panoramic views of Kandy city, the Knuckles range, and the Mahaweli River valley.",
-  image: "places/hanthana-pine-forest.jpg",
-  likes: 412,
-  commentsCount: 48,
-  authorName: "Lakshan Sandeepa",
-  authorVotes: 85, // Explorer / Contributor
-  category: "nature",
-  routes: [
-    {
-      step: 1,
-      title: "Kandy Town to Sarasavi Meda / Ceylon Tea Museum",
-      description:
-        "Take the Hanthana Road from Kandy city towards the Ceylon Tea Museum or University of Peradeniya entrance.",
-    },
-    {
-      step: 2,
-      title: "Pine Forest Trailhead Ascent",
-      description:
-        "Follow the estate path past Upper Hanthana into the shaded pine forest canopy, ascending through carpeted needle trails.",
-    },
-    {
-      step: 3,
-      title: "Ridge Trek to Peaks",
-      description:
-        "Continue along the mountain ridge, emerging from the pine forest onto open grassland summits offering sweeping 360-degree views.",
-    },
-  ],
-  googleMapUrl:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15830.123456789!2d80.6212!3d7.2614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae368123456789f%3A0x1234567890abcdef!2sHanthana%20Mountain%20Range!5e0!3m2!1sen!2slk!4v1785735339180!5m2!1sen!2slk",
-  safetyAlerts: [
-    "Sudden mist and quick weather shifts can obscure the trail on upper ridges; stick closely to main worn tracks.",
-    "Be cautious on steep rock faces near peak edges, especially during or immediately after rain.",
-  ],
-  vehicleAccessibility:
-    "Accessible by cars, tuk-tuks, or local buses up to the Ceylon Tea Museum or Upper Hanthana trailhead area.",
-  facilities: [
-    "Nearest Hospital: Kandy National Hospital / Peradeniya Teaching Hospital",
-    "Nearest ATM: Peradeniya Town / Kandy City Center",
-    "Accommodation: Wide variety of boutique hotels, guesthouses, and campus homestays in Kandy and Peradeniya.",
-  ],
-}
+  {
+    id: "33",
+    title: "Hanthana Mountain Range & Pine Forest",
+    district: "Kandy",
+    shortDescription:
+      "A legendary seven-peak mountain range flanking Kandy city, renowned for its dense pine slopes and breathtaking valley viewpoints.",
+    longDescription:
+      "Rising dramatically above the hill capital of Kandy and the University of Peradeniya campus, the Hanthana Mountain Range is one of Sri Lanka's most popular hiking destinations. The lower to mid-elevation slopes feature sprawling pine plantations with soft, pine-needle-covered paths that lead hikers up to Seven Peaks (Ura Kanda being the highest at 1,240m). It provides panoramic views of Kandy city, the Knuckles range, and the Mahaweli River valley.",
+    image: "places/hanthana-pine-forest.jpg",
+    likes: 412,
+    commentsCount: 48,
+    authorName: "Lakshan Sandeepa",
+    authorVotes: 85, // Explorer / Contributor
+    category: "nature",
+    routes: [
+      {
+        step: 1,
+        title: "Kandy Town to Sarasavi Meda / Ceylon Tea Museum",
+        description:
+          "Take the Hanthana Road from Kandy city towards the Ceylon Tea Museum or University of Peradeniya entrance.",
+      },
+      {
+        step: 2,
+        title: "Pine Forest Trailhead Ascent",
+        description:
+          "Follow the estate path past Upper Hanthana into the shaded pine forest canopy, ascending through carpeted needle trails.",
+      },
+      {
+        step: 3,
+        title: "Ridge Trek to Peaks",
+        description:
+          "Continue along the mountain ridge, emerging from the pine forest onto open grassland summits offering sweeping 360-degree views.",
+      },
+    ],
+    googleMapUrl:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15830.123456789!2d80.6212!3d7.2614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae368123456789f%3A0x1234567890abcdef!2sHanthana%20Mountain%20Range!5e0!3m2!1sen!2slk!4v1785735339180!5m2!1sen!2slk",
+    safetyAlerts: [
+      "Sudden mist and quick weather shifts can obscure the trail on upper ridges; stick closely to main worn tracks.",
+      "Be cautious on steep rock faces near peak edges, especially during or immediately after rain.",
+    ],
+    vehicleAccessibility:
+      "Accessible by cars, tuk-tuks, or local buses up to the Ceylon Tea Museum or Upper Hanthana trailhead area.",
+    facilities: [
+      "Nearest Hospital: Kandy National Hospital / Peradeniya Teaching Hospital",
+      "Nearest ATM: Peradeniya Town / Kandy City Center",
+      "Accommodation: Wide variety of boutique hotels, guesthouses, and campus homestays in Kandy and Peradeniya.",
+    ],
+  },
 ];

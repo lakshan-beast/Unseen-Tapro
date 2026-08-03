@@ -107,7 +107,7 @@ export default function ContributorsSlider() {
             {contributors.map((person, index) => (
               <div
                 key={index}
-                className="w-full md:w-[calc(50%-12px)] shrink-0 bg-zinc-900/40 border border-white/5 hover:border-emerald-500/20 rounded-[2rem] p-6 backdrop-blur-xl transition-all duration-300 group">
+                className="w-full md:w-[calc(50%-12px)] shrink-0 bg-zinc-900/40 border border-white/5 hover:border-emerald-500/20 rounded-4xl p-6 backdrop-blur-xl transition-all duration-300 group">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
                     <div className="w-16 h-16 rounded-2xl overflow-hidden border border-white/10 p-0.5 relative shrink-0">

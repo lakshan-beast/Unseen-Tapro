@@ -172,7 +172,7 @@ export default function AllPlaces() {
           filteredAndSortedPlaces.map((place) => (
             <div
               key={place.id}
-              className="relative h-[450px] border-2 border-white/15 rounded-3xl overflow-hidden hover:border-white/30 transition-all duration-500 flex flex-col justify-end group cursor-pointer">
+              className="relative h-112.5 border-2 border-white/15 rounded-3xl overflow-hidden hover:border-white/30 transition-all duration-500 flex flex-col justify-end group cursor-pointer">
               {/* Background Image */}
               <img
                 src={place.image}
@@ -181,7 +181,7 @@ export default function AllPlaces() {
               />
 
               {/* Dark Gradient Overlay - Text සහ Buttons පැහැදිලිව පෙනීමට */}
-              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/60 to-transparent z-10" />
+              <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/60 to-transparent z-10" />
 
               {/* Card Content (Image එක උඩ පාවෙන කොටස) */}
               <div className="relative z-20 p-6 w-full flex flex-col justify-between h-full">

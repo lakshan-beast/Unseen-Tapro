@@ -246,6 +246,11 @@ import type { UserProfile } from "../../data/user";
 import LoginModal from "./LoginModal";
 
 import { FaUserCircle } from "react-icons/fa";
+// import { TiThMenuOutline } from "react-icons/ti";
+import { TiThMenu } from "react-icons/ti";
+{
+  /* <TiThMenu /> */
+}
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -331,7 +336,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop User Profile / Login */}
-          <div className="hidden md:flex items-center gap-4">
+          {/* <div className="hidden md:flex items-center gap-4">
             {userProfile ? (
               <div className="flex items-center gap-4">
                 <Link
@@ -356,14 +361,31 @@ export default function Navbar() {
                 Login
               </button>
             )}
-          </div>
+          </div> */}
 
           {/* Mobile Hamburger Button */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-white focus:outline-none p-2">
-              <svg
+              <TiThMenu className="size-8" />
+
+               {isOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L12 12M4 4l16 16"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
+              {/* <svg
                 className="w-6 h-6"
                 fill="none"
                 stroke="currentColor"
@@ -383,7 +405,7 @@ export default function Navbar() {
                     d="M4 6h16M4 12h16M4 18h16"
                   />
                 )}
-              </svg>
+              </svg> */}
             </button>
           </div>
         </div>

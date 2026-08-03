@@ -58,7 +58,7 @@ export default function Dashboard() {
       {/* 👑 ROW 1: TOP PROFILE BENTO GRID (කොටස් 3) */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
         {/* Bento 1: User Profile Card */}
-        <div className="bg-zinc-900/30 border border-white/5 p-6 rounded-[2rem] backdrop-blur-xl flex items-center gap-5">
+        <div className="bg-zinc-900/30 border border-white/5 p-6 rounded-4xl backdrop-blur-xl flex items-center gap-5">
           <div className="w-16 h-16 rounded-full border-2 border-emerald-400/50 p-0.5 overflow-hidden">
             <img
               src={userProfile.profilePic}
@@ -80,7 +80,7 @@ export default function Dashboard() {
         </div>
 
         {/* Bento 2: Explorer Trust Level & Total Posts */}
-        <div className="bg-zinc-900/30 border border-white/5 p-6 rounded-[2rem] backdrop-blur-xl flex justify-between items-center">
+        <div className="bg-zinc-900/30 border border-white/5 p-6 rounded-4xl backdrop-blur-xl flex justify-between items-center">
           <div>
             <p className="text-gray-400 text-[10px] font-extrabold uppercase tracking-widest mb-1">
               Explorer Reputation
@@ -108,7 +108,7 @@ export default function Dashboard() {
         </div>
 
         {/* Bento 3: Eco-Traveler Scoreboard */}
-        <div className="bg-zinc-900/30 border border-white/5 p-6 rounded-[2rem] backdrop-blur-xl flex justify-between items-center">
+        <div className="bg-zinc-900/30 border border-white/5 p-6 rounded-4xl backdrop-blur-xl flex justify-between items-center">
           <div>
             <p className="text-emerald-400 text-[10px] font-extrabold uppercase tracking-widest mb-1">
               Sustainability Score
@@ -135,7 +135,7 @@ export default function Dashboard() {
       {/* 🏥 ROW 2: MEDICAL PASSPORT & EMERGENCY QR CODE */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
         {/* Left Side: Secure Medical Passport Form */}
-        <div className="lg:col-span-2 bg-zinc-900/20 border border-white/5 p-6 md:p-8 rounded-[2rem] backdrop-blur-xl">
+        <div className="lg:col-span-2 bg-zinc-900/20 border border-white/5 p-6 md:p-8 rounded-4xl backdrop-blur-xl">
           <div className="flex items-center gap-2 text-red-400 font-bold text-xs tracking-widest uppercase mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>
             Medical Emergency Passport (Secure Logs)
@@ -198,7 +198,7 @@ export default function Dashboard() {
         </div>
 
         {/* Right Side: Downloadable Emergency QR Code */}
-        <div className="bg-zinc-900/20 border border-white/5 p-6 rounded-[2rem] backdrop-blur-xl flex flex-col justify-between items-center text-center gap-4">
+        <div className="bg-zinc-900/20 border border-white/5 p-6 rounded-4xl backdrop-blur-xl flex flex-col justify-between items-center text-center gap-4">
           <div>
             <p className="text-gray-400 text-[10px] font-extrabold uppercase tracking-widest mb-1">
               Live Security Utility
@@ -295,7 +295,7 @@ export default function Dashboard() {
           {activeTab === "uploaded" && (
             <>
               {/* යූසර් අප්ලෝඩ් කරපු තැන් විදිහට අපේ data වලින් පෝස්ට් 2ක් පෙන්වමු */}
-              <div className="bg-zinc-900/20 border border-white/5 rounded-[2rem] overflow-hidden flex flex-col justify-between group">
+              <div className="bg-zinc-900/20 border border-white/5 rounded-4xl overflow-hidden flex flex-col justify-between group">
                 <div className="relative h-48 w-full bg-zinc-950">
                   <img
                     src="https://picsum.photos"
@@ -321,7 +321,7 @@ export default function Dashboard() {
                 </div>
               </div>
 
-              <div className="bg-zinc-900/20 border border-white/5 rounded-[2rem] overflow-hidden flex flex-col justify-between group">
+              <div className="bg-zinc-900/20 border border-white/5 rounded-4xl overflow-hidden flex flex-col justify-between group">
                 <div className="relative h-48 w-full bg-zinc-950">
                   <img
                     src="https://picsum.photos"
@@ -351,7 +351,7 @@ export default function Dashboard() {
 
           {/* 2. Clean Challenges Tab Content */}
           {activeTab === "clean" && (
-            <div className="bg-zinc-900/10 border border-white/5 border-dashed p-12 text-center text-gray-500 text-xs font-light rounded-[2rem] col-span-full py-16">
+            <div className="bg-zinc-900/10 border border-white/5 border-dashed p-12 text-center text-gray-500 text-xs font-light rounded-4xl col-span-full py-16">
               🌱 No clean challenges logged yet. Snap a photo of your next trash
               cleanup to earn 150+ Eco-Points!
             </div>
@@ -361,7 +361,7 @@ export default function Dashboard() {
           {activeTab === "saved" && (
             <>
               {/* යූසර් පසුව යන්න Bookmark කරගත්තු තැන් */}
-              <div className="bg-zinc-900/20 border border-white/5 rounded-[2rem] overflow-hidden flex flex-col justify-between group">
+              <div className="bg-zinc-900/20 border border-white/5 rounded-4xl overflow-hidden flex flex-col justify-between group">
                 <div className="relative h-48 w-full bg-zinc-950">
                   <img
                     src="https://picsum.photos"
@@ -388,7 +388,7 @@ export default function Dashboard() {
                 </div>
               </div>
 
-              <div className="bg-zinc-900/20 border border-white/5 rounded-[2rem] overflow-hidden flex flex-col justify-between group">
+              <div className="bg-zinc-900/20 border border-white/5 rounded-4xl overflow-hidden flex flex-col justify-between group">
                 <div className="relative h-48 w-full bg-zinc-950">
                   <img
                     src="https://picsum.photos"

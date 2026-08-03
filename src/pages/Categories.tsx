@@ -68,7 +68,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-[#01030f] text-white overflow-hidden">
+    <div className="relative  bg-[#01030f] text-white overflow-hidden">
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-16 ">
         <div className="mb-12 text-center sm:text-left flex justify-between">
           <div>
@@ -92,12 +92,12 @@ export default function Home() {
         </div>
 
         {/* Bento Layout Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-3 md:grid-cols-3 gap-3">
           {travelCategories.map((cat) => (
             <div
               key={cat.id}
               onClick={() => navigate(`/destinations?category=${cat.id}`)}
-              className="relative h-64 rounded-[2.5rem] overflow-hidden border border-white/5 group cursor-pointer hover:border-emerald-500/20 transition-all duration-500 shadow-2xl">
+              className="relative h-64 rounded-[1.5rem] overflow-hidden border border-white/15 group cursor-pointer hover:border-emerald-500/50 hover:border-2 transition-all duration-500 shadow-2xl">
               {/* Background Image Asset */}
               <div className="absolute inset-0">
                 <img
@@ -111,10 +111,10 @@ export default function Home() {
               {/* Category Info Contents */}
               <div className="absolute inset-0 p-8 flex flex-col justify-between z-10">
                 <div className="flex justify-between items-start">
-                  <span className="text-3xl bg-black/40 p-3 rounded-2xl border border-white/5 backdrop-blur-md">
+                  <span className="text-3xl bg-white/500 p-3 rounded-2xl border border-white/20 text-emerald-300 backdrop-blur-md">
                     {cat.icon}
                   </span>
-                  <span className="text-[10px] font-black uppercase tracking-widest bg-emerald-500 text-black px-3 py-1.5 rounded-full shadow-lg font-mono">
+                  <span className="text-[10px] font-black uppercase tracking-widest bg-emerald-800 text-white px-3 py-1.5 rounded-full shadow-lg font-mono">
                     {cat.count}
                   </span>
                 </div>
