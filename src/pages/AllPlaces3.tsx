@@ -31,6 +31,8 @@ export default function AllPlaces() {
   const [reportText, setReportText] = useState("");
   const [reportLoading, setReportLoading] = useState(false);
 
+  const navigate = useNavigate();
+
   const handleClearFilters = () => {
     setSearchQuery("");
     setSelectedDistrict("All Districts");
@@ -76,6 +78,8 @@ export default function AllPlaces() {
       const matchesDistrict =
         selectedDistrict === "All Districts" ||
         place.district === selectedDistrict;
+
+      console.log(place.image);
       const matchesSearch =
         place.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         place.shortDescription
@@ -94,11 +98,15 @@ export default function AllPlaces() {
       return Number(b.id) - Number(a.id);
     });
 
-  const navigate = useNavigate();
-
   return (
-    <div className="pt-32 min-h-screen bg-[#01030f] text-white pb-16">
+    <div className="pt-26 min-h-screen bg-[#01030f] text-white pb-16">
       <div className="max-w-7xl mx-auto px-6 md:px-12 mb-6">
+        <button
+          onClick={() => navigate(-1)}
+          className="flex items-center gap-2 bg-white-900/60 backdrop-blur-md border border-white/30 hover:bg-white/20 hover:text-white text-white px-4 py-2 rounded-xl text-xs font-semibold tracking-wider transition-all active:scale-95 mb-3">
+          ← Back to Home
+        </button>
+
         <span className="text-emerald-400 font-bold text-xs tracking-widest uppercase mb-2 block">
           Destinations Archive
         </span>
@@ -129,12 +137,6 @@ export default function AllPlaces() {
             </p>
           </div>
         </div> */}
-
-        <button
-          onClick={() => navigate(-1)}
-          className="flex items-center gap-2 bg-white-900/60 backdrop-blur-md border border-white/30 hover:bg-white/20 hover:text-white text-white px-4 py-2 rounded-xl text-xs font-semibold tracking-wider transition-all active:scale-95">
-          ← Back to Home
-        </button>
       </div>
 
       {/* Filter panel */}
@@ -183,6 +185,7 @@ export default function AllPlaces() {
               {/* Background Image */}
               <img
                 src={place.image}
+                // src="public/places/duwili-ella.jpg"
                 alt={place.title}
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 z-0 "
               />
@@ -266,7 +269,7 @@ export default function AllPlaces() {
           ))
         ) : (
           <div className="p-12 text-center text-gray-500 text-xs font-light col-span-full">
-            ❌ No hidden gems found matching your query. Try clearing filters.
+            No hidden gems found matching your query. Try clearing filters.
           </div>
         )}
       </section>

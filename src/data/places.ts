@@ -41,7 +41,7 @@ export const mockPlaces: Place[] = [
       "A breathtaking hidden waterfall tucked deep inside the Kalthota wilderness, featuring a mystical hidden cave behind the water curtain.",
     longDescription:
       "Kalthota Duwili Ella is a pristine waterfall hidden within dense jungles. Its most unique feature is the natural cave located directly behind the falling water, offering hikers a mesmerizing, misty 360-degree view of the valley below.",
-    image: "places/duwili-ella.jpg",
+    image: "/places/duwili-ella.jpg",
     likes: 142,
     commentsCount: 24,
     authorName: "",
@@ -91,7 +91,7 @@ export const mockPlaces: Place[] = [
       "One of the highest viewpoints in Pussellawa, offering a panoramic 360-degree view of Kotmale reservoir and endless tea estates.",
     longDescription:
       "Rising 1,518 meters above sea level, Peacock Hill provides stunning unobstructed views of Kotmale Reservoir, Navalapitiya town, and mountain ranges. It is an ideal spot for early morning cloud chasing.",
-    image: "places/peacock-hill.jpg",
+    image: "/places/peacock-hill.jpg",
     likes: 98,
     commentsCount: 11,
     authorName: "Chathura Silva",
@@ -143,7 +143,7 @@ export const mockPlaces: Place[] = [
       "A magnificent cliffside trek located inside the historic Loolkandura estate, the birthplace of Ceylon Tea.",
     longDescription:
       "Kondagala offers an adventurous hike through pine forests and misty cliffs within the Loolkandura Estate. Standing on the edge feels like standing at the end of the world, overlooking vast green valleys.",
-    image: "places/kondagala-peak.JPG",
+    image: "/places/kondagala-peak.JPG",
     likes: 115,
     commentsCount: 14,
     authorName: "Amila Bandara",
@@ -191,7 +191,7 @@ export const mockPlaces: Place[] = [
       "An untouched, serene coastal hideout away from the main kite-surfing crowds, perfect for dolphin watching and wild camping.",
     longDescription:
       "This hidden shoreline in Kalpitiya remains free of large commercial resorts. Surrounded by mangrove swamps and calm blue waters, it offers a peaceful retreat for camping directly under the stars.",
-    image: "places/kalpitiya-kite_surfing.jpg",
+    image: "/places/kalpitiya-kite_surfing.jpg",
     likes: 89,
     commentsCount: 9,
     authorName: "Nisha Perera",
@@ -240,7 +240,7 @@ export const mockPlaces: Place[] = [
       "An off-the-beaten-path ridge trek in Nawalapitiya border, offering endless views of the Sabaragamuwa mountain range.",
     longDescription:
       "Kabagala is a hidden gem for campers looking to escape commercial trails. The summit features flat grassland ideal for pitching tents, surrounded by deep drop-offs and cold mountain winds.",
-    image: "places/kabaragala-peak.jpg",
+    image: "/places/kabaragala-peak.jpg",
     likes: 76,
     commentsCount: 5,
     authorName: "Lahiru Silva",
@@ -287,7 +287,7 @@ export const mockPlaces: Place[] = [
       "Natural infinity rock pools hidden just above Sri Lanka's tallest waterfall, far away from the main observation platform.",
     longDescription:
       "While everyone visits the base of Bambarakanda, a secret trail leads to the very top cliff where cold mountain streams create natural crystal-clear swimming pools right on the edge of the drop.",
-    image: "places/bambarakanda-falls2.jpg",
+    image: "/places/bambarakanda-falls2.jpg",
     likes: 164,
     commentsCount: 32,
     authorName: "Kasun Perera",
@@ -335,7 +335,7 @@ export const mockPlaces: Place[] = [
       "Sri Lanka's second highest waterfall, famous for its epic natural infinity pools at the top.",
     longDescription:
       "Standing 220 meters high, Diyaluma Falls drops down over impressive rock faces near Koslanda. Hiking to the top rewards adventurers with a series of pristine natural rock pools and stunning views over the valleys below.",
-    image: "places/diyaluma-falls.jpg",
+    image: "/places/diyaluma-falls.jpg",
     likes: 142,
     commentsCount: 18,
     authorName: "Kasun Perera",
@@ -387,7 +387,7 @@ export const mockPlaces: Place[] = [
       "An ancient rock fortress and palace ruin dominated by a massive column of rock nearly 200 meters high.",
     longDescription:
       "Designated a UNESCO World Heritage site, Sigiriya (Lion Rock) features fifth-century palace ruins, intricate water gardens, famous fresco paintings, and the massive Lion Gate carved directly into the rock face.",
-    image: "places/sigiriya-rock.jpg",
+    image: "/places/sigiriya-rock.jpg",
     likes: 215,
     commentsCount: 34,
     authorName: "Nimali Wickramasinghe",
@@ -439,7 +439,7 @@ export const mockPlaces: Place[] = [
       "Sri Lanka's ultimate adventure hub, famous for white-water rafting down the Kelani River.",
     longDescription:
       "Nestled in the wet zone, Kitulgala is renowned as Sri Lanka's adventure capital. Visitors flock here for thrilling white-water rafting, confidence jumps, jungle trekking, and exploring picturesque rain forest streams.",
-    image: "places/kithulgala-water_rafting.jpg",
+    image: "/places/kithulgala-water_rafting.jpg",
     likes: 178,
     commentsCount: 22,
     authorName: "Sahan Jayasuriya",
@@ -491,7 +491,7 @@ export const mockPlaces: Place[] = [
       "A scenic rural railway halt surrounded by misty mountains, historical railway tunnels, and lush greenery.",
     longDescription:
       "Located along the Main Line railway between Rambukkana and Kadugannawa, Ihalakotte is a picturesque country village renowned for its serene railway setting, historic tunnels built during the British era, and scenic trekking routes towards Alagalla Mountain Range.",
-    image: "places/ihalakotte.jpg",
+    image: "/places/ihalakotte.jpg",
     likes: 124,
     commentsCount: 15,
     authorName: "Ruwan Bandara",
@@ -543,7 +543,7 @@ export const mockPlaces: Place[] = [
       "A UNESCO World Heritage biodiversity hotspot featuring dramatic cloud forests, hidden waterfalls, and mountain peaks.",
     longDescription:
       "Named after its resemblance to a folded fist, the Knuckles Range features 34 mountain peaks ranging from 900m to 1,900m. It is a premier trekking destination offering breathtaking scenery, rare endemic wildlife, cascading waterfalls, and traditional isolated mountain villages.",
-    image: "places/knuckels-mountain.jpg",
+    image: "/places/knuckels-mountain.jpeg",
     likes: 195,
     commentsCount: 27,
     authorName: "Tharindu Dilshan",
@@ -595,7 +595,7 @@ export const mockPlaces: Place[] = [
       "A remote traditional village hidden deep within the Knuckles Range, dominated by the majestic Lakegala Peak.",
     longDescription:
       "Meemure is one of Sri Lanka's most isolated villages, known for maintaining its traditional rural culture, pristine mountain streams, and dramatic backdrop of Lakegala Mountain. It is a favorite destination for eco-tourism, camping, and natural stream water jumps.",
-    image: "places/meemure-village.jpg",
+    image: "/places/meemure-village.jpg",
     likes: 167,
     commentsCount: 21,
     authorName: "Sanjeewa Bandara",
@@ -647,7 +647,7 @@ export const mockPlaces: Place[] = [
       "The widest waterfall in Sri Lanka, consisting of a collection of several cascading jungle waterfalls.",
     longDescription:
       "Situated in the Uva-Paranagama region near the border of Nuwara Eliya and Badulla districts, Bomburu Ella (Perawella Falls) is famous for its unmatched width and multi-tier cascade. A picturesque jungle trek leads visitors to the base of the massive mist-covered falls.",
-    image: "places/bomburu-ella.jpg",
+    image: "/places/bomburu-ella.jpg",
     likes: 189,
     commentsCount: 24,
     authorName: "Dinesh Fernando",
@@ -699,7 +699,7 @@ export const mockPlaces: Place[] = [
       "A stunning series of multi-tiered waterfalls cascading down steep cliff faces along the Kalugala-Gerandi Ella range.",
     longDescription:
       "Gerandi Ella (located in the Kalugala region near Hasalaka/Mahiyanganaya) is famous for its dramatic vertical drops and striking appearance after rains. The falls consist of several tiers visible from afar, while adventurous trekkers can hike through forest paths to reach various viewing points and pristine stream pools.",
-    image: "places/gerandi-ella.jpg",
+    image: "/places/gerandi-ella.jpg",
     likes: 145,
     commentsCount: 16,
     authorName: "Dilshan Ranasinghe",
@@ -751,7 +751,7 @@ export const mockPlaces: Place[] = [
       "A magnificent 13th-century rock fortress and ancient capital featuring a dramatic ornamental stone staircase.",
     longDescription:
       "Rising nearly 100 meters above the surrounding plains, Yapahuwa served as the capital of Sri Lanka in the late 13th century. Often compared to Sigiriya, it is best known for its beautifully carved steep ornamental granite staircase leading to the old Palace of the Sacred Tooth Relic.",
-    image: "places/yapahuwa.jpg",
+    image: "/places/yapahuwa.jpg",
     likes: 132,
     commentsCount: 14,
     authorName: "Lakshan Sandeepa",
@@ -803,7 +803,7 @@ export const mockPlaces: Place[] = [
       "A massive rock formation directly opposite Sigiriya, offering unmatched 360-degree panoramic views and a ancient cave monastery.",
     longDescription:
       "Located just north of Sigiriya, Pidurangala Rock carries a rich Buddhist history dating back to the 1st century BC. King Kashyapa relocated the monastery monks here before building his fortress on Sigiriya. Famous for its rewarding trek, ancient reclining Buddha statue, and incredible sunrise view over Sigiriya Rock.",
-    image: "places/pidurangala.jpg",
+    image: "/places/pidurangala.jpg",
     likes: 310,
     commentsCount: 42,
     authorName: "Lakshan Sandeepa",
@@ -853,7 +853,7 @@ export const mockPlaces: Place[] = [
       "A world-renowned coastal strip famous for its calm, crystal-clear turquoise waters and shallow offshore reef.",
     longDescription:
       "Located on the east coast of Sri Lanka, Pasikuda (Pasikudah) boasts one of the safest and shallowest stretches of coastline in the island. Protected by a natural coral reef, the ocean here is remarkably calm with virtually no wave action, allowing visitors to walk hundreds of meters out into the ocean safely.",
-    image: "places/pasikuda.jpg",
+    image: "/places/pasikuda.jpg",
     likes: 275,
     commentsCount: 31,
     authorName: "Lakshan Sandeepa",
@@ -903,7 +903,7 @@ export const mockPlaces: Place[] = [
       "A picturesque horseshoe-shaped bay famous for its golden sands, vibrant beach bars, and clear waters ideal for swimming.",
     longDescription:
       "Located just south of Galle, Unawatuna is one of Sri Lanka's most popular coastal destinations. Protected by an offshore reef, the bay offers calm waters suitable for swimming, snorkeling, and diving. The lively beach strip is lined with seafood restaurants, cafes, and boutique shops, making it a favorite for both relaxation and nightlife.",
-    image: "places/unawatuna.jpg",
+    image: "/places/unawatuna.jpg",
     likes: 395,
     commentsCount: 52,
     authorName: "Lakshan Sandeepa",
@@ -953,7 +953,7 @@ export const mockPlaces: Place[] = [
       "A trendy, horseshoe-shaped bay famous for its year-round surf waves, lush coconut palms, and vibrant laid-back vibe.",
     longDescription:
       "Nestled in Dikwella on Sri Lanka's southern coast, Hiriketiya (or Hiri) is a picturesque crescent bay enclosed by dense palm groves. Renowned for its reliable surf breaks suitable for both beginners and experienced surfers, the bay has transformed into a vibrant hotspot packed with beachfront cafes, surf schools, and cozy boutique stays.",
-    image: "places/hiriketiya.jpg",
+    image: "/places/hiriketiya.jpg",
     likes: 410,
     commentsCount: 59,
     authorName: "Lakshan Sandeepa",
@@ -1003,7 +1003,7 @@ export const mockPlaces: Place[] = [
       "A serene and pristine sheltered bay known for its crystal-clear turquoise waters and soft white sands.",
     longDescription:
       "Located along China Bay in Trincomalee, Marble Beach (also known as Marble Bay) is famous for its smooth, calm, and crystal-clear waters that reflect the sky like polished marble. Managed primarily by the Sri Lanka Air Force, it offers a exceptionally clean and well-maintained environment with gentle waves suitable for swimming, snorkeling, and relaxing.",
-    image: "places/marble-beach.jpg",
+    image: "/places/marble-beach.jpg",
     likes: 280,
     commentsCount: 35,
     authorName: "Lakshan Sandeepa",
@@ -1053,7 +1053,7 @@ export const mockPlaces: Place[] = [
       "A stunning palm-fringed coastal bay famous for whale watching, Coconut Tree Hill, and vibrant beach nightlife.",
     longDescription:
       "Located on Sri Lanka's tropical southern coast, Mirissa is a vibrant beach town famous for its crescent-shaped sandy bay and laid-back atmosphere. It is world-renowned as one of the best locations for blue whale and dolphin watching excursions. Beyond the ocean, visitors flock to Coconut Tree Hill for scenic sunset views and Parrot Rock for a panoramic look over the bay.",
-    image: "places/mirissa.jpg",
+    image: "/places/mirissa.jpg",
     likes: 420,
     commentsCount: 64,
     authorName: "Lakshan Sandeepa",
@@ -1103,7 +1103,7 @@ export const mockPlaces: Place[] = [
       "An iconic 19th-century colonial viaduct bridge set amid lush green tea plantations and misty mountains.",
     longDescription:
       "Located in the scenic hill country town of Ella, the Nine Arch Bridge (also called the Bridge in the Sky) is an architectural marvel built entirely of stone, brick, and cement without steel reinforcement. Spanning 91 meters across a dense forest valley, watching the blue passenger trains curve across the bridge is one of Sri Lanka's most famous experiences.",
-    image: "places/nine-arch-bridge.jpg",
+    image: "/places/nine-arch-bridge.jpg",
     likes: 512,
     commentsCount: 89,
     authorName: "Lakshan Sandeepa",
@@ -1153,7 +1153,7 @@ export const mockPlaces: Place[] = [
       "A sacred 2,243-meter tall mountain famous for its holy footprint, historic pilgrimage trail, and spectacular sunrise views.",
     longDescription:
       "Revered by Buddhists, Hindus, Christians, and Muslims alike, Adam's Peak (Sri Pada) stands as one of Sri Lanka's most iconic sacred mountains. The summit houses a sacred footprint impression, believed by Buddhists to belong to Lord Buddha. The nightly climb during the pilgrimage season (December to May) leads thousands of travelers and devotees up thousands of stone steps to witness a breathtaking sunrise above the clouds.",
-    image: "places/adams-peak.jpg",
+    image: "/places/adams-peak.jpg",
     likes: 468,
     commentsCount: 76,
     authorName: "Lakshan Sandeepa",
@@ -1202,8 +1202,8 @@ export const mockPlaces: Place[] = [
     shortDescription:
       "A legendary 1,370m high cave shrouded in Ramayana folklore, connected to a vast network of subterranean tunnels.",
     longDescription:
-      "Located roughly 2km outside Ella town, Ravana Cave is steeped in ancient Ramayana legend, believed to be one of the places where King Ravana hid Princess Sita. Sitting at an elevation of 1,370 meters, the cave entrance opens into a dramatic rock cliff. Archeological excavations have also discovered human remains here dating back over 20,000 years.",
-    image: "places/ravana-cave.jpg",
+      "Located roughly 2km outside Ella town, Ravana Cave is steeped in ancient Ramayana legend, believed to be one of the /places where King Ravana hid Princess Sita. Sitting at an elevation of 1,370 meters, the cave entrance opens into a dramatic rock cliff. Archeological excavations have also discovered human remains here dating back over 20,000 years.",
+    image: "/places/ravana-cave.jpg",
     likes: 340,
     commentsCount: 41,
     authorName: "Lakshan Sandeepa",
@@ -1253,7 +1253,7 @@ export const mockPlaces: Place[] = [
       "Sri Lanka's largest and best-preserved cave temple complex, featuring ancient Buddha statues and vibrant rock murals.",
     longDescription:
       "A UNESCO World Heritage Site dating back to the 1st century BC, the Dambulla Cave Temple (or Golden Temple of Dambulla) consists of five majestic caves carved into a massive 160-meter high rock tower. King Valagamba took refuge here during an invasion, later converting the caves into an elaborate rock monastery filled with 153 Buddha statues and stunning wall paintings.",
-    image: "places/dambulla-cave-temple.jpg",
+    image: "/places/dambulla-cave-temple.jpg",
     likes: 450,
     commentsCount: 61,
     authorName: "Lakshan Sandeepa",
@@ -1303,7 +1303,7 @@ export const mockPlaces: Place[] = [
       "A legendary subterranean cave system hiding a glowing, crystal-clear blue underground pond 80 meters beneath the surface.",
     longDescription:
       "Located near Karandagolla along the Ella-Wellawaya road, Nil Diya Pokuna (Blue Water Pond) is one of Sri Lanka's most mystical and adventurous caving sites. Steeped in Ramayana folklore as part of King Ravana's underground tunnel network, reaching this hidden aquatic cavern requires descending through tight rock squeezes, iron ladders, and pitch-black pitch caverns with headlamps.",
-    image: "places/nil-diya-pokuna.jpg",
+    image: "/places/nil-diya-pokuna.jpg",
     likes: 388,
     commentsCount: 53,
     authorName: "Lakshan Sandeepa",
@@ -1353,7 +1353,7 @@ export const mockPlaces: Place[] = [
       "A massive prehistoric cave rich in ancient Balangoda Man archaeological finds and believed to be the sacred Diva Guhava.",
     longDescription:
       "Located near Kuruwita, Batatotalena is a massive natural rock cave capable of sheltering over 500 people. Archaeologically famous for yielding fossil remains of the prehistoric 'Balangoda Man' (Homosapiens balangodensis) dating back over 28,000 years, it holds immense religious importance as the legendary 'Diva Guhava' where Lord Buddha is believed to have rested after visiting Adam's Peak.",
-    image: "places/batatotalena-cave.jpg",
+    image: "/places/batatotalena-cave.jpg",
     likes: 295,
     commentsCount: 38,
     authorName: "Lakshan Sandeepa",
@@ -1403,7 +1403,7 @@ export const mockPlaces: Place[] = [
       "A serene man-made lake nestled deep within rolling tea estates and surrounded by towering, dense pine forests.",
     longDescription:
       "Located in Elkaduwa, Sembuwatta Lake is one of Sri Lanka's most picturesque destinations. Surrounded by thick pine forests and lush tea plantations, the emerald-green lake was formed from a natural spring and is powered by a nearby hydroelectric station. Visitors flock here for peaceful forest walks, ziplining, boating, and scenic photography.",
-    image: "places/sembuwatta.jpg",
+    image: "/places/sembuwatta.jpg",
     likes: 365,
     commentsCount: 47,
     authorName: "Lakshan Sandeepa",
@@ -1453,7 +1453,7 @@ export const mockPlaces: Place[] = [
       "A tranquil, high-altitude needle forest offering misty mountain walking trails near Horton Plains National Park.",
     longDescription:
       "Perched at an elevation of over 1,700 meters in the central highlands, the Ohiya Pine Forest is famous for its ethereal, misty ambiance and crisp mountain air. Characterized by dense rows of towering pine trees blanketed in pine needle floors, this serene forest provides picturesque trekking routes leading toward Horton Plains, Devil's Staircase, and panoramic mountain valley viewpoints.",
-    image: "places/ohiya-pine-forest.jpg",
+    image: "/places/ohiya-pine-forest.jpg",
     likes: 315,
     commentsCount: 39,
     authorName: "Lakshan Sandeepa",
@@ -1503,7 +1503,7 @@ export const mockPlaces: Place[] = [
       "A stunning high-altitude railway station and pine-covered ridge offering dramatic 360-degree views across southern plains and central misty hills.",
     longDescription:
       "Situated along the main highland railway line between Haputale and Ohiya at an elevation of 1,615 meters, Idalgashinna is famous for sitting on a razor-thin mountain ridge. Standing on the railway platform, visitors can see two distinct weather systems simultaneously— the Southern plains of Sabaragamuwa on one side and the Uva mountain range on the other. Dense pine forest trails, scenic rail hikes, and frequent thick mist cover make it a premier trekking destination.",
-    image: "places/idalgashinna.jpg",
+    image: "/places/idalgashinna.jpg",
     likes: 342,
     commentsCount: 41,
     authorName: "Lakshan Sandeepa",
@@ -1553,7 +1553,7 @@ export const mockPlaces: Place[] = [
       "A vast high-altitude pine forest reserve cradling Sri Lanka's tallest waterfall, Bambarakanda Falls.",
     longDescription:
       "Located along the southern slopes of the central highlands near Haldummulla, the Kalupahana Pine Forest is a dramatic wilderness expanse. Famous for enveloping the trail to Bambarakanda Falls (Sri Lanka's highest waterfall at 263 meters) and Lanka Falls, this dense pine canopy offers cool mountain air, carpeted forest floors, and picturesque trekking paths popular among hikers and nature lovers.",
-    image: "places/kalupahana-pine-forest.jpg",
+    image: "/places/kalupahana-pine-forest.jpg",
     likes: 358,
     commentsCount: 44,
     authorName: "Lakshan Sandeepa",
@@ -1603,7 +1603,7 @@ export const mockPlaces: Place[] = [
       "A wind-swept mountain pass in the Knuckles Range featuring misty pine woods, dramatic sheer cliffs, and unique pygmy grasslands.",
     longDescription:
       "Located within the UNESCO-designated Knuckles Mountain Range, Riverston is famous for its dramatic cloud-forest ecosystems, cool high-altitude pine plantations, and fierce mountain winds. The trail up to Riverston Telecommunication Tower winds through tall, misty pine trees before opening up to the stunning Riverston Gap and nearby Pitawala Patana—a unique sloping rock-plateau grassland with 'Mini World's End' drop-offs.",
-    image: "places/riverston-pine-forest.jpg",
+    image: "/places/riverston-pine-forest.jpg",
     likes: 389,
     commentsCount: 52,
     authorName: "Lakshan Sandeepa",
@@ -1653,7 +1653,7 @@ export const mockPlaces: Place[] = [
       "A legendary seven-peak mountain range flanking Kandy city, renowned for its dense pine slopes and breathtaking valley viewpoints.",
     longDescription:
       "Rising dramatically above the hill capital of Kandy and the University of Peradeniya campus, the Hanthana Mountain Range is one of Sri Lanka's most popular hiking destinations. The lower to mid-elevation slopes feature sprawling pine plantations with soft, pine-needle-covered paths that lead hikers up to Seven Peaks (Ura Kanda being the highest at 1,240m). It provides panoramic views of Kandy city, the Knuckles range, and the Mahaweli River valley.",
-    image: "places/hanthana-pine-forest.jpg",
+    image: "/places/hanthana-pine-forest1.jpg",
     likes: 412,
     commentsCount: 48,
     authorName: "Lakshan Sandeepa",
@@ -1703,7 +1703,7 @@ export const mockPlaces: Place[] = [
       "A multi-religious sanctuary and biodiversity complex featuring a dramatic 48-meter multi-styled spiral tower atop a 3,567-foot peak.",
     longDescription:
       "Perched on a steep peak in Gampola near Kandy, the Ambuluwawa Tower is one of Sri Lanka's most striking architectural and adventure landmarks. The white cone-shaped stupa tower reaches 48 meters in height and stands inside Sri Lanka's first multi-religious sanctuary, incorporating design elements of a Buddhist Stupa, Hindu Kovil, Christian Church, and Islamic Mosque. Climbing the narrow, spiraling exterior staircase leads to dizzying 360-degree views of Sri Pada, the Knuckles Range, and the Hanthana mountains.",
-    image: "places/ambuluwawa.jpg",
+    image: "/places/ambuluwawa.jpg",
     likes: 485,
     commentsCount: 64,
     authorName: "Lakshan Sandeepa",

@@ -256,22 +256,24 @@ export default function CardDetails() {
   const badge = getBadge(place.authorVotes);
 
   return (
-    <div className="pt-36 min-h-screen bg-zinc-950 text-zinc-100 pb-24">
+    <div className="pt-20 min-h-screen max-w-7xl m-auto bg-zinc-950 text-zinc-100 pb-24">
       {/* 🖼️ HERO HEADER BANNER */}
-      <section className="relative h-[45vh] md:h-[60vh] w-full overflow-hidden">
+      {/* <section className="relative h-[65vh] md:h-[60vh] w-full overflow-hidden rounded-2xl">
         <img
           src={place.image}
           alt={place.title}
-          className="w-full h-full object-cover brightness-75 scale-105 transition-transform duration-700 hover:scale-100"
+          className="w-full max-h-full h-full object-cover transition-transform duration-700 hover:scale-100 m-auto "
         />
-        {/* Soft Multi-Layer Gradient Overlay */}
+        {/* Soft Multi-Layer Gradient Overlay 
         <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/50 to-transparent" />
         <div className="absolute inset-0 bg-linear-to-b from-zinc-950/40 via-transparent to-transparent" />
 
-        {/* Back Button */}
+        {/* Back Button 
 
-        {/* Floating Title Container */}
-        <div className="absolute bottom-6 left-0 right-0 px-6 md:px-12 max-w-7xl mx-auto">
+        {/* Floating Title Container 
+
+        <div className="absolute bottom-0 left-0 right-0 px-6 md:px-12 max-w-7xl mx-auto">
+          {/* <div className=" px-6 md:px-12 max-w-7xl mx-auto"> 
           <div className="flex flex-wrap items-center gap-2 mb-3">
             <span className="bg-emerald-500 text-zinc-950 text-[10px] font-extrabold tracking-widest uppercase px-3 py-1 rounded-md shadow-lg">
               {place.district} District
@@ -292,6 +294,54 @@ export default function CardDetails() {
             ← Back
           </button>
         </div>
+      </section> */}
+
+      <section className="relative h-[95vh] md:h-[90vh] w-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl group mt-2">
+        {/* Background Image with Zoom Effect */}
+        <img
+          src={place.image}
+          alt={place.title}
+          className="w-full h-full object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-105"
+        />
+
+        {/* Multi-Layered Cinematic Gradients */}
+        <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/40 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/60 via-transparent to-transparent z-10" />
+
+        {/* Top Navigation Bar / Back Button */}
+        <div className="absolute top-6 left-6 md:left-10 z-20 flex items-center justify-between w-[calc(100%-3rem)] md:w-[calc(100%-5rem)]">
+          <button
+            onClick={() => navigate(-1)}
+            className="group/btn flex items-center gap-2 bg-zinc-900/40 hover:bg-emerald-500 hover:text-zinc-950 text-white/90 backdrop-blur-md border border-white/15 px-4 py-2.5 rounded-2xl text-xs font-bold tracking-wider uppercase transition-all duration-300 active:scale-95 shadow-lg">
+            <span className="transition-transform group-hover/btn:-translate-x-1">
+              ←
+            </span>{" "}
+            Back
+          </button>
+        </div>
+
+        {/* Floating Main Content Container */}
+        <div className="absolute bottom-8 left-0 right-0 px-6 md:px-12 max-w-7xl mx-auto z-20">
+          <div className="flex flex-col gap-3">
+            {/* Badges Row */}
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="bg-emerald-500 text-zinc-950 text-[10px] font-black tracking-widest uppercase px-3.5 py-1.5 rounded-full shadow-lg shadow-emerald-500/20">
+                {place.district} District
+              </span>
+              <span className="bg-zinc-900/80 border border-white/15 text-emerald-400 text-[10px] font-bold tracking-widest uppercase px-3.5 py-1.5 rounded-full backdrop-blur-md shadow-md">
+                {place.category}
+              </span>
+            </div>
+
+            {/* Main Title with Text Shadow & Gradient Accent */}
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight uppercase leading-none drop-shadow-md">
+              {place.title}
+            </h1>
+
+            {/* Decorative Accent Line */}
+            <div className="w-16 h-1 bg-gradient-to-r from-emerald-500 to-transparent rounded-full mt-1" />
+          </div>
+        </div>
       </section>
 
       {/* MAIN LAYOUT (8-Column / 4-Column Split) */}
@@ -299,7 +349,7 @@ export default function CardDetails() {
         {/* LEFT COLUMN: MAIN INTEL & TIMELINE (8 Cols) */}
         <div className="lg:col-span-8 space-y-3">
           {/* FIELD INTELLIGENCE CARD */}
-          <article className="bg-zinc-900/80 border-2 border-white/20 p-6 md:p-8 rounded-3xl backdrop-blur-md shadow-xl">
+          <article className="bg-black border-2 border-white/12 p-6 md:p-8 rounded-3xl backdrop-blur-md shadow-xl">
             <div className="flex items-center gap-2 mb-4">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <h2 className="text-xs font-bold uppercase tracking-widest text-zinc-400">
@@ -312,7 +362,7 @@ export default function CardDetails() {
             </p>
 
             {/* Vehicle Accessibility Highlight Box */}
-            <div className="mt-6 bg-zinc-950/60 p-4 rounded-2xl border-2 border-white/10 flex gap-3 items-start">
+            <div className="mt-6 bg-zinc-950/60 p-4 rounded-2xl border-2 border-white/7 flex gap-3 items-start">
               <span className="text-xl leading-none">
                 <FaCarSide />
               </span>
@@ -328,7 +378,7 @@ export default function CardDetails() {
           </article>
 
           {/* CRITICAL RISK ALERTS (Red Highlight Card) */}
-          <article className="bg-red-900/15 border-2 border-red-500/30 p-6 md:p-8 rounded-3xl backdrop-blur-md">
+          <article className="bg-red-900/5 border-2 border-red-500/15 p-6 md:p-8 rounded-3xl backdrop-blur-md">
             <div className="flex items-center gap-2 text-red-400 font-bold text-xs tracking-widest uppercase mb-4">
               <span>
                 <IoWarning className="size-5" />
@@ -350,7 +400,7 @@ export default function CardDetails() {
           </article>
 
           {/* WAYPOINT EXPEDITION TIMELINE */}
-          <article className="bg-emerald-900/15 border-2 border-emerald-400/50 p-6 md:p-8 rounded-3xl backdrop-blur-md">
+          <article className="bg-emerald-900/5 border-2 border-emerald-400/15 p-6 md:p-8 rounded-3xl backdrop-blur-md">
             <h2 className="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-8">
               Expedition Route Track
             </h2>
@@ -378,9 +428,9 @@ export default function CardDetails() {
         </div>
 
         {/* RIGHT COLUMN: SCOUT INFO & SATELLITE ACTION (4 Cols Sticky) */}
-        <aside className="lg:col-span-4 space-y-6 lg:sticky lg:top-8 self-start">
+        <aside className="lg:col-span-4 space-y-3 lg:sticky lg:top-8 self-start">
           {/* Scout Identity Box */}
-          <div className="bg-amber-900/15  border-2 border-amber-400/30 p-6 rounded-3xl backdrop-blur-md">
+          <div className="bg-amber-900/5  border-2 border-amber-400/15 p-6 rounded-3xl backdrop-blur-md">
             {/* <div className="`inline-block text-[9px] font-bold uppercase tracking-wider rounded-2xl border mt-1 bg-zinc-900/40 border-white/10 p-6 backdrop-blur-md ${badge.color}` "> */}
             <span className="text-[10px] text-zinc-500 uppercase font-bold tracking-wider block mb-4">
               Intel Provided By

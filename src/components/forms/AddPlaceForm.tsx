@@ -275,7 +275,7 @@ export default function AddPlaceModal({ onClose }: AddPlaceModalProps) {
           {/* Submit Post Button */}
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-500 hover:to-teal-500 text-black font-black py-4 px-6 rounded-2xl text-xs md:text-sm tracking-wider uppercase transition-all duration-300 shadow-xl active:scale-95">
+            className="w-full bg-linear-to-r from-emerald-400 to-teal-400 hover:from-emerald-500 hover:to-teal-500 text-black font-black py-4 px-6 rounded-2xl text-xs md:text-sm tracking-wider uppercase transition-all duration-300 shadow-xl active:scale-95">
             🚀 Publish Hidden Gem Archive
           </button>
         </form>
