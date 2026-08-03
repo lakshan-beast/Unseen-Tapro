@@ -1,32 +1,38 @@
 import { useState } from "react";
-import { auth } from "../../lib/firebase"; // Firebase Auth සහ DB Import කිරීම
+// import { auth } from "../../lib/firebase"; // Firebase Auth සහ DB Import කිරීම
 import { FaRegStar } from "react-icons/fa6";
+import { FaShareFromSquare } from "react-icons/fa6";
+
 // import  from "./LoginModal";
-import LoginModal from "./LoginModal"; // අපි කලින් හදපු Login Modal එක
-import type { UserProfile } from "../../data/user";
+// import LoginModal from "./LoginModal"; // අපි කලින් හදපු Login Modal එක
+// import type { UserProfile } from "../../data/user";
+
+import AddPlaceModal from "../forms/AddPlaceForm";
 
 export default function CommunityBanner() {
   const [isFormOpen, setIsFormOpen] = useState(false);
-  const [isLoginOpen, setIsLoginOpen] = useState(false);
+  // const [isLoginOpen, setIsLoginOpen] = useState(false);
 
   // 🖱️ බටන් එක ක්ලික් කරපු ගමන් මුලින්ම Login Status එක Check කරන ශ්‍රිතය (Function)
-  const handleJoinClick = () => {
-    const currentUser = auth.currentUser;
+  // const handleJoinClick = () => {
+  //   const currentUser = auth.currentUser;
 
-    if (currentUser) {
-      // 🟢 1. යූසර් කලින්ම ලොග් වෙලා ඉන්නවා නම් කෙළින්ම Form එක අරිනවා
-      setIsFormOpen(true);
-    } else {
-      // 🔴 2. ලොග් වෙලා නැත්නම් මුලින්ම Login Modal එක පෙන්වනවා
-      setIsLoginOpen(true);
-    }
-  };
+  //   if (currentUser) {
+  //     // 🟢 1. යූසර් කලින්ම ලොග් වෙලා ඉන්නවා නම් කෙළින්ම Form එක අරිනවා
+  //     setIsFormOpen(true);
+  //   } else {
+  //     // 🔴 2. ලොග් වෙලා නැත්නම් මුලින්ම Login Modal එක පෙන්වනවා
+  //     setIsLoginOpen(true);
+  //   }
+  // };
+
+  const [isAddPlaceOpen, setIsAddPlaceOpen] = useState(false);
 
   // 🔐 ලොගින් එක සාර්ථක වූ පසු ක්‍රියාත්මක වන කොටස
-  const handleLoginSuccess = (_profile: UserProfile) => {
-    setIsLoginOpen(false); // Login එක වහනවා
-    setIsFormOpen(true); // කෙළින්ම Suggestion Form එක ඇරලා දෙනවා (සුපිරි UX!)
-  };
+  // const handleLoginSuccess = (_profile: UserProfile) => {
+  //   setIsLoginOpen(false); // Login එක වහනවා
+  //   setIsFormOpen(true); // කෙළින්ම Suggestion Form එක ඇරලා දෙනවා (සුපිරි UX!)
+  // };
 
   return (
     <>
@@ -59,7 +65,7 @@ export default function CommunityBanner() {
 
             {/* Right Button */}
             <div className="flex items-center">
-              <button
+              {/* <button
                 onClick={handleJoinClick} // 🖱️ Handler එක Trigger කිරීම
                 className="w-full lg:w-auto bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-500 hover:to-teal-500 text-black font-black px-8 py-4 rounded-2xl text-xs md:text-sm tracking-wider uppercase transition-all duration-300 shadow-lg shadow-emerald-400/10 hover:shadow-emerald-400/20 active:scale-95 flex items-center justify-center gap-2 group/btn cursor-pointer">
                 Join the Community
@@ -76,6 +82,13 @@ export default function CommunityBanner() {
                     d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
                   />
                 </svg>
+              </button> */}
+
+              <button
+                onClick={() => setIsAddPlaceOpen(true)}
+                // className="w-full bg-gradient-to-r from-emerald-500 to-teal-400 ...">
+                className="w-full lg:w-auto bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-500 hover:to-teal-500 text-white font-black px-8 py-4 rounded-2xl text-xs md:text-sm tracking-wider uppercase transition-all duration-300 shadow-lg shadow-emerald-400/10 hover:shadow-emerald-400/20 active:scale-95 flex items-center justify-center gap-2 group/btn cursor-pointer">
+                <FaShareFromSquare /> Share Hidden Place
               </button>
             </div>
           </div>
@@ -83,11 +96,15 @@ export default function CommunityBanner() {
       </section>
 
       {/* 🔮 1. LOGIN MODAL POPUP (ලොග් වී නැත්නම් විතරක් වැඩ කරයි) */}
-      {isLoginOpen && (
-        <LoginModal
+      {/* {isLoginOpen && (
+        <AddPlaceModal
           onClose={() => setIsLoginOpen(false)}
-          onLoginSuccess={handleLoginSuccess} // සාර්ථක වුණොත් ඊළඟ පියවරට යයි
+          // onLoginSuccess={handleLoginSuccess} // සාර්ථක වුණොත් ඊළඟ පියවරට යයි
         />
+      )} */}
+
+      {isAddPlaceOpen && (
+        <AddPlaceModal onClose={() => setIsAddPlaceOpen(false)} />
       )}
 
       {/* 🔮 2. SUGGEST PLACE FORM MODAL (ලොග් වී ඇත්නම් විතරක් වැඩ කරයි) */}
