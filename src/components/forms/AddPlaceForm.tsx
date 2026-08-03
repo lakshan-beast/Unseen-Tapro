@@ -80,14 +80,14 @@ export default function AddPlaceModal({ onClose }: AddPlaceModalProps) {
   ];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 ">
       {/* Backdrop Blur Overlays */}
       <div
         className="absolute inset-0 bg-black/70 backdrop-blur-md"
         onClick={onClose}></div>
 
       {/* 🔮 ULTRA-PREMIUM BENTO POST UPLOADER FORM */}
-      <div className="relative bg-zinc-900/90 border border-white/10 rounded-[2.5rem] p-6 md:p-8 max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl backdrop-blur-2xl z-10 animate-[fadeIn_0.2s_ease-out]">
+      <div className="relative bg-zinc-900/90 border border-white/10 rounded-[2.5rem] p-6 md:p-8 max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl backdrop-blur-2xl z-10 animate-[fadeIn_0.2s_ease-out] overflow-x-scroll scrollbar-none">
         <button
           onClick={onClose}
           className="absolute top-6 right-6 text-gray-400 hover:text-white font-bold text-sm">
@@ -103,7 +103,7 @@ export default function AddPlaceModal({ onClose }: AddPlaceModalProps) {
 
         <form onSubmit={handleSubmit} className="space-y-6 text-left">
           {/* Section 1: Basic Info Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-black/20 p-4 rounded-2xl border border-white/5">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-black/20 p-4 rounded-2xl border border-white/5 ">
             <div className="flex flex-col gap-1.5">
               <label className="text-[10px] text-gray-400 uppercase font-black">
                 Location Name
