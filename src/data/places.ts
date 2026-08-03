@@ -22,6 +22,7 @@ export interface Place {
     | "camping"
     | "historical"
     | "coastal"
+    | "rocks"
     | "nature";
   routes: PlaceRoute[];
   googleMapUrl: string;
@@ -1690,6 +1691,56 @@ export const mockPlaces: Place[] = [
       "Nearest Hospital: Kandy National Hospital / Peradeniya Teaching Hospital",
       "Nearest ATM: Peradeniya Town / Kandy City Center",
       "Accommodation: Wide variety of boutique hotels, guesthouses, and campus homestays in Kandy and Peradeniya.",
+    ],
+  },
+
+  // Ambuluwawa Tower & Biodiversity Complex
+  {
+    id: "35",
+    title: "Ambuluwawa Tower & Biodiversity Complex",
+    district: "Kandy",
+    shortDescription:
+      "A multi-religious sanctuary and biodiversity complex featuring a dramatic 48-meter multi-styled spiral tower atop a 3,567-foot peak.",
+    longDescription:
+      "Perched on a steep peak in Gampola near Kandy, the Ambuluwawa Tower is one of Sri Lanka's most striking architectural and adventure landmarks. The white cone-shaped stupa tower reaches 48 meters in height and stands inside Sri Lanka's first multi-religious sanctuary, incorporating design elements of a Buddhist Stupa, Hindu Kovil, Christian Church, and Islamic Mosque. Climbing the narrow, spiraling exterior staircase leads to dizzying 360-degree views of Sri Pada, the Knuckles Range, and the Hanthana mountains.",
+    image: "places/ambuluwawa.jpg",
+    likes: 485,
+    commentsCount: 64,
+    authorName: "Lakshan Sandeepa",
+    authorVotes: 85, // Explorer / Contributor
+    category: "rocks",
+    routes: [
+      {
+        step: 1,
+        title: "Kandy to Gampola Town",
+        description:
+          "Travel approximately 20 km south from Kandy along the Kandy-Road / AB13 highway to Gampola town center.",
+      },
+      {
+        step: 2,
+        title: "Gampola to Ambuluwawa Entrance Gate",
+        description:
+          "Take the Ambuluwawa ICC Road ascending roughly 3 km up the hill to the main ticket barrier and parking hub.",
+      },
+      {
+        step: 3,
+        title: "Peak Hill Drive & Spiral Tower Climb",
+        description:
+          "Drive or take an estate tuk-tuk to the upper sanctuary level, then ascend the narrow spiral staircase surrounding the tower.",
+      },
+    ],
+    googleMapUrl:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15833.123456789!2d80.5481!3d7.1189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3722b4c8c8291%3A0x484da04034a80e09!2sAmbuluwawa%20Tower!5e0!3m2!1sen!2slk!4v1785735339182!5m2!1sen!2slk",
+    safetyAlerts: [
+      "The spiral stairs get exceptionally narrow towards the top and feature low railings; not recommended for people with acrophobia (fear of heights).",
+      "High wind gusts at the upper tower level can cause instability—hold firmly onto handrails and keep personal items secure.",
+    ],
+    vehicleAccessibility:
+      "Buses and cars can reach the base ticketing area. Private vehicles are often parked at the base gate, with local shuttle tuk-tuks carrying visitors up the steep final stretch.",
+    facilities: [
+      "Nearest Hospital: Gampola Base Hospital",
+      "Nearest ATM: Gampola Town Center (3.5 km away)",
+      "Accommodation: Guesthouses in Gampola, with extensive luxury hotels and boutique stays in nearby Kandy.",
     ],
   },
 ];

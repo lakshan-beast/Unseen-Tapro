@@ -167,17 +167,17 @@ export default function AllPlaces() {
         </button>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredAndSortedPlaces.length > 0 ? (
           filteredAndSortedPlaces.map((place) => (
             <div
               key={place.id}
-              className="relative h-112.5 border-2 border-white/15 rounded-3xl overflow-hidden hover:border-white/30 transition-all duration-500 flex flex-col justify-end group cursor-pointer">
+              className="relative h-112.5 border-2 border-white/20 rounded-3xl overflow-hidden hover:border-white/30 transition-all duration-500 flex flex-col justify-end group cursor-pointer">
               {/* Background Image */}
               <img
                 src={place.image}
                 alt={place.title}
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 z-0"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 z-0 "
               />
 
               {/* Dark Gradient Overlay - Text සහ Buttons පැහැදිලිව පෙනීමට */}
@@ -187,14 +187,14 @@ export default function AllPlaces() {
               <div className="relative z-20 p-6 w-full flex flex-col justify-between h-full">
                 {/* Top Section - District Tag */}
                 <div className="flex justify-between items-start">
-                  <span className="bg-black/60 backdrop-blur-md border border-white/10 text-white text-[10px] font-black uppercase px-3 py-1.5 rounded-full">
+                  <span className="bg-black/60 backdrop-blur-md border border-white/80 text-white/80 text-[10px] font-black uppercase px-3 py-1.5 rounded-full">
                     {place.district}
                   </span>
                 </div>
 
                 {/* Bottom Section - Title, Description, and Actions */}
                 <div className="mt-auto">
-                  <h3 className="font-black text-lg md:text-xl text-white uppercase border-white/20 border-b-2 mt-0.5 tracking-tight mb-2 group-hover:text-emerald-400 transition-colors">
+                  <h3 className="font-black text-lg md:text-xl text-white uppercase mt-0.5 tracking-tight mb-2 group-hover:text-emerald-400 transition-colors">
                     {place.title}
                   </h3>
 
@@ -203,7 +203,7 @@ export default function AllPlaces() {
                   </p>
 
                   {/* Action Buttons Row */}
-                  <div className="border-t border-white/10 pt-4 flex items-center justify-between gap-1 text-xs text-gray-300">
+                  <div className="border-t border-white/10 pt-3 flex items-center justify-between gap-2 text-xs text-gray-300 ">
                     <button
                       onClick={() => handleLike(place.id)}
                       className={`flex items-center gap-1.5 font-semibold transition-colors cursor-pointer ${
@@ -253,7 +253,7 @@ export default function AllPlaces() {
 
                     <Link
                       to={`/places/${place.id}`}
-                      className="text-emerald-400 hover:text-emerald-300 font-bold tracking-wide uppercase text-[11px]">
+                      className="text-emerald-400 hover:text-emerald-300 font-bold tracking-wide uppercase text-[11px] bg-white/10 py-3 px-4 rounded-3xl">
                       Details →
                     </Link>
                   </div>
