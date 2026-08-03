@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 
+// import CampingScene from "./components/ui/CampingScene";
+import Loader from "./components/ui/Loading";
+
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Dashboard from "./pages/Dashboard";
@@ -12,7 +15,8 @@ import AllPlaces3 from "./pages/AllPlaces3";
 
 const MarketPlaceMock = () => (
   <div className="pt-24 min-h-screen bg-zinc-950 text-white p-8 text-center flex justify-center items-center">
-    Comming soon...
+    {/* <CampingScene /> */}
+    <Loader />
   </div>
 );
 
@@ -25,7 +29,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/destinations" element={<AllPlaces3 />} />
-          <Route path="/marcketplace" element={<MarketPlaceMock />} />
+          <Route path="/marketplace" element={<MarketPlaceMock />} />
           <Route path="/services" element={<Services />} />
 
           <Route path="/places/:id" element={<CardDetails />} />
