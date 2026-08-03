@@ -754,7 +754,7 @@ export const mockPlaces: Place[] = [
     image: "places/yapahuwa.jpg",
     likes: 132,
     commentsCount: 14,
-    authorName: "Kavinda De Silva",
+    authorName: "Lakshan Sandeepa",
     authorVotes: 71, // Pro Traveler
     category: "historical",
     routes: [
@@ -806,7 +806,7 @@ export const mockPlaces: Place[] = [
     image: "places/pidurangala.jpg",
     likes: 310,
     commentsCount: 42,
-    authorName: "Kavinda De Silva",
+    authorName: "Lakshan Sandeepa",
     authorVotes: 71, // Pro Traveler
     category: "historical",
     routes: [
@@ -856,7 +856,7 @@ export const mockPlaces: Place[] = [
     image: "places/pasikuda.jpg",
     likes: 275,
     commentsCount: 31,
-    authorName: "Kavinda De Silva",
+    authorName: "Lakshan Sandeepa",
     authorVotes: 71, // Pro Traveler
     category: "coastal",
     routes: [
@@ -906,7 +906,7 @@ export const mockPlaces: Place[] = [
     image: "places/unawatuna.jpg",
     likes: 395,
     commentsCount: 52,
-    authorName: "Kavinda De Silva",
+    authorName: "Lakshan Sandeepa",
     authorVotes: 71, // Pro Traveler
     category: "coastal",
     routes: [
@@ -956,7 +956,7 @@ export const mockPlaces: Place[] = [
     image: "places/hiriketiya.jpg",
     likes: 410,
     commentsCount: 59,
-    authorName: "Kavinda De Silva",
+    authorName: "Lakshan Sandeepa",
     authorVotes: 71, // Pro Traveler
     category: "coastal",
     routes: [
@@ -1006,7 +1006,7 @@ export const mockPlaces: Place[] = [
     image: "places/marble-beach.jpg",
     likes: 280,
     commentsCount: 35,
-    authorName: "Kavinda De Silva",
+    authorName: "Lakshan Sandeepa",
     authorVotes: 71, // Pro Traveler
     category: "coastal",
     routes: [
@@ -1056,7 +1056,7 @@ export const mockPlaces: Place[] = [
     image: "places/mirissa.jpg",
     likes: 420,
     commentsCount: 64,
-    authorName: "Kavinda De Silva",
+    authorName: "Lakshan Sandeepa",
     authorVotes: 71, // Pro Traveler
     category: "coastal",
     routes: [
@@ -1106,7 +1106,7 @@ export const mockPlaces: Place[] = [
     image: "places/nine-arch-bridge.jpg",
     likes: 512,
     commentsCount: 89,
-    authorName: "Kavinda De Silva",
+    authorName: "Lakshan Sandeepa",
     authorVotes: 71, // Pro Traveler
     category: "historical",
     routes: [
@@ -1156,7 +1156,7 @@ export const mockPlaces: Place[] = [
     image: "places/adams-peak.jpg",
     likes: 468,
     commentsCount: 76,
-    authorName: "Kavinda De Silva",
+    authorName: "Lakshan Sandeepa",
     authorVotes: 71, // Pro Traveler
     category: "historical",
     routes: [
@@ -1206,7 +1206,7 @@ export const mockPlaces: Place[] = [
     image: "places/ravana-cave.jpg",
     likes: 340,
     commentsCount: 41,
-    authorName: "Kavinda De Silva",
+    authorName: "Lakshan Sandeepa",
     authorVotes: 71, // Pro Traveler
     category: "historical",
     routes: [
@@ -1256,7 +1256,7 @@ export const mockPlaces: Place[] = [
     image: "places/dambulla-cave-temple.jpg",
     likes: 450,
     commentsCount: 61,
-    authorName: "Kavinda De Silva",
+    authorName: "Lakshan Sandeepa",
     authorVotes: 71, // Pro Traveler
     category: "historical",
     routes: [
@@ -1306,7 +1306,7 @@ export const mockPlaces: Place[] = [
     image: "places/nil-diya-pokuna.jpg",
     likes: 388,
     commentsCount: 53,
-    authorName: "Kavinda De Silva",
+    authorName: "Lakshan Sandeepa",
     authorVotes: 71, // Pro Traveler
     category: "historical",
     routes: [
@@ -1356,7 +1356,7 @@ export const mockPlaces: Place[] = [
     image: "places/batatotalena-cave.jpg",
     likes: 295,
     commentsCount: 38,
-    authorName: "Kavinda De Silva",
+    authorName: "Lakshan Sandeepa",
     authorVotes: 71, // Pro Traveler
     category: "historical",
     routes: [
@@ -1406,7 +1406,7 @@ export const mockPlaces: Place[] = [
     image: "places/sembuwatta.jpg",
     likes: 365,
     commentsCount: 47,
-    authorName: "Kavinda De Silva",
+    authorName: "Lakshan Sandeepa",
     authorVotes: 71, // Pro Traveler
     category: "nature",
     routes: [
@@ -1456,7 +1456,7 @@ export const mockPlaces: Place[] = [
     image: "places/ohiya-pine-forest.jpg",
     likes: 315,
     commentsCount: 39,
-    authorName: "Kavinda De Silva",
+    authorName: "Lakshan Sandeepa",
     authorVotes: 71, // Pro Traveler
     category: "nature",
     routes: [
@@ -1506,7 +1506,7 @@ export const mockPlaces: Place[] = [
     image: "places/idalgashinna.jpg",
     likes: 342,
     commentsCount: 41,
-    authorName: "Kavinda De Silva",
+    authorName: "Lakshan Sandeepa",
     authorVotes: 71, // Pro Traveler
     category: "nature",
     routes: [

@@ -204,6 +204,9 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { mockPlaces } from "../../data/places";
 
+import { IoWarning } from "react-icons/io5";
+import { FaCarSide } from "react-icons/fa6";
+
 export default function CardDetails() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
@@ -214,7 +217,7 @@ export default function CardDetails() {
     return (
       <div className="pt-32 min-h-screen bg-zinc-950 text-white flex flex-col items-center justify-center p-6 text-center">
         <div className="w-16 h-16 bg-red-500/10 border border-red-500/20 rounded-2xl flex items-center justify-center text-red-400 text-2xl mb-4">
-          ⚠️
+          <IoWarning />
         </div>
         <h2 className="text-xl font-bold tracking-tight">
           Intelligence File Not Found
@@ -310,7 +313,9 @@ export default function CardDetails() {
 
             {/* Vehicle Accessibility Highlight Box */}
             <div className="mt-6 bg-zinc-950/60 p-4 rounded-2xl border border-white/5 flex gap-3 items-start">
-              <span className="text-xl leading-none">🚗</span>
+              <span className="text-xl leading-none">
+                <FaCarSide />
+              </span>
               <div className="text-xs">
                 <span className="font-bold text-zinc-200 block mb-0.5">
                   Vehicle Accessibility
@@ -325,7 +330,9 @@ export default function CardDetails() {
           {/* CRITICAL RISK ALERTS (Red Highlight Card) */}
           <article className="bg-red-500/[0.03] border border-red-500/20 p-6 md:p-8 rounded-3xl backdrop-blur-md">
             <div className="flex items-center gap-2 text-red-400 font-bold text-xs tracking-widest uppercase mb-4">
-              <span>⚠️</span>
+              <span>
+                <IoWarning className="size-5"/>
+              </span>
               Safety & Environmental Advisory
             </div>
             <ul className="space-y-3">
@@ -403,7 +410,7 @@ export default function CardDetails() {
               target="_blank"
               rel="noreferrer"
               className="w-full bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-extrabold py-3.5 px-4 rounded-xl text-xs tracking-wider uppercase text-center flex items-center justify-center gap-2 transition-all shadow-lg shadow-emerald-500/10 active:scale-95"> */}
-              {/* <span>🛰️</span> Launch Google Maps
+            {/* <span>🛰️</span> Launch Google Maps
             </a> */}
 
             <iframe

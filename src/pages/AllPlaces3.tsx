@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useSearchParams, Link } from "react-router-dom";
+import { useSearchParams, Link, useNavigate } from "react-router-dom";
 import { mockPlaces } from "../data/places";
 import { sriLankaDistricts } from "../data/sriLankaDistricts";
 
@@ -94,10 +94,11 @@ export default function AllPlaces() {
       return Number(b.id) - Number(a.id);
     });
 
+  const navigate = useNavigate();
+
   return (
     <div className="pt-32 min-h-screen bg-[#01030f] text-white pb-16">
-      {/* Page header & safety alert */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-12">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-6">
         <span className="text-emerald-400 font-bold text-xs tracking-widest uppercase mb-2 block">
           Destinations Archive
         </span>
@@ -128,6 +129,12 @@ export default function AllPlaces() {
             </p>
           </div>
         </div> */}
+
+        <button
+          onClick={() => navigate(-1)}
+          className="flex items-center gap-2 bg-white-900/60 backdrop-blur-md border border-white/30 hover:bg-white/20 hover:text-white text-white px-4 py-2 rounded-xl text-xs font-semibold tracking-wider transition-all active:scale-95">
+          ← Back to Home
+        </button>
       </div>
 
       {/* Filter panel */}
@@ -180,19 +187,15 @@ export default function AllPlaces() {
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 z-0 "
               />
 
-              {/* Dark Gradient Overlay - Text සහ Buttons පැහැදිලිව පෙනීමට */}
               <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/60 to-transparent z-10" />
 
-              {/* Card Content (Image එක උඩ පාවෙන කොටස) */}
               <div className="relative z-20 p-6 w-full flex flex-col justify-between h-full">
-                {/* Top Section - District Tag */}
                 <div className="flex justify-between items-start">
                   <span className="bg-black/60 backdrop-blur-md border border-white/80 text-white/80 text-[10px] font-black uppercase px-3 py-1.5 rounded-full">
                     {place.district}
                   </span>
                 </div>
 
-                {/* Bottom Section - Title, Description, and Actions */}
                 <div className="mt-auto">
                   <h3 className="font-black text-lg md:text-xl text-white uppercase mt-0.5 tracking-tight mb-2 group-hover:text-emerald-400 transition-colors">
                     {place.title}
