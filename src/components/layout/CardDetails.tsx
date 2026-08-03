@@ -295,11 +295,11 @@ export default function CardDetails() {
       </section>
 
       {/* MAIN LAYOUT (8-Column / 4-Column Split) */}
-      <main className="max-w-7xl mx-auto px-6 md:px-12 mt-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <main className="max-w-7xl mx-auto px-6 md:px-12 mt-10 grid grid-cols-1 lg:grid-cols-12 gap-5">
         {/* LEFT COLUMN: MAIN INTEL & TIMELINE (8 Cols) */}
-        <div className="lg:col-span-8 space-y-8">
+        <div className="lg:col-span-8 space-y-3">
           {/* FIELD INTELLIGENCE CARD */}
-          <article className="bg-zinc-900/40 border border-white/10 p-6 md:p-8 rounded-3xl backdrop-blur-md shadow-xl">
+          <article className="bg-zinc-900/80 border-2 border-white/20 p-6 md:p-8 rounded-3xl backdrop-blur-md shadow-xl">
             <div className="flex items-center gap-2 mb-4">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <h2 className="text-xs font-bold uppercase tracking-widest text-zinc-400">
@@ -312,7 +312,7 @@ export default function CardDetails() {
             </p>
 
             {/* Vehicle Accessibility Highlight Box */}
-            <div className="mt-6 bg-zinc-950/60 p-4 rounded-2xl border border-white/5 flex gap-3 items-start">
+            <div className="mt-6 bg-zinc-950/60 p-4 rounded-2xl border-2 border-white/10 flex gap-3 items-start">
               <span className="text-xl leading-none">
                 <FaCarSide />
               </span>
@@ -328,10 +328,10 @@ export default function CardDetails() {
           </article>
 
           {/* CRITICAL RISK ALERTS (Red Highlight Card) */}
-          <article className="bg-red-500/[0.03] border border-red-500/20 p-6 md:p-8 rounded-3xl backdrop-blur-md">
+          <article className="bg-red-900/15 border-2 border-red-500/30 p-6 md:p-8 rounded-3xl backdrop-blur-md">
             <div className="flex items-center gap-2 text-red-400 font-bold text-xs tracking-widest uppercase mb-4">
               <span>
-                <IoWarning className="size-5"/>
+                <IoWarning className="size-5" />
               </span>
               Safety & Environmental Advisory
             </div>
@@ -350,7 +350,7 @@ export default function CardDetails() {
           </article>
 
           {/* WAYPOINT EXPEDITION TIMELINE */}
-          <article className="bg-zinc-900/40 border border-white/10 p-6 md:p-8 rounded-3xl backdrop-blur-md">
+          <article className="bg-emerald-900/15 border-2 border-emerald-400/50 p-6 md:p-8 rounded-3xl backdrop-blur-md">
             <h2 className="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-8">
               Expedition Route Track
             </h2>
@@ -380,12 +380,14 @@ export default function CardDetails() {
         {/* RIGHT COLUMN: SCOUT INFO & SATELLITE ACTION (4 Cols Sticky) */}
         <aside className="lg:col-span-4 space-y-6 lg:sticky lg:top-8 self-start">
           {/* Scout Identity Box */}
-          <div className="bg-zinc-900/40 border border-white/10 p-6 rounded-3xl backdrop-blur-md">
+          <div className="bg-amber-900/15  border-2 border-amber-400/30 p-6 rounded-3xl backdrop-blur-md">
+            {/* <div className="`inline-block text-[9px] font-bold uppercase tracking-wider rounded-2xl border mt-1 bg-zinc-900/40 border-white/10 p-6 backdrop-blur-md ${badge.color}` "> */}
             <span className="text-[10px] text-zinc-500 uppercase font-bold tracking-wider block mb-4">
               Intel Provided By
             </span>
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center font-black text-emerald-400 text-lg">
+              <div
+                className={`w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center font-black text-emerald-400 text-lg ${badge.color}`}>
                 {place.authorName.charAt(0)}
               </div>
               <div>
@@ -425,8 +427,8 @@ export default function CardDetails() {
           </div>
 
           {/* Credits / Metadata */}
-          <div className="bg-zinc-900/20 border border-white/5 p-5 rounded-2xl text-center">
-            <p className="text-zinc-500 text-[11px] font-light leading-relaxed">
+          <div className="bg-zinc-900/20 border border-white/8 p-5 rounded-2xl text-center">
+            <p className="text-zinc-400 text-[11px] font-medium leading-relaxed">
               Expedition intelligence cross-referenced via{" "}
               <span className="text-zinc-300 font-medium">
                 Best of Lanka Archives
