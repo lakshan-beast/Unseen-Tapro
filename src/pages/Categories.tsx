@@ -70,7 +70,7 @@ export default function Home() {
   return (
     <div className="relative  bg-[#01030f] text-white overflow-hidden">
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-16 ">
-        <div className="mb-12 text-center sm:text-left flex justify-between">
+        <div className="mb-12 text-center sm:text-left flex justify-between flex-wrap md:flex-nowrap ">
           <div>
             <span className="text-emerald-400 font-bold text-xs tracking-widest uppercase mb-2 flex gap-1 items-center ">
               <HiLocationMarker className="size-4.5 text-emerald-200 " />{" "}
