@@ -24,9 +24,9 @@
   },
   "include": [
     "src",
-    "text/dis.ts",
-    "text/AllPlaces.tsx",
-    "text/AllPlaces2.tsx",
+    "text/dis.tt",
+    "text/AllPlaces.tt",
+    "text/AllPlaces2.tt",
     "text/AllPlacesss.tsx",
     "layout/Home.tsx"
   ]
