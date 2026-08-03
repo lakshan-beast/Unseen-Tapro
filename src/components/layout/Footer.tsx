@@ -231,9 +231,10 @@ import { RiCopyrightLine } from "react-icons/ri";
 
 export default function Footer() {
   const contentCredits = [
-    { name: "Sri Lanka Travel Culture", url: "https://facebook.com" },
-    { name: "Ceylon Wild Photography", url: "https://Instagram.com" },
-    { name: "Unexplored LK Blog", url: "https://example3.com" },
+    // { name: "Sri Lanka Travel Culture", url: "https://facebook.com" },
+    // { name: "Ceylon Wild Photography", url: "https://Instagram.com" },
+    // { name: "Unexplored LK Blog", url: "https://example3.com" },
+    { name: "No Anyone", url: "https://example3.com" },
   ];
 
   return (
@@ -246,7 +247,6 @@ export default function Footer() {
           className="w-full h-full object-cover opacity-0.95"
           //   className="w-full h-full object-cover opacity-0.55 grayscale contrast-125"
         />
-        {/* පින්තූරය උඩින් කළු පාට Gradient එකක් දාලා අකුරු ලස්සනට කැපිලා පේන්න හදනවා */}
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-zinc-950/40"></div>
       </div>
 
@@ -319,6 +319,13 @@ export default function Footer() {
                 to="/services"
                 className="hover:text-white transition-colors">
                 Services & SOS
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/dashboard"
+                className="hover:text-white transition-colors">
+                Dashboard
               </Link>
             </li>
           </ul>
