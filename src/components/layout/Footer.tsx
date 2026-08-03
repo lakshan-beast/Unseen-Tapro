@@ -238,7 +238,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full relative bg-zinc-950 text-gray-400 border-t border-white/5 pt-16 pb-8 overflow-hidden w-full ">
+    <footer className="w-full relative bg-zinc-950 text-gray-400 border-t border-white/5 pt-16 pb-8 overflow-hidden ">
       {/* 📸 Full Width Background Image Overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -247,7 +247,7 @@ export default function Footer() {
           className="w-full h-full object-cover opacity-0.95"
           //   className="w-full h-full object-cover opacity-0.55 grayscale contrast-125"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-zinc-950/40"></div>
+        <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/80 to-zinc-950/40"></div>
       </div>
 
       {/* 🟢 Background Neon Glow Effect (අර කලින් තිබ්බ ලයිට් එක) */}
@@ -348,7 +348,7 @@ export default function Footer() {
                   href={credit.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-emerald-400 underline decoration-white/10 hover:decoration-emerald-400/40 transition-all block truncate block">
+                  className="hover:text-emerald-400 underline decoration-white/10 hover:decoration-emerald-400/40 transition-all block truncate">
                   {/* <MdPhotoCamera /> */}
                   {credit.name}
                 </a>

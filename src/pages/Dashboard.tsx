@@ -230,7 +230,7 @@ export default function Dashboard() {
         {/* පරණ බටන් එක වෙනුවට මේonClick එක දාන්න: */}
         <button
           onClick={() => setIsAddPlaceOpen(true)}
-          className="w-full bg-gradient-to-r from-emerald-500 to-teal-400 ...">
+          className="w-full bg-linear-to-r from-emerald-500 to-teal-400 ...">
           ➕ Add New Hidden Gem (Upload Post)
         </button>
       </div>

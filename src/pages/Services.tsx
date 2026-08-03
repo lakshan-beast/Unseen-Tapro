@@ -51,7 +51,7 @@ export default function Services() {
 
       {/* 🔴 SECTION 1: GLOBAL EMERGENCY WIDGET */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 mb-12">
-        <div className="bg-zinc-900/40 border border-red-500/10 p-6 md:p-8 rounded-[2rem] flex flex-col sm:flex-row items-center justify-between gap-6 backdrop-blur-xl">
+        <div className="bg-zinc-900/40 border border-red-500/10 p-6 md:p-8 rounded-4xl flex flex-col sm:flex-row items-center justify-between gap-6 backdrop-blur-xl">
           <div className="flex items-center gap-4 text-center sm:text-left flex-col sm:flex-row">
             <div className="w-12 h-12 bg-red-500/10 border border-red-500/20 rounded-2xl flex items-center justify-center text-red-400">
               <span className="w-3 h-3 rounded-full bg-red-500 animate-ping"></span>
@@ -177,7 +177,7 @@ export default function Services() {
               filteredHelplines.map((item) => (
                 <div
                   key={item.id}
-                  className="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-white/[0.02] transition-colors duration-200">
+                  className="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-white/2 transition-colors duration-200">
                   <div className="flex items-center gap-4">
                     <span
                       className={`text-[9px] font-black uppercase tracking-wider px-2.5 py-1 rounded-md border shrink-0 w-30 ${

@@ -7,7 +7,7 @@ export default function TrustFeatures() {
       {/* 🛡 2026 BENTO STYLE TRUST FEATURES BAR */}
       <section
         id="trust-score"
-        className="max-w-7xl mx-auto px-6 md:px-12 py-16 mt-2">
+        className="max-w-7xl mx-auto px-6 md:px-12 py-16 mt-5">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Card 1: 100% Verified */}
           <div className="bg-white/5 border-2 border-white/10 p-6 rounded-3xl backdrop-blur-md hover:-translate-y-1 hover:border-emerald-500/30  hover:shadow-[0_0_30px_rgba(16,185,129,0.05)] transition-all duration-300 flex flex-col gap-4 group">

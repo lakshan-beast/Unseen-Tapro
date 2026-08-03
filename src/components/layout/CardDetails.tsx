@@ -265,8 +265,8 @@ export default function CardDetails() {
           className="w-full h-full object-cover brightness-75 scale-105 transition-transform duration-700 hover:scale-100"
         />
         {/* Soft Multi-Layer Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/40 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/50 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-b from-zinc-950/40 via-transparent to-transparent" />
 
         {/* Back Button */}
 
@@ -360,7 +360,7 @@ export default function CardDetails() {
               {place.routes.map((route) => (
                 <div key={route.step} className="relative group">
                   {/* Step Node */}
-                  <div className="absolute -left-[35px] top-0.5 w-6 h-6 bg-zinc-950 border-2 border-emerald-400 rounded-full flex items-center justify-center text-[10px] font-extrabold text-emerald-400 group-hover:bg-emerald-400 group-hover:text-zinc-950 transition-colors">
+                  <div className="absolute -left-8.75 top-0.5 w-6 h-6 bg-zinc-950 border-2 border-emerald-400 rounded-full flex items-center justify-center text-[10px] font-extrabold text-emerald-400 group-hover:bg-emerald-400 group-hover:text-zinc-950 transition-colors">
                     {route.step}
                   </div>
                   <div>

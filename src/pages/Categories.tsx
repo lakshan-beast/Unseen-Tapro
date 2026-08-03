@@ -100,7 +100,7 @@ export default function Home() {
             <div
               key={cat.id}
               onClick={() => navigate(`/destinations?category=${cat.id}`)}
-              className="relative h-64 rounded-[1.5rem] overflow-hidden border border-white/15 group cursor-pointer hover:border-emerald-500/50 hover:border-2 transition-all duration-500 shadow-2xl">
+              className="relative h-64 rounded-3xl overflow-hidden border border-white/15 group cursor-pointer hover:border-emerald-500/50 hover:border-2 transition-all duration-500 shadow-2xl">
               {/* Background Image Asset */}
               <div className="absolute inset-0">
                 <img
@@ -108,7 +108,7 @@ export default function Home() {
                   alt={cat.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-40 grayscale group-hover:grayscale-0 group-hover:opacity-50"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/60 to-transparent"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/60 to-transparent"></div>
               </div>
 
               {/* Category Info Contents */}
