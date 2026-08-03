@@ -73,7 +73,8 @@ export default function Home() {
         <div className="mb-12 text-center sm:text-left flex justify-between">
           <div>
             <span className="text-emerald-400 font-bold text-xs tracking-widest uppercase mb-2 flex gap-1 items-center ">
-              <HiLocationMarker className="size-4.5 text-emerald-200 " /> Expedition Categories
+              <HiLocationMarker className="size-4.5 text-emerald-200 " />{" "}
+              Expedition Categories
             </span>
             <h2 className="text-2xl md:text-4xl font-black text-white uppercase tracking-tight">
               Select Your Vibe
@@ -85,14 +86,16 @@ export default function Home() {
           </div>
 
           <div>
-            <Link to="/destinations" className="w-full md:w-auto bg-white/5 hover:bg-emerald-500 hover:text-black border border-white/10 text-white font-bold px-6 py-3 rounded-2xl text-xs tracking-wider uppercase transition-all duration-300 shadow-xl active:scale-95">
+            <Link
+              to="/destinations"
+              className="w-full md:w-auto bg-white/5 hover:bg-emerald-500 hover:text-black border border-white/10 text-white font-bold px-6 py-3 rounded-2xl text-xs tracking-wider uppercase transition-all duration-300 shadow-xl active:scale-95">
               Explore All Places →
             </Link>
           </div>
         </div>
 
         {/* Bento Layout Grid */}
-        <div className="grid grid-cols-3 md:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {travelCategories.map((cat) => (
             <div
               key={cat.id}
