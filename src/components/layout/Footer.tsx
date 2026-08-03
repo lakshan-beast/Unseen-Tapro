@@ -225,10 +225,8 @@
 import { Link } from "react-router-dom";
 
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa6";
-import { FaGlobe } from "react-icons/fa6";
-import { LuShieldAlert } from "react-icons/lu";
+
 import { GoHeartFill } from "react-icons/go";
-// import { MdPhotoCamera } from "react-icons/md";
 import { RiCopyrightLine } from "react-icons/ri";
 
 export default function Footer() {

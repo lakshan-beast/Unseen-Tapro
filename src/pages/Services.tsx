@@ -6,7 +6,7 @@ import { sriLankaDistricts } from "../data/sriLankaDistricts";
 
 // react icons
 import { FaMagnifyingGlass, FaCarRear } from "react-icons/fa6";
-import { GiSiren, GiCommercialAirplane, GiHelicopter } from "react-icons/gi";
+import { GiSiren } from "react-icons/gi";
 import { MdOutlineWifiCalling3, MdOutlineMyLocation } from "react-icons/md";
 
 export default function Services() {
