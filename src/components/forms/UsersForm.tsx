@@ -56,7 +56,7 @@ export const UserAddPlaceModal: React.FC<UserAddPlaceModalProps> = ({
   // Dynamic Array States
   const [routes, setRoutes] = useState([{ title: "", description: "" }]);
   const [safetyAlerts, setSafetyAlerts] = useState<string[]>([""]);
-  const [facilities, setFacilities] = useState<string[]>([""]);
+  const [facilities] = useState<string[]>([""]);
 
   // Images States
   const [imageFiles, setImageFiles] = useState<File[]>([]);
@@ -87,14 +87,14 @@ export const UserAddPlaceModal: React.FC<UserAddPlaceModalProps> = ({
   const handleRemoveSafetyAlert = (index: number) =>
     setSafetyAlerts(safetyAlerts.filter((_, i) => i !== index));
 
-  const handleAddFacility = () => setFacilities([...facilities, ""]);
-  const handleFacilityChange = (index: number, value: string) => {
-    const updated = [...facilities];
-    updated[index] = value;
-    setFacilities(updated);
-  };
-  const handleRemoveFacility = (index: number) =>
-    setFacilities(facilities.filter((_, i) => i !== index));
+  //   const handleAddFacility = () => setFacilities([...facilities, ""]);
+  //   const handleFacilityChange = (index: number, value: string) => {
+  //     const updated = [...facilities];
+  //     updated[index] = value;
+  //     setFacilities(updated);
+  //   };
+  //   const handleRemoveFacility = (index: number) =>
+  //     setFacilities(facilities.filter((_, i) => i !== index));
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {

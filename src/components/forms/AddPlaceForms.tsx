@@ -1212,7 +1212,7 @@ export const AddPlaceModal: React.FC<AddPlaceModalProps> = ({
           <button
             type="submit"
             disabled={isUploading}
-            className="w-full bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-500 hover:to-teal-500 text-black font-black py-4 rounded-2xl uppercase tracking-wider transition-all duration-300 shadow-lg shadow-emerald-400/10 cursor-pointer disabled:opacity-50 mt-6"
+            className="w-full bg-linear-to-r from-emerald-400 to-teal-400 hover:from-emerald-500 hover:to-teal-500 text-black font-black py-4 rounded-2xl uppercase tracking-wider transition-all duration-300 shadow-lg shadow-emerald-400/10 cursor-pointer disabled:opacity-50 mt-6"
           >
             {isUploading
               ? "Uploading to ImgBB & Saving Data..."

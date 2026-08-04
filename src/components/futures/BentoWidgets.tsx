@@ -43,7 +43,7 @@ export default function EmergencyMobilityWidgets() {
     <section className="max-w-7xl mx-auto px-6 md:px-12 py-8">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* 🔴 WIDGET 1: REAL-TIME EMERGENCY SOS KIT */}
-        <div className="bg-zinc-900/30 border border-red-500/10 p-6 md:p-8 rounded-[2rem] backdrop-blur-xl flex flex-col justify-between gap-6 group hover:border-red-500/20 transition-all duration-300">
+        <div className="bg-zinc-900/30 border border-red-500/10 p-6 md:p-8 rounded-2 backdrop-blur-xl flex flex-col justify-between gap-6 group hover:border-red-500/20 transition-all duration-300">
           <div>
             <div className="flex items-center gap-2 text-red-400 font-bold text-xs tracking-widest uppercase mb-4">
               <span className="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
@@ -95,7 +95,7 @@ export default function EmergencyMobilityWidgets() {
         </div>
 
         {/* 🚖 WIDGET 2: SEAMLESS MOBILITY & TRAVEL HUB */}
-        <div className="bg-zinc-900/30 border border-white/5 p-6 md:p-8 rounded-[2rem] backdrop-blur-xl flex flex-col justify-between gap-6 group hover:border-emerald-500/10 transition-all duration-300">
+        <div className="bg-zinc-900/30 border border-white/5 p-6 md:p-8 rounded-2 backdrop-blur-xl flex flex-col justify-between gap-6 group hover:border-emerald-500/10 transition-all duration-300">
           <div>
             <div className="flex items-center gap-2 text-emerald-400 font-bold text-xs tracking-widest uppercase mb-4">
               Mobility Hub

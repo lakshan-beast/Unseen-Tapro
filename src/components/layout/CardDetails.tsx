@@ -627,8 +627,8 @@ export default function CardDetails() {
           className="w-full h-full object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-105"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent z-10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/60 via-transparent to-transparent z-10" />
+        <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/40 to-transparent z-10" />
+        <div className="absolute inset-0 bg-linear-to-b from-zinc-950/60 via-transparent to-transparent z-10" />
 
         <div className="absolute top-6 left-6 md:left-10 z-20 flex items-center justify-between w-[calc(100%-3rem)] md:w-[calc(100%-5rem)]">
           <button
@@ -657,7 +657,7 @@ export default function CardDetails() {
               {place.title}
             </h1>
 
-            <div className="w-16 h-1 bg-gradient-to-r from-emerald-500 to-transparent rounded-full mt-1" />
+            <div className="w-16 h-1 bg-linear-to-r from-emerald-500 to-transparent rounded-full mt-1" />
           </div>
         </div>
       </section>
@@ -729,7 +729,7 @@ export default function CardDetails() {
               <div className="relative border-l-2 border-zinc-800 ml-4 space-y-8 pl-6">
                 {place.routes.map((route, idx) => (
                   <div key={idx} className="relative group">
-                    <div className="absolute -left-[35px] top-0.5 w-6 h-6 bg-zinc-950 border-2 border-emerald-400 rounded-full flex items-center justify-center text-[10px] font-extrabold text-emerald-400 group-hover:bg-emerald-400 group-hover:text-zinc-950 transition-colors">
+                    <div className="absolute -left-8.75 top-0.5 w-6 h-6 bg-zinc-950 border-2 border-emerald-400 rounded-full flex items-center justify-center text-[10px] font-extrabold text-emerald-400 group-hover:bg-emerald-400 group-hover:text-zinc-950 transition-colors">
                       {route.step || idx + 1}
                     </div>
                     <div>
