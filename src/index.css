@@ -2,7 +2,7 @@
 
 @import "tailwindcss";
 
-@theme {
+:root {
   --font-heading: "Exo 2", sans-serif;
   --font-body: "Montserrat", sans-serif;
 }
@@ -28,13 +28,13 @@
   h2,
   h3,
   button {
-    @apply font-heading;
+    font-family: var(--font-heading);
   }
 
   /* 3. HTML & Body Resets */
   html,
   body {
     scroll-behavior: smooth;
-    @apply font-body;
+    font-family: var(--font-body);
   }
 }

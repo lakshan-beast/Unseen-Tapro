@@ -67,13 +67,13 @@ export default function Hero() {
             <img
               src={slide.image}
               alt="Unseen Tapro Background"
-              className={`w-full h-full object-cover transition-transform duration-[5000ms] ease-out ${
+              className={`w-full h-full object-cover transition-transform duration-5000 ease-out ${
                 index === currentSlide ? "scale-100" : "scale-110"
               }`}
             />
           </div>
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-teal-950/10 to-zinc-950 z-20"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-black/50 via-teal-950/10 to-zinc-950 z-20"></div>
       </div>
 
       <div className="relative z-30 px-6 md:px-12 max-w-5xl mb-auto mt-32 md:mt-40">
@@ -82,7 +82,7 @@ export default function Hero() {
           className="transition-all duration-700 ease-out">
           <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 uppercase font-heading ">
             {sliderSlides[currentSlide].title} <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-emerald-400 to-teal-300">
               {sliderSlides[currentSlide].highlight}
             </span>{" "}
             <br />

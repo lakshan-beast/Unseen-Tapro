@@ -307,7 +307,7 @@ export default function CardDetails() {
 
         {/* Multi-Layered Cinematic Gradients */}
         <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/40 to-transparent z-10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/60 via-transparent to-transparent z-10" />
+        <div className="absolute inset-0 bg-linear-to-b from-zinc-950/60 via-transparent to-transparent z-10" />
 
         {/* Top Navigation Bar / Back Button */}
         <div className="absolute top-6 left-6 md:left-10 z-20 flex items-center justify-between w-[calc(100%-3rem)] md:w-[calc(100%-5rem)]">
@@ -341,7 +341,7 @@ export default function CardDetails() {
             </h1>
 
             {/* Decorative Accent Line */}
-            <div className="w-16 h-1 bg-gradient-to-r from-emerald-500 to-transparent rounded-full mt-1" />
+            <div className="w-16 h-1 bg-linear-to-r from-emerald-500 to-transparent rounded-full mt-1" />
           </div>
         </div>
       </section>
