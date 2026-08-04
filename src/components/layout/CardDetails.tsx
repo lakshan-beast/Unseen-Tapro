@@ -206,6 +206,7 @@ import { mockPlaces } from "../../data/places";
 
 import { IoWarning } from "react-icons/io5";
 import { FaCarSide } from "react-icons/fa6";
+import { MdShareLocation } from "react-icons/md";
 
 export default function CardDetails() {
   const { id } = useParams<{ id: string }>();
@@ -296,7 +297,7 @@ export default function CardDetails() {
         </div>
       </section> */}
 
-      <section className="relative h-[95vh] md:h-[90vh] w-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl group mt-2">
+      <section className="relative h-[95vh] md:h-[65vh] w-full overflow-hidden border border-white/10 shadow-2xl group">
         {/* Background Image with Zoom Effect */}
         <img
           src={place.image}
@@ -325,10 +326,11 @@ export default function CardDetails() {
           <div className="flex flex-col gap-3">
             {/* Badges Row */}
             <div className="flex flex-wrap items-center gap-2">
-              <span className="bg-emerald-500 text-zinc-950 text-[10px] font-black tracking-widest uppercase px-3.5 py-1.5 rounded-full shadow-lg shadow-emerald-500/20">
+              <span className="bg-emerald-500 text-black/60 text-[10px] font-black tracking-widest uppercase px-4.5 py-1.5 rounded-md shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 border border-white/60">
+                <MdShareLocation size={18} className="text-white/80 *:" />
                 {place.district} District
               </span>
-              <span className="bg-zinc-900/80 border border-white/15 text-emerald-400 text-[10px] font-bold tracking-widest uppercase px-3.5 py-1.5 rounded-full backdrop-blur-md shadow-md">
+              <span className="bg-zinc-900/80 border border-white/15 text-white/60 text-[10px] font-bold tracking-widest uppercase px-4.5 py-1.5 rounded-2xl backdrop-blur-md shadow-md">
                 {place.category}
               </span>
             </div>

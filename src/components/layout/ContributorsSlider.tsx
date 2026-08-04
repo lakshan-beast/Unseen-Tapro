@@ -75,8 +75,8 @@ export default function ContributorsSlider() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
             <span className="text-emerald-400 font-bold text-xs tracking-widest uppercase mb-2 flex gap-1 items-center ">
-              <FaHandshakeSimple className="size-4.5 text-emerald-200 mr-1" /> The
-              Minds Behind The Lens
+              <FaHandshakeSimple className="size-4.5 text-emerald-200 mr-1" />{" "}
+              The Minds Behind The Lens
             </span>
             {/* <span className="text-emerald-400 font-bold text-[10px] tracking-widest uppercase mb-2 block"></span> */}
             <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">
@@ -102,12 +102,12 @@ export default function ContributorsSlider() {
         {/* 🎴 Slider Viewport */}
         <div className="overflow-hidden w-full py-4">
           <div
-            className="flex transition-transform duration-500 ease-out gap-6"
-            style={{ transform: `translateX(-${currentIndex * (100 / 2)}%) ` }}>
+            className="flex transition-transform duration-500 ease-out gap-2"
+            style={{ transform: `translateX(-${currentIndex * 100}%) ` }}>
             {contributors.map((person, index) => (
               <div
                 key={index}
-                className="w-full md:w-[calc(50%-12px)] shrink-0 bg-zinc-900/40 border border-white/5 hover:border-emerald-500/20 rounded-4xl p-6 backdrop-blur-xl transition-all duration-300 group">
+                className="w-full md:w-[calc(50%-12px)] shrink-0 bg-white/10 border-2 border-white/10 hover:border-emerald-500/30 rounded-4xl py-3 px-4 backdrop-blur-xl transition-all duration-300 group ">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
                     <div className="w-16 h-16 rounded-2xl overflow-hidden border border-white/10 p-0.5 relative shrink-0">
@@ -122,7 +122,7 @@ export default function ContributorsSlider() {
                       <h3 className="text-white text-sm font-bold uppercase tracking-wide group-hover:text-emerald-400 transition-colors">
                         {person.name}
                       </h3>
-                      <span className="text-[10px] text-gray-500 uppercase font-semibold tracking-wider block mt-0.5">
+                      <span className="text-[5px] text-gray-500 uppercase font-semibold tracking-wider block mt-0.5">
                         {person.role}
                       </span>
                     </div>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { IoIosArrowDropdownCircle } from "react-icons/io";
 
 const sliderSlides = [
   {
@@ -88,14 +89,12 @@ export default function Hero() {
             {sliderSlides[currentSlide].endText}
           </h1>
 
-          <p className="text-xs md:text-sm text-gray-300 max-w-md leading-relaxed font-light mb-8">
+          <p className="text-xs md:text-sm text-white-300 max-w-md leading-relaxed font-light mb-8">
             {sliderSlides[currentSlide].description}
           </p>
         </div>
 
-        {/* <Weather /> */}
-
-        {/* SLIDER DOTS INDICATORS (යටින් තියෙන පොඩි ඉරි කෑලි 3) */}
+        {/* SLIDER DOTS INDICATORS  */}
         <div className="flex gap-2 mt-12">
           {sliderSlides.map((_, index) => (
             <button
@@ -112,23 +111,11 @@ export default function Hero() {
       </div>
 
       {/* 🔽 SCROLL DOWN INDICATOR */}
-      <div className="relative z-30 w-full flex justify-center pb-12">
+      <div className="relative z-30 w-full flex justify-center pb-14">
         <a
           href="#trust-score"
           className="animate-bounce bg-white/5 p-2.5 rounded-full border border-white/10 backdrop-blur-md cursor-pointer hover:bg-white/10 hover:border-white/20 transition-all">
-          <svg
-            xmlns="http://w3.org"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2.5}
-            stroke="currentColor"
-            className="w-4 h-4 text-emerald-400">
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M19.5 13.5L12 21m0 0l-7-7m7 7V3"
-            />
-          </svg>
+          <IoIosArrowDropdownCircle className="text-emerald-400 text-2xl" />
         </a>
       </div>
     </section>

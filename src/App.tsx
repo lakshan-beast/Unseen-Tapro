@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import Loader from "./components/ui/Loading";
-import ScrollTop from "./components/ui/ScrolTop";
+import ScrollTop from "./components/ui/ScrollTop";
 
 import Home from "./pages/Home";
 import Services from "./pages/Services";
@@ -20,7 +20,7 @@ const MarketPlaceMock = () => (
 export default function App() {
   return (
     <Router>
-      <div className="bg-zinc-950 min-h-screen font-sans selection:bg-emerald-500 selection:text-black">
+      <div className="bg-zinc-950 min-h-screen font-sans selection:bg-emerald-500 selection:text-black [.scroll-up_&]:mt-4]">
         <Navbar />
 
         <Routes>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 // import { auth } from "../../lib/firebase"; // Firebase Auth සහ DB Import කිරීම
-import { FaRegStar } from "react-icons/fa6";
+import { FaStar } from "react-icons/fa6";
 import { FaShareFromSquare } from "react-icons/fa6";
 
 // import  from "./LoginModal";
@@ -47,7 +47,7 @@ export default function CommunityBanner() {
             {/* Left Content */}
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-bold tracking-widest uppercase mb-4">
-                <FaRegStar className="animate-spin-slow" /> Now Boarding
+                <FaStar className="animate-spin-slow size-4" /> Now Boarding
                 Explorers
               </div>
               <h2 className="text-2xl md:text-4xl font-black text-white tracking-tight leading-tight uppercase mb-4">
@@ -87,7 +87,7 @@ export default function CommunityBanner() {
               <button
                 onClick={() => setIsAddPlaceOpen(true)}
                 // className="w-full bg-gradient-to-r from-emerald-500 to-teal-400 ...">
-                className="w-full lg:w-auto bg-linear-to-r from-emerald-400 to-teal-400 hover:from-emerald-500 hover:to-teal-500 text-white font-black px-8 py-4 rounded-2xl text-xs md:text-sm tracking-wider uppercase transition-all duration-300 shadow-lg shadow-emerald-400/10 hover:shadow-emerald-400/20 active:scale-95 flex items-center justify-center gap-2 group/btn cursor-pointer">
+                className="w-full lg:w-auto bg-linear-to-r from-emerald-400 to-teal-400 hover:from-emerald-500 hover:to-teal-500 text-white font-black px-8 py-4 rounded-2xl text-xl md:text-sm tracking-wider uppercase transition-all duration-300 shadow-lg shadow-emerald-400/10 hover:shadow-emerald-400/20 active:scale-95 flex items-center justify-center gap-2 group/btn cursor-pointer">
                 <FaShareFromSquare /> Share Hidden Place
               </button>
             </div>

@@ -35,7 +35,8 @@ export default function Home() {
       count: "10+ Pools",
       // icon: "🏞️",
       icon: <GiPoolDive />,
-      image: "/images/hero/slide3.jpg",
+
+      image: "/places/knuckels-mountain.jpeg",
       desc: "Crystal-clear infinity rock pools and safe swimming spots deep inside the wild.",
     },
     {
@@ -44,7 +45,7 @@ export default function Home() {
       count: "8+ Shores",
       // icon: "🏖️",
       icon: <FaUmbrellaBeach />,
-      image: "/images/hero/slide4.jpg",
+      image: "/images/hero/slide3.jpg",
       desc: "Untouched, serene coastal hideouts and wild shorelines away from crowds.",
     },
     {
@@ -62,7 +63,7 @@ export default function Home() {
       count: "7+ Secrets",
       // icon: "🕳️",
       icon: <GiUndergroundCave />,
-      image: "/images/hero/caves.jpeg",
+      image: "/images/hero/slide4.jpg",
       desc: "Unearth ancient history and subterranean trails buried deep within rock tunnels.",
     },
   ];
@@ -70,7 +71,7 @@ export default function Home() {
   return (
     <div className="relative  bg-[#01030f] text-white overflow-hidden">
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-16 ">
-        <div className="mb-12 text-center sm:text-left flex justify-between flex-wrap md:flex-nowrap ">
+        <div className="mb-12 text-center sm:text-left flex justify-between flex-wrap md:flex-wrap gap-7">
           <div>
             <span className="text-emerald-400 font-bold text-xs tracking-widest uppercase mb-2 flex gap-1 items-center ">
               <HiLocationMarker className="size-4.5 text-emerald-200 " />{" "}
@@ -88,7 +89,7 @@ export default function Home() {
           <div>
             <Link
               to="/destinations"
-              className="w-full md:w-auto bg-white/5 hover:bg-emerald-500 hover:text-black border border-white/10 text-white font-bold px-6 py-3 rounded-2xl text-xs tracking-wider uppercase transition-all duration-300 shadow-xl active:scale-95">
+              className="w-full md:w-auto bg-white/5 hover:bg-white/20 hover:text-white border border-white/10 text-white font-bold px-6 py-3 rounded-2xl text-xs tracking-wider uppercase transition-all duration-300 shadow-xl active:scale-95">
               Explore All Places →
             </Link>
           </div>
@@ -100,7 +101,7 @@ export default function Home() {
             <div
               key={cat.id}
               onClick={() => navigate(`/destinations?category=${cat.id}`)}
-              className="relative h-64 rounded-3xl overflow-hidden border border-white/15 group cursor-pointer hover:border-emerald-500/50 hover:border-2 transition-all duration-500 shadow-2xl">
+              className="relative h-64 rounded-3xl overflow-hidden border-2 border-white/20 group cursor-pointer hover:border-emerald-500/50 hover:border-2 hover:text-white transition-all duration-500 shadow-2xl">
               {/* Background Image Asset */}
               <div className="absolute inset-0">
                 <img
@@ -117,7 +118,7 @@ export default function Home() {
                   <span className="text-3xl bg-white/500 p-3 rounded-2xl border border-white/20 text-emerald-300 backdrop-blur-md">
                     {cat.icon}
                   </span>
-                  <span className="text-[10px] font-black uppercase tracking-widest bg-emerald-800 text-white px-3 py-1.5 rounded-full shadow-lg font-mono">
+                  <span className="text-[10px] font-black uppercase tracking-widest bg-emerald-500 text-white px-3 py-1.5 rounded-full shadow-lg font-mono">
                     {cat.count}
                   </span>
                 </div>

@@ -375,7 +375,7 @@ export default function Footer() {
       </div>
 
       {/* Copyright Line */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-gray-500 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 border-t border-white/5 pt-6 flex flex-col items-center justify-between gap-4 text-[11px] text-gray-500 relative z-10">
         <p className="flex items-center">
           <RiCopyrightLine size={15} className="mr-2" />{" "}
           {new Date().getFullYear()} UNSEEN.TAPRO. All Rights Reserved.
