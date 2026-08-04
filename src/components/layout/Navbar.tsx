@@ -237,15 +237,15 @@
 //   );
 // }
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { auth, db, logoutUser } from "../../lib/firebase";
-import { onAuthStateChanged } from "firebase/auth";
-import { doc, getDoc } from "firebase/firestore";
-import type { UserProfile } from "../../data/user";
-import LoginModal from "./LoginModal";
+// import {  db  } from "../../lib/firebase";
+// import { onAuthStateChanged } from "firebase/auth";
+// import { doc, getDoc } from "firebase/firestore";
+// import type { UserProfile } from "../../data/user";
+// import LoginModal from "./LoginModal";
 
-import { FaUserCircle } from "react-icons/fa";
+// import { FaUserCircle } from "react-icons/fa";
 // import { TiThMenuOutline } from "react-icons/ti";
 import { TiThMenu } from "react-icons/ti";
 {
@@ -254,49 +254,49 @@ import { TiThMenu } from "react-icons/ti";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isLoginOpen, setIsLoginOpen] = useState(false);
-  const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
+  // const [isLoginOpen, setIsLoginOpen] = useState(false);
+  // const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
-      if (firebaseUser) {
-        const userDocRef = doc(db, "users", firebaseUser.uid);
-        const userDocSnap = await getDoc(userDocRef);
+  // useEffect(() => {
+  //   const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
+  //     if (firebaseUser) {
+  //       const userDocRef = doc(db, "users", firebaseUser.uid);
+  //       const userDocSnap = await getDoc(userDocRef);
 
-        if (userDocSnap.exists()) {
-          setUserProfile(userDocSnap.data() as UserProfile);
-          // } else {
-          //   // Firestore එකේ profile එක තවම නැත්නම් Firebase Auth එකෙන් data ගන්නවා
-          //   setUserProfile({
-          //     uid: firebaseUser.uid,
-          //     name: firebaseUser.displayName || "Traveler",
-          //     email: firebaseUser.email || "",
-          //     profilePic: firebaseUser.photoURL || <FaUserCircle />,
-          //     role: "user",
-          //   } as UserProfile);
-          // }
-          // 🔄 Navbar.tsx ඇතුළේ useEffect එක මැද තියෙන else කොටස මේ විදිහට වෙනස් කරන්න:
-        } else {
-          // Firestore එකේ profile එක තවම නැත්නම් Firebase Auth එකෙන් data ගන්නවා
-          setUserProfile({
-            uid: firebaseUser.uid,
-            name: firebaseUser.displayName || "Traveler",
-            email: firebaseUser.email || "",
-            profilePic: firebaseUser.photoURL || <FaUserCircle />,
-            role: "Tourist", // 👈 'user' වෙනුවට 'Tourist' ලෙස නිවැරදි කලා
-            explorerVotes: 0, // 👈 අලුතින් එක් කලා
-            ecoPoints: 0, // 👈 අලුතින් එක් කලා
-          } as UserProfile);
-        }
-      } else {
-        setUserProfile(null);
-      }
-    });
-    return () => unsubscribe();
-  }, []);
+  //       if (userDocSnap.exists()) {
+  //         setUserProfile(userDocSnap.data() as UserProfile);
+  //         // } else {
+  //         //   // Firestore එකේ profile එක තවම නැත්නම් Firebase Auth එකෙන් data ගන්නවා
+  //         //   setUserProfile({
+  //         //     uid: firebaseUser.uid,
+  //         //     name: firebaseUser.displayName || "Traveler",
+  //         //     email: firebaseUser.email || "",
+  //         //     profilePic: firebaseUser.photoURL || <FaUserCircle />,
+  //         //     role: "user",
+  //         //   } as UserProfile);
+  //         // }
+  //         // 🔄 Navbar.tsx ඇතුළේ useEffect එක මැද තියෙන else කොටස මේ විදිහට වෙනස් කරන්න:
+  //       } else {
+  //         // Firestore එකේ profile එක තවම නැත්නම් Firebase Auth එකෙන් data ගන්නවා
+  //         setUserProfile({
+  //           uid: firebaseUser.uid,
+  //           name: firebaseUser.displayName || "Traveler",
+  //           email: firebaseUser.email || "",
+  //           profilePic: firebaseUser.photoURL || <FaUserCircle />,
+  //           role: "Tourist", // 👈 'user' වෙනුවට 'Tourist' ලෙස නිවැරදි කලා
+  //           explorerVotes: 0, // 👈 අලුතින් එක් කලා
+  //           ecoPoints: 0, // 👈 අලුතින් එක් කලා
+  //         } as UserProfile);
+  //       }
+  //     } else {
+  //       setUserProfile(null);
+  //     }
+  //   });
+  //   return () => unsubscribe();
+  // }, []);
 
   // Spelling නිවැරදි කලා: marketplace
   const navLinks = [
@@ -370,21 +370,21 @@ export default function Navbar() {
               className="text-white focus:outline-none p-2">
               <TiThMenu className="size-8" />
 
-               {isOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L12 12M4 4l16 16"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                )}
+              {isOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L12 12M4 4l16 16"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
               {/* <svg
                 className="w-6 h-6"
                 fill="none"
@@ -431,7 +431,7 @@ export default function Navbar() {
               <hr className="border-white/10 my-2" />
 
               {/* Mobile Profile / Login */}
-              {userProfile ? (
+              {/* {userProfile ? (
                 <div className="flex items-center justify-between px-4 py-2">
                   <Link
                     to="/dashboard"
@@ -446,14 +446,14 @@ export default function Navbar() {
                       {userProfile.name}
                     </span>
                   </Link>
-                  <button
+                  {/* <button
                     onClick={() => {
                       logoutUser();
                       setIsOpen(false);
                     }}
                     className="text-red-400 font-bold text-xs uppercase">
                     Logout
-                  </button>
+                  </button> *
                 </div>
               ) : (
                 <button
@@ -464,18 +464,18 @@ export default function Navbar() {
                   className="bg-emerald-500 text-black font-extrabold py-3 rounded-xl text-sm tracking-wider uppercase w-full text-center">
                   Login
                 </button>
-              )}
+              )} */}
             </div>
           </div>
         )}
       </nav>
 
-      {isLoginOpen && (
+      {/* {isLoginOpen && (
         <LoginModal
           onClose={() => setIsLoginOpen(false)}
           onLoginSuccess={(profile) => setUserProfile(profile)}
         />
-      )}
+      )} */}
     </>
   );
 }

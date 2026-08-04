@@ -1,0 +1,254 @@
+import React, { useState } from "react";
+import { X, Upload, Plus, Trash2, MapPin, AlertTriangle, Route, Car, ShieldAlert } from "lucide-react";
+import { db } from "../firebase"; // firebase setup path
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+
+const IMGBB_API_KEY = "YOUR_IMGBB_API_KEY_HERE";
+
+async function uploadToImgBB(file: File): Promise<string> {
+  const formData = new FormData();
+  formData.append("image", file);
+
+  const response = await fetch(`https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}`, {
+    method: "POST",
+    body: formData,
+  });
+
+  const data = await response.json();
+  if (data.success) return data.data.url;
+  throw new Error("Image upload failed");
+}
+
+interface AddPlaceModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export const AddPlaceModal: React.FC<AddPlaceModalProps> = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+
+  // Basic Info
+  const [authorName, setAuthorName] = useState("");
+  const [title, setTitle] = useState("");
+  const [district, setDistrict] = useState("Ratnapura");
+  const [category, setCategory] = useState("waterfall");
+  const [shortDescription, setShortDescription] = useState("");
+  const [longDescription, setLongDescription] = useState("");
+  const [googleMapUrl, setGoogleMapUrl] = useState("");
+  const [vehicleAccessibility, setVehicleAccessibility] = useState("");
+
+  // Dynamic Fields
+  const [routes, setRoutes] = useState([{ title: "", description: "" }]);
+  const [safetyAlerts, setSafetyAlerts] = useState([""]);
+  const [facilities, setFacilities] = useState([""]);
+
+  // Images
+  const [imageFiles, setImageFiles] = useState<File[]>([]);
+  const [previewUrls, setPreviewUrls] = useState<string[]>([]);
+  const [isUploading, setIsUploading] = useState(false);
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      const files = Array.from(e.target.files);
+      setImageFiles((prev) => [...prev, ...files]);
+      setPreviewUrls((prev) => [...prev, ...files.map((file) => URL.createObjectURL(file))]);
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (imageFiles.length === 0) {
+      alert("කරුණාකර අවම වශයෙන් ඡායාරූපයක් හෝ එකතු කරන්න!");
+      return;
+    }
+
+    setIsUploading(true);
+
+    try {
+      // Upload Images
+      const uploadedUrls: string[] = [];
+      for (const file of imageFiles) {
+        const url = await uploadToImgBB(file);
+        uploadedUrls.push(url);
+      }
+
+      // Structure data matching places.ts
+      const newPlaceData = {
+        title,
+        district,
+        category,
+        shortDescription,
+        longDescription,
+        image: uploadedUrls[0], // Main cover image
+        imageUrls: uploadedUrls, // Extra gallery images
+        likes: 0,
+        commentsCount: 0,
+        authorName: authorName.trim() || "Anonymous Explorer",
+        authorVotes: 1,
+        googleMapUrl,
+        vehicleAccessibility,
+        routes: routes
+          .filter((r) => r.title.trim() !== "")
+          .map((r, index) => ({
+            step: index + 1,
+            title: r.title,
+            description: r.description,
+          })),
+        safetyAlerts: safetyAlerts.filter((a) => a.trim() !== ""),
+        facilities: facilities.filter((f) => f.trim() !== ""),
+        createdAt: serverTimestamp(),
+      };
+
+      await addDoc(collection(db, "places"), newPlaceData);
+      alert("🎉 ස්ථානය සාර්ථකව Firestore වෙත එකතු කරන ලදී!");
+      onClose();
+    } catch (err) {
+      console.error(err);
+      alert("❌ Upload කිරීමේදී දෝෂයක් සිදු විය.");
+    } finally {
+      setIsUploading(false);
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4 overflow-y-auto">
+      <div className="relative w-full max-w-3xl max-h-[90vh] bg-zinc-950 border border-white/10 rounded-3xl p-6 md:p-8 text-white overflow-y-auto shadow-2xl">
+        <button onClick={onClose} className="absolute top-5 right-5 p-2 bg-zinc-900 rounded-full hover:bg-zinc-800">
+          <X size={18} />
+        </button>
+
+        <h2 className="text-2xl font-black uppercase text-emerald-400 mb-6 flex items-center gap-2">
+          <MapPin /> Add New Hidden Gem
+        </h2>
+
+        <form onSubmit={handleSubmit} className="space-y-5 text-xs">
+          {/* Author & Title */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="block font-bold text-gray-400 mb-1">YOUR NAME / EXPLORER HANDLE</label>
+              <input
+                type="text"
+                required
+                placeholder="Ex: Kasun Perera"
+                value={authorName}
+                onChange={(e) => setAuthorName(e.target.value)}
+                className="w-full bg-zinc-900 border border-white/10 rounded-xl p-3 text-white focus:border-emerald-500 outline-none"
+              />
+            </div>
+            <div>
+              <label className="block font-bold text-gray-400 mb-1">DESTINATION TITLE</label>
+              <input
+                type="text"
+                required
+                placeholder="Ex: Duwili Ella Waterfall"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                className="w-full bg-zinc-900 border border-white/10 rounded-xl p-3 text-white focus:border-emerald-500 outline-none"
+              />
+            </div>
+          </div>
+
+          {/* District & Category */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="block font-bold text-gray-400 mb-1">DISTRICT</label>
+              <select
+                value={district}
+                onChange={(e) => setDistrict(e.target.value)}
+                className="w-full bg-zinc-900 border border-white/10 rounded-xl p-3 text-white focus:border-emerald-500 outline-none"
+              >
+                {["Ratnapura", "Kandy", "Matale", "Nuwara Eliya", "Badulla", "Galle", "Matara", "Hambantota", "Kegalle", "Anuradhapura", "Polonnaruwa", "Jaffna", "Trincomalee"].map((d) => (
+                  <option key={d} value={d}>{d}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className="block font-bold text-gray-400 mb-1">CATEGORY</label>
+              <select
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+                className="w-full bg-zinc-900 border border-white/10 rounded-xl p-3 text-white focus:border-emerald-500 outline-none"
+              >
+                <option value="waterfall">Waterfall</option>
+                <option value="hiking">Hiking / Viewpoint</option>
+                <option value="camping">Camping Site</option>
+                <option value="historical">Historical</option>
+                <option value="hidden_gem">Hidden Gem</option>
+              </select>
+            </div>
+          </div>
+
+          {/* Descriptions */}
+          <div>
+            <label className="block font-bold text-gray-400 mb-1">SHORT DESCRIPTION (For Card View)</label>
+            <input
+              type="text"
+              required
+              maxLength={160}
+              placeholder="A brief 1-2 sentence overview..."
+              value={shortDescription}
+              onChange={(e) => setShortDescription(e.target.value)}
+              className="w-full bg-zinc-900 border border-white/10 rounded-xl p-3 text-white focus:border-emerald-500 outline-none"
+            />
+          </div>
+
+          <div>
+            <label className="block font-bold text-gray-400 mb-1">LONG DESCRIPTION (Detailed Story)</label>
+            <textarea
+              required
+              rows={4}
+              placeholder="Full story, unique features, cave locations, history..."
+              value={longDescription}
+              onChange={(e) => setLongDescription(e.target.value)}
+              className="w-full bg-zinc-900 border border-white/10 rounded-xl p-3 text-white focus:border-emerald-500 outline-none resize-none"
+            />
+          </div>
+
+          {/* Map Link & Vehicle Access */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="block font-bold text-gray-400 mb-1">GOOGLE MAPS URL</label>
+              <input
+                type="url"
+                placeholder="https://maps.google.com/..."
+                value={googleMapUrl}
+                onChange={(e) => setGoogleMapUrl(e.target.value)}
+                className="w-full bg-zinc-900 border border-white/10 rounded-xl p-3 text-white focus:border-emerald-500 outline-none"
+              />
+            </div>
+            <div>
+              <label className="block font-bold text-gray-400 mb-1">VEHICLE ACCESSIBILITY</label>
+              <input
+                type="text"
+                placeholder="Ex: Accessible by 4WD/Bikes only from Kalthota"
+                value={vehicleAccessibility}
+                onChange={(e) => setVehicleAccessibility(e.target.value)}
+                className="w-full bg-zinc-900 border border-white/10 rounded-xl p-3 text-white focus:border-emerald-500 outline-none"
+              />
+            </div>
+          </div>
+
+          {/* Image Upload Area */}
+          <div>
+            <label className="block font-bold text-gray-400 mb-1">PHOTOS (Upload via ImgBB)</label>
+            <input type="file" multiple accept="image/*" onChange={handleImageChange} className="bg-zinc-900 p-2 rounded-xl w-full text-xs" />
+            <div className="flex gap-2 mt-2">
+              {previewUrls.map((url, i) => (
+                <img key={i} src={url} alt="preview" className="w-14 h-14 object-cover rounded-lg border border-white/10" />
+              ))}
+            </div>
+          </div>
+
+          {/* Submit */}
+          <button
+            type="submit"
+            disabled={isUploading}
+            className="w-full bg-emerald-500 hover:bg-emerald-400 text-black font-black py-4 rounded-2xl uppercase tracking-wider transition duration-200 mt-4 cursor-pointer"
+          >
+            {isUploading ? "Uploading to ImgBB & Firestore..." : "Submit Destination"}
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};

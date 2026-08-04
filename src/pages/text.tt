@@ -56,3 +56,9 @@ function PlacesList({ mockPlaces, categoryFilter, selectedDistrict, searchQuery,
 }
 
 export default PlacesList;
+
+wait wait. i have some problems. 
+now this project in confused... please we work new to new structure... this website is hidden places in sri lanka.  this website has header, hero section, footer perfect in home page. i have  
+
+
+imgbb : 976fcddf394f0cfbc94f30913118ae4e

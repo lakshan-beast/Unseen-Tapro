@@ -2,6 +2,7 @@
 
 @import "tailwindcss";
 
+/* store fonts  */
 :root {
   --font-heading: "Exo 2", sans-serif;
   --font-body: "Montserrat", sans-serif;
@@ -23,7 +24,7 @@
     background: #555;
   }
 
-
+  /* 2. specail font-family */
   h1,
   h2,
   h3,

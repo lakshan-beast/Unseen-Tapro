@@ -1,43 +1,27 @@
 import { useState } from "react";
-import { db, storage } from "../../lib/firebase"; // Path to your updated firebase.ts
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 interface AddPlaceModalProps {
   onClose: () => void;
 }
 
 export default function AddPlaceModal({ onClose }: AddPlaceModalProps) {
-  // 📝 Form States
-  const [userName, setUserName] = useState("");
+  // 📝 Form එකට අවශ්‍ය කරන ප්‍රධාන States
   const [title, setTitle] = useState("");
   const [district, setDistrict] = useState("Colombo");
   const [category, setCategory] = useState("waterfall");
   const [shortDesc, setShortDesc] = useState("");
   const [longDesc, setLongDesc] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
 
-  // 📸 Multiple Image Files State
-  const [imageFiles, setImageFiles] = useState<File[]>([]);
-
-  // 🗺️ Dynamic Routes
+  // 🗺️ Dynamic Routes (යන පාරවල් ලැයිස්තුව) පාලනය කරන State එක
   const [routes, setRoutes] = useState([
     { step: 1, title: "", description: "" },
   ]);
 
-  // 🛡️ Safety Risk Alerts
+  // 🛡️ Safety Alerts ලැයිස්තුව පාලනය කරන State එක
   const [alerts, setAlerts] = useState([""]);
 
-  // ⏳ Loading state for upload
-  const [isUploading, setIsUploading] = useState(false);
-
-  // File Input Handler for Multiple Images
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files) {
-      setImageFiles(Array.from(e.target.files));
-    }
-  };
-
-  // Dynamic Route & Alert Handlers
+  // අලුත් පාරේ පියවරක් (Step) එකතු කිරීමට
   const addRouteStep = () => {
     setRoutes([
       ...routes,
@@ -45,58 +29,27 @@ export default function AddPlaceModal({ onClose }: AddPlaceModalProps) {
     ]);
   };
 
+  // අලුත් ආරක්ෂිත උපදෙසක් (Alert Box) එකතු කිරීමට
   const addAlertField = () => {
     setAlerts([...alerts, ""]);
   };
 
-  // 🚀 Firebase Upload Handler
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (imageFiles.length === 0) {
-      alert("Please select at least one image file!");
-      return;
-    }
-
-    setIsUploading(true);
-
-    try {
-      // 1. Upload Images to Firebase Storage and get URLs
-      const uploadedImageUrls: string[] = [];
-
-      for (const file of imageFiles) {
-        const uniqueFileName = `${Date.now()}_${file.name}`;
-        const storageRef = ref(storage, `places/${uniqueFileName}`);
-        const snapshot = await uploadBytes(storageRef, file);
-        const downloadUrl = await getDownloadURL(snapshot.ref);
-        uploadedImageUrls.push(downloadUrl);
-      }
-
-      // 2. Save Document Data to Firestore
-      await addDoc(collection(db, "places"), {
-        userName,
-        title,
-        district,
-        category,
-        shortDesc,
-        longDesc,
-        imageUrls: uploadedImageUrls, // Save multiple uploaded URLs array
-        coverImage: uploadedImageUrls[0], // First image as main cover
-        routes: routes.filter((r) => r.title.trim() !== ""), // Clean empty routes
-        alerts: alerts.filter((a) => a.trim() !== ""), // Clean empty alerts
-        createdAt: serverTimestamp(),
-      });
-
-      alert("🚀 Hidden Gem published successfully!");
-      onClose();
-    } catch (error) {
-      console.error("Error adding document to Firebase: ", error);
-      alert(
-        "❌ Upload failed. Please check your Firebase rules and internet connection.",
-      );
-    } finally {
-      setIsUploading(false);
-    }
+    console.log("New Hidden Gem Data Sourced:", {
+      title,
+      district,
+      category,
+      shortDesc,
+      longDesc,
+      imageUrl,
+      routes,
+      alerts,
+    });
+    alert(
+      "🚀 Hidden Gem submitted successfully! Your Role is now updated to Tourist & Explorer.",
+    );
+    onClose();
   };
 
   const sriLankaDistricts = [
@@ -127,18 +80,17 @@ export default function AddPlaceModal({ onClose }: AddPlaceModalProps) {
   ];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      {/* Backdrop */}
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 ">
+      {/* Backdrop Blur Overlays */}
       <div
         className="absolute inset-0 bg-black/70 backdrop-blur-md"
         onClick={onClose}></div>
 
-      {/* Form Container */}
-      <div className="relative bg-zinc-900/90 border border-white/10 rounded-[2.5rem] p-6 md:p-8 max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl backdrop-blur-2xl z-10 scrollbar-none">
+      {/* 🔮 ULTRA-PREMIUM BENTO POST UPLOADER FORM */}
+      <div className="relative bg-zinc-900/90 border border-white/10 rounded-[2.5rem] p-6 md:p-8 max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl backdrop-blur-2xl z-10 animate-[fadeIn_0.2s_ease-out] overflow-x-scroll scrollbar-none">
         <button
           onClick={onClose}
-          disabled={isUploading}
-          className="absolute top-6 right-6 text-gray-400 hover:text-white font-bold text-sm disabled:opacity-50">
+          className="absolute top-6 right-6 text-gray-400 hover:text-white font-bold text-sm">
           ✕
         </button>
 
@@ -150,23 +102,8 @@ export default function AddPlaceModal({ onClose }: AddPlaceModalProps) {
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-6 text-left">
-          {/* Section 0: Contributor Username */}
-          <div className="flex flex-col gap-1.5 bg-black/20 p-4 rounded-2xl border border-white/5">
-            <label className="text-[10px] text-gray-400 uppercase font-black">
-              Explorer / Contributor Name
-            </label>
-            <input
-              type="text"
-              required
-              value={userName}
-              onChange={(e) => setUserName(e.target.value)}
-              placeholder="e.g. Kasun Perera"
-              className="bg-zinc-950 border border-white/10 rounded-xl p-2.5 text-xs text-white outline-none focus:border-emerald-500/40"
-            />
-          </div>
-
           {/* Section 1: Basic Info Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-black/20 p-4 rounded-2xl border border-white/5">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-black/20 p-4 rounded-2xl border border-white/5 ">
             <div className="flex flex-col gap-1.5">
               <label className="text-[10px] text-gray-400 uppercase font-black">
                 Location Name
@@ -180,7 +117,6 @@ export default function AddPlaceModal({ onClose }: AddPlaceModalProps) {
                 className="bg-zinc-950 border border-white/10 rounded-xl p-2.5 text-xs text-white outline-none focus:border-emerald-500/40"
               />
             </div>
-
             <div className="flex flex-col gap-1.5">
               <label className="text-[10px] text-gray-400 uppercase font-black">
                 District
@@ -196,7 +132,6 @@ export default function AddPlaceModal({ onClose }: AddPlaceModalProps) {
                 ))}
               </select>
             </div>
-
             <div className="flex flex-col gap-1.5">
               <label className="text-[10px] text-gray-400 uppercase font-black">
                 Category
@@ -213,24 +148,19 @@ export default function AddPlaceModal({ onClose }: AddPlaceModalProps) {
             </div>
           </div>
 
-          {/* Section 2: Multiple Image File Upload */}
-          <div className="flex flex-col gap-1.5 bg-black/20 p-4 rounded-2xl border border-white/5">
+          {/* Section 2: Image URL Asset */}
+          <div className="flex flex-col gap-1.5">
             <label className="text-[10px] text-gray-400 uppercase font-black">
-              Upload Images (Select Multiple Files)
+              Cover Image URL
             </label>
             <input
-              type="file"
-              accept="image/*"
-              multiple
+              type="url"
               required
-              onChange={handleImageChange}
-              className="bg-zinc-950 border border-white/10 rounded-xl p-2 text-xs text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-emerald-500/10 file:text-emerald-400 hover:file:bg-emerald-500/20 cursor-pointer"
+              value={imageUrl}
+              onChange={(e) => setImageUrl(e.target.value)}
+              placeholder="https://unsplash.com"
+              className="w-full bg-black/20 border border-white/10 rounded-xl p-3 text-xs text-white outline-none focus:border-emerald-500/40"
             />
-            {imageFiles.length > 0 && (
-              <p className="text-[10px] text-emerald-400 mt-1">
-                ✓ {imageFiles.length} file(s) selected
-              </p>
-            )}
           </div>
 
           {/* Section 3: Descriptions */}
@@ -244,31 +174,30 @@ export default function AddPlaceModal({ onClose }: AddPlaceModalProps) {
                 required
                 value={shortDesc}
                 onChange={(e) => setShortDesc(e.target.value)}
-                placeholder="A brief 1-line catchy preview..."
+                placeholder="A brief 1-line catchy preview of this hidden location..."
                 className="w-full bg-black/20 border border-white/10 rounded-xl p-3 text-xs text-white outline-none focus:border-emerald-500/40"
               />
             </div>
-
             <div className="flex flex-col gap-1.5">
               <label className="text-[10px] text-gray-400 uppercase font-black">
-                Long Description
+                Comprehensive Field Intelligence (Long Description)
               </label>
               <textarea
                 required
                 rows={4}
                 value={longDesc}
                 onChange={(e) => setLongDesc(e.target.value)}
-                placeholder="Describe history, landscape, route details..."
+                placeholder="Describe the history, layout, landscape, and why this unseen place holds magic..."
                 className="w-full bg-black/20 border border-white/10 rounded-xl p-3 text-xs text-white outline-none focus:border-emerald-500/40 resize-none"
               />
             </div>
           </div>
 
-          {/* Section 4: Dynamic Routes */}
+          {/* 🗺️ Section 4: Dynamic Step-by-Step Waypoint Tracks (2026 Layout) */}
           <div className="space-y-3 bg-black/20 p-4 rounded-3xl border border-white/5">
             <div className="flex items-center justify-between">
               <label className="text-[10px] text-emerald-400 uppercase font-black tracking-wide">
-                Route Mapping
+                Route Mapping (Step-by-Step Timeline)
               </label>
               <button
                 type="button"
@@ -277,7 +206,6 @@ export default function AddPlaceModal({ onClose }: AddPlaceModalProps) {
                 + Add Next Step
               </button>
             </div>
-
             <div className="space-y-3">
               {routes.map((route, index) => (
                 <div
@@ -299,7 +227,7 @@ export default function AddPlaceModal({ onClose }: AddPlaceModalProps) {
                   />
                   <input
                     type="text"
-                    placeholder="Transit Details"
+                    placeholder="Transit Direction Details"
                     value={route.description}
                     onChange={(e) => {
                       const newRoutes = [...routes];
@@ -313,11 +241,11 @@ export default function AddPlaceModal({ onClose }: AddPlaceModalProps) {
             </div>
           </div>
 
-          {/* Section 5: Risk Alerts */}
+          {/* 🛡️ Section 5: Dynamic Safety Risk Warning System */}
           <div className="space-y-3 bg-black/20 p-4 rounded-3xl border border-white/5">
             <div className="flex items-center justify-between">
               <label className="text-[10px] text-red-400 uppercase font-black tracking-wide">
-                Environmental Risk Alerts
+                Environmental Risk Alerts (Safety Guidelines)
               </label>
               <button
                 type="button"
@@ -326,33 +254,29 @@ export default function AddPlaceModal({ onClose }: AddPlaceModalProps) {
                 + Add Risk Alert
               </button>
             </div>
-
             <div className="space-y-2">
-              {alerts.map((alertItem, index) => (
+              {alerts.map((alert, index) => (
                 <input
                   key={index}
                   type="text"
-                  value={alertItem}
+                  value={alert}
                   onChange={(e) => {
                     const newAlerts = [...alerts];
                     newAlerts[index] = e.target.value;
                     setAlerts(newAlerts);
                   }}
-                  placeholder="e.g. Extreme slippery rock slopes near waterfall"
+                  placeholder="e.g. Extreme slippery rock slopes near waterfall edge / Flash flood hazard area"
                   className="w-full bg-zinc-950 border border-white/5 rounded-xl p-2.5 text-xs text-white outline-none focus:border-red-500/20"
                 />
               ))}
             </div>
           </div>
 
-          {/* Submit Button */}
+          {/* Submit Post Button */}
           <button
             type="submit"
-            disabled={isUploading}
-            className="w-full bg-linear-to-r from-emerald-400 to-teal-400 hover:from-emerald-500 hover:to-teal-500 text-black font-black py-4 px-6 rounded-2xl text-xs md:text-sm tracking-wider uppercase transition-all duration-300 shadow-xl active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed">
-            {isUploading
-              ? "Uploading Data & Images..."
-              : "Publish Hidden Gem Archive"}
+            className="w-full bg-linear-to-r from-emerald-400 to-teal-400 hover:from-emerald-500 hover:to-teal-500 text-black font-black py-4 px-6 rounded-2xl text-xs md:text-sm tracking-wider uppercase transition-all duration-300 shadow-xl active:scale-95">
+            Publish Hidden Gem Archive
           </button>
         </form>
       </div>

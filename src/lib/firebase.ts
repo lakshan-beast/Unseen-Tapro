@@ -49,37 +49,60 @@
 // const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
 
+// import API_KEY from "./"
+
+// import { initializeApp } from "firebase/app";
+// import {
+//   getAuth,
+//   GoogleAuthProvider,
+//   signInWithPopup,
+//   signOut,
+// } from "firebase/auth";
+// import { getFirestore } from "firebase/firestore";
+// // import Firebase Storage
+// import { getStorage } from "firebase/storage";
+
+// const firebaseConfig = {
+//   apiKey = import.meta.env.FIREBASE_API_KEY; // 🔑 ඔබේ සැබෑ API Key එක දමන්න
+//   authDomain: "unseen-tapro.firebaseapp.com", // 🔄 නිවැරදි කරන ලදී
+//   projectId: "unseen-tapro",
+//   storageBucket: "unseen-tapro.appspot.com", // 🔄 නිවැරදි කරන ලදී
+//   messagingSenderId: "499094199874", // 🔑 ඔබේ සැබෑ Sender ID එක දමන්න
+//   appId: "1:499094199874:web:072959056c24ebc91297db",
+// };
+
+// // Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+
+// export const auth = getAuth(app);
+// export const db = getFirestore(app);
+// export const storage = getStorage(app); // 📸 පින්තූර සේව් කිරීමට Storage එක සක්‍රීය කලා
+// export const googleProvider = new GoogleAuthProvider();
+
+// // Custom OAuth Parameters (සමහර වෙලාවට Google Profile Pic එක ලොකු size එකෙන් ගන්න උදව් වේ)
+// googleProvider.setCustomParameters({ prompt: "select_account" });
+
+// // Google හරහා ලොග් වීමේ සරල පහසුකම
+// export const loginWithGoogle = () => signInWithPopup(auth, googleProvider);
+// export const logoutUser = () => signOut(auth);
+
 import { initializeApp } from "firebase/app";
-import {
-  getAuth,
-  GoogleAuthProvider,
-  signInWithPopup,
-  signOut,
-} from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
-// 🎨 Firebase Storage සඳහා අලුතින් Import කලා
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBYnDd9KX9oIBidbvAZ2Mr2RQIrXsy-kSw", // 🔑 ඔබේ සැබෑ API Key එක දමන්න
-  authDomain: "unseen-tapro.firebaseapp.com", // 🔄 නිවැරදි කරන ලදී
+  apiKey:
+    import.meta.env.VITE_FIREBASE_API_KEY || import.meta.env.FIREBASE_API_KEY,
+  authDomain: "unseen-tapro.firebaseapp.com",
   projectId: "unseen-tapro",
-  storageBucket: "unseen-tapro.appspot.com", // 🔄 නිවැරදි කරන ලදී
-  messagingSenderId: "499094199874", // 🔑 ඔබේ සැබෑ Sender ID එක දමන්න
+  storageBucket: "unseen-tapro.appspot.com",
+  messagingSenderId: "499094199874",
   appId: "1:499094199874:web:072959056c24ebc91297db",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-export const auth = getAuth(app);
+// Export Firestore & Storage instances
 export const db = getFirestore(app);
-export const storage = getStorage(app); // 📸 පින්තූර සේව් කිරීමට Storage එක සක්‍රීය කලා
-export const googleProvider = new GoogleAuthProvider();
-
-// Custom OAuth Parameters (සමහර වෙලාවට Google Profile Pic එක ලොකු size එකෙන් ගන්න උදව් වේ)
-googleProvider.setCustomParameters({ prompt: "select_account" });
-
-// Google හරහා ලොග් වීමේ සරල පහසුකම
-export const loginWithGoogle = () => signInWithPopup(auth, googleProvider);
-export const logoutUser = () => signOut(auth);
+export const storage = getStorage(app);
