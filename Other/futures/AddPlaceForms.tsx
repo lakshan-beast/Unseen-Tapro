@@ -709,8 +709,6 @@
 //   );
 // };
 
-
-
 import React, { useState } from "react";
 import {
   FaXmark,
@@ -721,7 +719,7 @@ import {
   FaShieldCat,
   FaCircleInfo,
 } from "react-icons/fa6";
-import { db } from "../../lib/firebase"; 
+import { db } from "../../src/lib/firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 const IMGBB_API_KEY = "976fcddf394f0cfbc94f30913118ae4e";
@@ -735,7 +733,7 @@ async function uploadToImgBB(file: File): Promise<string> {
     {
       method: "POST",
       body: formData,
-    }
+    },
   );
 
   const data = await response.json();
@@ -767,7 +765,10 @@ export const AddPlaceModal: React.FC<AddPlaceModalProps> = ({
   // 2. Dynamic Array States
   // Routes Step-by-Step
   const [routes, setRoutes] = useState([
-    { title: "Colombo to Balangoda", description: "Take the Colombo-Badulla highway..." },
+    {
+      title: "Colombo to Balangoda",
+      description: "Take the Colombo-Badulla highway...",
+    },
   ]);
 
   // Safety Alerts
@@ -792,7 +793,11 @@ export const AddPlaceModal: React.FC<AddPlaceModalProps> = ({
     setRoutes([...routes, { title: "", description: "" }]);
   };
 
-  const handleRouteChange = (index: number, field: "title" | "description", value: string) => {
+  const handleRouteChange = (
+    index: number,
+    field: "title" | "description",
+    value: string,
+  ) => {
     const updated = [...routes];
     updated[index][field] = value;
     setRoutes(updated);
@@ -897,7 +902,9 @@ export const AddPlaceModal: React.FC<AddPlaceModalProps> = ({
       onClose();
     } catch (err) {
       console.error(err);
-      alert("❌ An error occurred while uploading. Please check the ImgBB API Key.");
+      alert(
+        "❌ An error occurred while uploading. Please check the ImgBB API Key.",
+      );
     } finally {
       setIsUploading(false);
     }
@@ -909,8 +916,7 @@ export const AddPlaceModal: React.FC<AddPlaceModalProps> = ({
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 bg-zinc-900 rounded-full hover:bg-zinc-800 text-gray-400 hover:text-white transition-colors cursor-pointer"
-        >
+          className="absolute top-5 right-5 p-2 bg-zinc-900 rounded-full hover:bg-zinc-800 text-gray-400 hover:text-white transition-colors cursor-pointer">
           <FaXmark size={18} />
         </button>
 
@@ -952,18 +958,39 @@ export const AddPlaceModal: React.FC<AddPlaceModalProps> = ({
           {/* 2. District & Category */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block font-bold text-gray-400 mb-1">DISTRICT</label>
+              <label className="block font-bold text-gray-400 mb-1">
+                DISTRICT
+              </label>
               <select
                 value={district}
                 onChange={(e) => setDistrict(e.target.value)}
-                className="w-full bg-zinc-900 border border-white/10 rounded-xl p-3 text-white focus:border-emerald-500 outline-none cursor-pointer"
-              >
+                className="w-full bg-zinc-900 border border-white/10 rounded-xl p-3 text-white focus:border-emerald-500 outline-none cursor-pointer">
                 {[
-                  "Ratnapura", "Kandy", "Matale", "Nuwara Eliya", "Badulla",
-                  "Galle", "Matara", "Hambantota", "Kegalle", "Anuradhapura",
-                  "Polonnaruwa", "Jaffna", "Trincomalee", "Colombo", "Gampaha",
-                  "Kalutara", "Kurunegala", "Puttalam", "Monaragala", "Ampara",
-                  "Batticaloa", "Vavuniya", "Mullaitivu", "Mannar", "Kilinochchi",
+                  "Ratnapura",
+                  "Kandy",
+                  "Matale",
+                  "Nuwara Eliya",
+                  "Badulla",
+                  "Galle",
+                  "Matara",
+                  "Hambantota",
+                  "Kegalle",
+                  "Anuradhapura",
+                  "Polonnaruwa",
+                  "Jaffna",
+                  "Trincomalee",
+                  "Colombo",
+                  "Gampaha",
+                  "Kalutara",
+                  "Kurunegala",
+                  "Puttalam",
+                  "Monaragala",
+                  "Ampara",
+                  "Batticaloa",
+                  "Vavuniya",
+                  "Mullaitivu",
+                  "Mannar",
+                  "Kilinochchi",
                 ].map((d) => (
                   <option key={d} value={d} className="bg-zinc-950">
                     {d}
@@ -973,17 +1000,28 @@ export const AddPlaceModal: React.FC<AddPlaceModalProps> = ({
             </div>
 
             <div>
-              <label className="block font-bold text-gray-400 mb-1">CATEGORY</label>
+              <label className="block font-bold text-gray-400 mb-1">
+                CATEGORY
+              </label>
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className="w-full bg-zinc-900 border border-white/10 rounded-xl p-3 text-white focus:border-emerald-500 outline-none cursor-pointer"
-              >
-                <option value="waterfall" className="bg-zinc-950">Waterfall</option>
-                <option value="hiking" className="bg-zinc-950">Hiking / Viewpoint</option>
-                <option value="camping" className="bg-zinc-950">Camping Site</option>
-                <option value="historical" className="bg-zinc-950">Historical</option>
-                <option value="hidden_gem" className="bg-zinc-950">Hidden Gem</option>
+                className="w-full bg-zinc-900 border border-white/10 rounded-xl p-3 text-white focus:border-emerald-500 outline-none cursor-pointer">
+                <option value="waterfall" className="bg-zinc-950">
+                  Waterfall
+                </option>
+                <option value="hiking" className="bg-zinc-950">
+                  Hiking / Viewpoint
+                </option>
+                <option value="camping" className="bg-zinc-950">
+                  Camping Site
+                </option>
+                <option value="historical" className="bg-zinc-950">
+                  Historical
+                </option>
+                <option value="hidden_gem" className="bg-zinc-950">
+                  Hidden Gem
+                </option>
               </select>
             </div>
           </div>
@@ -1057,15 +1095,16 @@ export const AddPlaceModal: React.FC<AddPlaceModalProps> = ({
               <button
                 type="button"
                 onClick={handleAddRoute}
-                className="flex items-center gap-1 bg-emerald-500/20 text-emerald-400 px-3 py-1.5 rounded-lg hover:bg-emerald-500/30 transition-colors font-bold cursor-pointer"
-              >
+                className="flex items-center gap-1 bg-emerald-500/20 text-emerald-400 px-3 py-1.5 rounded-lg hover:bg-emerald-500/30 transition-colors font-bold cursor-pointer">
                 <FaPlus size={10} /> Add Step
               </button>
             </div>
 
             <div className="space-y-3">
               {routes.map((route, idx) => (
-                <div key={idx} className="bg-zinc-900/80 p-3 rounded-xl border border-white/5 space-y-2 relative">
+                <div
+                  key={idx}
+                  className="bg-zinc-900/80 p-3 rounded-xl border border-white/5 space-y-2 relative">
                   <div className="flex justify-between items-center">
                     <span className="font-bold text-gray-400 text-[10px] uppercase">
                       Step {idx + 1}
@@ -1074,8 +1113,7 @@ export const AddPlaceModal: React.FC<AddPlaceModalProps> = ({
                       <button
                         type="button"
                         onClick={() => handleRemoveRoute(idx)}
-                        className="text-red-400 hover:text-red-300 transition-colors p-1"
-                      >
+                        className="text-red-400 hover:text-red-300 transition-colors p-1">
                         <FaTrashCan size={12} />
                       </button>
                     )}
@@ -1084,14 +1122,18 @@ export const AddPlaceModal: React.FC<AddPlaceModalProps> = ({
                     type="text"
                     placeholder="Step Title (e.g., Colombo to Balangoda)"
                     value={route.title}
-                    onChange={(e) => handleRouteChange(idx, "title", e.target.value)}
+                    onChange={(e) =>
+                      handleRouteChange(idx, "title", e.target.value)
+                    }
                     className="w-full bg-black/40 border border-white/10 rounded-lg p-2 text-white outline-none focus:border-emerald-500"
                   />
                   <input
                     type="text"
                     placeholder="Step Instructions/Description..."
                     value={route.description}
-                    onChange={(e) => handleRouteChange(idx, "description", e.target.value)}
+                    onChange={(e) =>
+                      handleRouteChange(idx, "description", e.target.value)
+                    }
                     className="w-full bg-black/40 border border-white/10 rounded-lg p-2 text-white outline-none focus:border-emerald-500"
                   />
                 </div>
@@ -1110,8 +1152,7 @@ export const AddPlaceModal: React.FC<AddPlaceModalProps> = ({
               <button
                 type="button"
                 onClick={handleAddSafetyAlert}
-                className="flex items-center gap-1 bg-amber-500/20 text-amber-400 px-3 py-1.5 rounded-lg hover:bg-amber-500/30 transition-colors font-bold cursor-pointer"
-              >
+                className="flex items-center gap-1 bg-amber-500/20 text-amber-400 px-3 py-1.5 rounded-lg hover:bg-amber-500/30 transition-colors font-bold cursor-pointer">
                 <FaPlus size={10} /> Add Alert
               </button>
             </div>
@@ -1123,15 +1164,16 @@ export const AddPlaceModal: React.FC<AddPlaceModalProps> = ({
                     type="text"
                     placeholder="e.g., Flash floods are common during rainy seasons."
                     value={alert}
-                    onChange={(e) => handleSafetyAlertChange(idx, e.target.value)}
+                    onChange={(e) =>
+                      handleSafetyAlertChange(idx, e.target.value)
+                    }
                     className="w-full bg-zinc-900 border border-white/10 rounded-xl p-2.5 text-white outline-none focus:border-amber-500"
                   />
                   {safetyAlerts.length > 1 && (
                     <button
                       type="button"
                       onClick={() => handleRemoveSafetyAlert(idx)}
-                      className="p-2.5 text-red-400 hover:text-red-300 bg-zinc-900 rounded-xl border border-white/10"
-                    >
+                      className="p-2.5 text-red-400 hover:text-red-300 bg-zinc-900 rounded-xl border border-white/10">
                       <FaTrashCan size={12} />
                     </button>
                   )}
@@ -1151,8 +1193,7 @@ export const AddPlaceModal: React.FC<AddPlaceModalProps> = ({
               <button
                 type="button"
                 onClick={handleAddFacility}
-                className="flex items-center gap-1 bg-teal-500/20 text-teal-400 px-3 py-1.5 rounded-lg hover:bg-teal-500/30 transition-colors font-bold cursor-pointer"
-              >
+                className="flex items-center gap-1 bg-teal-500/20 text-teal-400 px-3 py-1.5 rounded-lg hover:bg-teal-500/30 transition-colors font-bold cursor-pointer">
                 <FaPlus size={10} /> Add Facility
               </button>
             </div>
@@ -1171,8 +1212,7 @@ export const AddPlaceModal: React.FC<AddPlaceModalProps> = ({
                     <button
                       type="button"
                       onClick={() => handleRemoveFacility(idx)}
-                      className="p-2.5 text-red-400 hover:text-red-300 bg-zinc-900 rounded-xl border border-white/10"
-                    >
+                      className="p-2.5 text-red-400 hover:text-red-300 bg-zinc-900 rounded-xl border border-white/10">
                       <FaTrashCan size={12} />
                     </button>
                   )}
@@ -1211,8 +1251,7 @@ export const AddPlaceModal: React.FC<AddPlaceModalProps> = ({
           <button
             type="submit"
             disabled={isUploading}
-            className="w-full bg-linear-to-r from-emerald-400 to-teal-400 hover:from-emerald-500 hover:to-teal-500 text-black font-black py-4 rounded-2xl uppercase tracking-wider transition-all duration-300 shadow-lg shadow-emerald-400/10 cursor-pointer disabled:opacity-50 mt-6"
-          >
+            className="w-full bg-linear-to-r from-emerald-400 to-teal-400 hover:from-emerald-500 hover:to-teal-500 text-black font-black py-4 rounded-2xl uppercase tracking-wider transition-all duration-300 shadow-lg shadow-emerald-400/10 cursor-pointer disabled:opacity-50 mt-6">
             {isUploading
               ? "Uploading to ImgBB & Saving Data..."
               : "Submit Hidden Gem"}

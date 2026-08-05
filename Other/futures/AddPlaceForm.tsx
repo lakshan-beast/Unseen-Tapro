@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { db, storage } from "../../lib/firebase"; // Path to your updated firebase.ts
+import { db, storage } from "../../src/lib/firebase"; // Path to your updated firebase.ts
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
