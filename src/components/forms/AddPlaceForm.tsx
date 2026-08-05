@@ -5,7 +5,6 @@ interface AddPlaceModalProps {
 }
 
 export default function AddPlaceModal({ onClose }: AddPlaceModalProps) {
-  // 📝 Form එකට අවශ්‍ය කරන ප්‍රධාන States
   const [title, setTitle] = useState("");
   const [district, setDistrict] = useState("Colombo");
   const [category, setCategory] = useState("waterfall");
@@ -13,15 +12,13 @@ export default function AddPlaceModal({ onClose }: AddPlaceModalProps) {
   const [longDesc, setLongDesc] = useState("");
   const [imageUrl, setImageUrl] = useState("");
 
-  // 🗺️ Dynamic Routes (යන පාරවල් ලැයිස්තුව) පාලනය කරන State එක
   const [routes, setRoutes] = useState([
     { step: 1, title: "", description: "" },
   ]);
 
-  // 🛡️ Safety Alerts ලැයිස්තුව පාලනය කරන State එක
   const [alerts, setAlerts] = useState([""]);
 
-  // අලුත් පාරේ පියවරක් (Step) එකතු කිරීමට
+
   const addRouteStep = () => {
     setRoutes([
       ...routes,
@@ -29,7 +26,7 @@ export default function AddPlaceModal({ onClose }: AddPlaceModalProps) {
     ]);
   };
 
-  // අලුත් ආරක්ෂිත උපදෙසක් (Alert Box) එකතු කිරීමට
+
   const addAlertField = () => {
     setAlerts([...alerts, ""]);
   };

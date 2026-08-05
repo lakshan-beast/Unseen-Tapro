@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import AddPlaceModal from "../components/forms/AddPlaceForm2";
+import AddPlaceModal from "../components/forms/AddPlaceForm";
 
 export default function Dashboard() {
   const [isAddPlaceOpen, setIsAddPlaceOpen] = useState(false);
@@ -414,6 +414,6 @@ export default function Dashboard() {
       {isAddPlaceOpen && (
         <AddPlaceModal onClose={() => setIsAddPlaceOpen(false)} />
       )}
-    </div> 
+    </div>
   );
 }

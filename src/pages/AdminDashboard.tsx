@@ -11,7 +11,7 @@ import {
   FaShareFromSquare,
 } from "react-icons/fa6";
 import { db } from "../lib/firebase";
-import AddPlaceModal from "../components/forms/AddPlaceForm2";
+import AddPlaceModal from "../components/forms/AddPlaceForm";
 
 import {
   collection,
