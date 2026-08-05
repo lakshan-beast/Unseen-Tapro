@@ -24,6 +24,11 @@
     background: #555;
   }
 
+  * {
+    scroll-behavior: smooth;
+    scroll-margin-top: 6rem;
+  }
+
   /* 2. specail font-family */
   h1,
   h2,
