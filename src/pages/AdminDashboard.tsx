@@ -11,7 +11,7 @@ import {
   FaShareFromSquare,
 } from "react-icons/fa6";
 import { db } from "../lib/firebase";
-import { AddPlaceModal } from "../../Other/futures/AddPlaceForms";
+import AddPlaceModal from "../components/forms/AddPlaceForm2";
 
 import {
   collection,
@@ -425,7 +425,7 @@ export const AdminDashboard: React.FC = () => {
 
         {isAddPlaceOpen && (
           <AddPlaceModal
-            isOpen={isAddPlaceOpen}
+            // isOpen={isAddPlaceOpen}
             onClose={() => setIsAddPlaceOpen(false)}
           />
         )}
