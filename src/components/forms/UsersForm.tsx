@@ -479,7 +479,7 @@ export const UserAddPlaceModal: React.FC<UserAddPlaceModalProps> = ({
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-gradient-to-r from-emerald-400 to-teal-400 text-black font-black py-4 rounded-2xl uppercase tracking-wider transition-all duration-300 shadow-lg cursor-pointer disabled:opacity-50 mt-6">
+            className="w-full bg-linear-to-r from-emerald-400 to-teal-400 text-black font-black py-4 rounded-2xl uppercase tracking-wider transition-all duration-300 shadow-lg cursor-pointer disabled:opacity-50 mt-6">
             {isSubmitting
               ? "Uploading & Submitting..."
               : "Submit Destination for Review"}
