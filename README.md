@@ -5,8 +5,6 @@ Unseen Tapro is a modern travel exploration web platform dedicated to uncovering
 ## 🚀 Live Demo
 🔗 Live Link: [https://unseentapro.vercel.app](https://unseentapro.vercel.app)
 
-
-
 ## ✨ Key Features
 - Hidden Gem Discovery: Browse unique and beautiful travel destinations in Sri Lanka sorted by districts.
 - Interactive UI Cards: Clean grid layout featuring rich visual card overlays for an immersive user experience.

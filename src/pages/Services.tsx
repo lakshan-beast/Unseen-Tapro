@@ -14,7 +14,7 @@ export default function Services() {
   const [selectedDistrict, setSelectedDistrict] = useState("All Districts");
   const [searchQuery, setSearchQuery] = useState("");
 
-  // 🔍 Search සහ District Filter Logic එක
+  // 🔍 Search සහ District Filter Logic 
   const filteredHelplines = districtHelplines.filter((item) => {
     const matchesDistrict =
       selectedDistrict === "All Districts" ||
@@ -82,7 +82,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* 🚖 SECTION 2: MOBILITY SERVICES GRID (අලුතින් පිරිසිදුව එක් කලා) */}
+      {/* 🚖 SECTION 2: MOBILITY SERVICES GRID */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 mb-16">
         <h3 className="text-white text-xs font-bold uppercase tracking-widest mb-6 flex items-center gap-2">
           <FaCarRear className="text-emerald-400" /> Mobility & On-Demand
@@ -101,7 +101,7 @@ export default function Services() {
             </p>
           </a>
           <a
-            href="uber://?action=setPickup"
+            href="https://www.uber.com/lk/en/"
             className="bg-zinc-900/40 border border-white/5 hover:border-white/20 p-5 rounded-2xl flex flex-col justify-between h-36 transition-all group cursor-pointer">
             <span className="bg-white text-black font-black text-[10px] px-2.5 py-1 rounded-md uppercase w-max">
               Uber
@@ -137,7 +137,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* 🔍 SECTION 3: SEARCH & FILTER CONTROLS (අලුතින් ලියන ලදී) */}
+      {/* 🔍 SECTION 3: SEARCH & FILTER CONTROLS */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 mb-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 bg-zinc-900/20 border border-white/5 p-4 rounded-2xl backdrop-blur-md">
           {/* Search Bar Input */}

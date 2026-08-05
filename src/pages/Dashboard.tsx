@@ -1,25 +1,24 @@
 import { useState } from "react";
 
-import AddPlaceModal from "../components/futures/AddPlaceForm2";
+import AddPlaceModal from "../../Other/futures/AddPlaceForm2";
 
 export default function Dashboard() {
   const [isAddPlaceOpen, setIsAddPlaceOpen] = useState(false);
 
-  // 1. TikTok Style Tabs පාලනය කරන්න React State එකක්
   const [activeTab, setActiveTab] = useState<"uploaded" | "clean" | "saved">(
     "uploaded",
   );
 
-  // 🎭 2. දැනට ලොග් වී ඉන්නා යූසර්ගේ දත්ත (Mock User Profile)
+  // 🎭 2. (Mock User Profile)
   const [userProfile] = useState({
     name: "Kasun Perera",
     email: "kasun.p@unseentapro.com",
     profilePic: "https://dicebear.com",
-    role: "Tourist & Explorer", // කලින් පෝස්ට් එකක් දාපු නිසා Role එක මාරු වී ඇත
-    explorerVotes: 120, // Elite Guide මට්ටමේ ඡන්ද ගණනක්
-    ecoPoints: 450, // ලැබී ඇති Eco-Points
-    totalPosts: 8, // ඔයා අලුතින්ම එකතු කරන්න කිව්ව පෝස්ට් ගණන 📊
-    ecoRank: "#14 in Sri Lanka", // ප්‍රජා ශ්‍රේණිගත කිරීම
+    role: "Tourist & Explorer",
+    explorerVotes: 120,
+    ecoPoints: 450,
+    totalPosts: 8,
+    ecoRank: "#14 in Sri Lanka",
     medicalPassport: {
       bloodGroup: "O+",
       allergies: "Penicillin, Bee Stings",
@@ -31,7 +30,7 @@ export default function Dashboard() {
     },
   });
 
-  // 🏆 Trust Level සහ Badge තීරණය කරන Logic එක
+  // 🏆 Trust Level / Badge Logic
   const getExplorerLevel = (votes: number) => {
     if (votes >= 100)
       return {
@@ -55,7 +54,7 @@ export default function Dashboard() {
 
   return (
     <div className="pt-32 min-h-screen bg-[#01030f] text-white pb-16">
-      {/* 👑 ROW 1: TOP PROFILE BENTO GRID (කොටස් 3) */}
+      {/* 👑 ROW 1: TOP PROFILE BENTO GRID */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
         {/* Bento 1: User Profile Card */}
         <div className="bg-zinc-900/30 border border-white/5 p-6 rounded-4xl backdrop-blur-xl flex items-center gap-5">
@@ -93,7 +92,6 @@ export default function Dashboard() {
               {expLvl.title}
             </span>
           </div>
-          {/* ඔයා එකතු කරන්න කිව්ව පෝස්ට් ගණන පෙන්වන තැන 📊 */}
           <div className="text-right border-l border-white/5 pl-6">
             <p className="text-gray-500 text-[9px] font-bold uppercase tracking-wider">
               Total Gems
@@ -209,7 +207,6 @@ export default function Dashboard() {
           </div>
           {/* QR Code Container Box */}
           <div className="w-40 h-40 bg-white p-3 rounded-2xl shadow-xl flex items-center justify-center">
-            {/* සැබෑ QR එක සම්බන්ධ කරනකම් මෙතනට සරල QR placeholder පින්තූරයක් දානවා */}
             <img
               src="https://qrserver.com"
               alt="Emergency QR"
@@ -224,10 +221,6 @@ export default function Dashboard() {
 
       {/* ➕ ROW 3: THE ACTION CORE - ADD PLACE BUTTON */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16">
-        {/* <button className="w-full bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-600 hover:to-teal-500 text-black font-black py-4 px-6 rounded-2xl text-xs md:text-sm tracking-wider uppercase transition-all duration-300 shadow-xl shadow-emerald-500/5 hover:shadow-emerald-500/10 active:scale-[0.99] flex items-center justify-center gap-2">
-          ➕ Add New Hidden Gem (Upload Post)
-        </button> */}
-        {/* පරණ බටන් එක වෙනුවට මේonClick එක දාන්න: */}
         <button
           onClick={() => setIsAddPlaceOpen(true)}
           className="w-full bg-linear-to-r from-emerald-500 to-teal-400 ...">
@@ -294,7 +287,6 @@ export default function Dashboard() {
           {/* 1. Uploaded Gems Tab Content */}
           {activeTab === "uploaded" && (
             <>
-              {/* යූසර් අප්ලෝඩ් කරපු තැන් විදිහට අපේ data වලින් පෝස්ට් 2ක් පෙන්වමු */}
               <div className="bg-zinc-900/20 border border-white/5 rounded-4xl overflow-hidden flex flex-col justify-between group">
                 <div className="relative h-48 w-full bg-zinc-950">
                   <img
@@ -360,7 +352,6 @@ export default function Dashboard() {
           {/* 3. Saved Gems Tab Content */}
           {activeTab === "saved" && (
             <>
-              {/* යූසර් පසුව යන්න Bookmark කරගත්තු තැන් */}
               <div className="bg-zinc-900/20 border border-white/5 rounded-4xl overflow-hidden flex flex-col justify-between group">
                 <div className="relative h-48 w-full bg-zinc-950">
                   <img
@@ -423,6 +414,6 @@ export default function Dashboard() {
       {isAddPlaceOpen && (
         <AddPlaceModal onClose={() => setIsAddPlaceOpen(false)} />
       )}
-    </div> // 👈 Dashboard එක ඉවර වෙන අන්තිම div එක
+    </div> 
   );
 }

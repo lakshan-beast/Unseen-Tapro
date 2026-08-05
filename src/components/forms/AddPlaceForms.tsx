@@ -721,10 +721,9 @@ import {
   FaShieldCat,
   FaCircleInfo,
 } from "react-icons/fa6";
-import { db } from "../../lib/firebase"; // ඔබේ firebase.ts file path එකට අදාළව මෙය පරීක්ෂා කරගන්න
+import { db } from "../../lib/firebase"; 
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
-// ⚠️ ඔබගේ ImgBB API Key එක මෙතැනට යොදන්න
 const IMGBB_API_KEY = "976fcddf394f0cfbc94f30913118ae4e";
 
 async function uploadToImgBB(file: File): Promise<string> {
@@ -850,7 +849,7 @@ export const AddPlaceModal: React.FC<AddPlaceModalProps> = ({
     e.preventDefault();
 
     if (imageFiles.length === 0) {
-      alert("කරුණාකර අවම වශයෙන් ඡායාරූපයක් හෝ එකතු කරන්න!");
+      alert("Please add at least one photo!");
       return;
     }
 
@@ -894,11 +893,11 @@ export const AddPlaceModal: React.FC<AddPlaceModalProps> = ({
       // Save to Firestore 'places' collection
       await addDoc(collection(db, "places"), newPlaceData);
 
-      alert("🎉 ස්ථානය සාර්ථකව සේව් කරන ලදී!");
+      alert("🎉 Location successfully saved!");
       onClose();
     } catch (err) {
       console.error(err);
-      alert("❌ Upload කිරීමේදී දෝෂයක් සිදු විය. ImgBB API Key එක පරීක්ෂා කරන්න.");
+      alert("❌ An error occurred while uploading. Please check the ImgBB API Key.");
     } finally {
       setIsUploading(false);
     }

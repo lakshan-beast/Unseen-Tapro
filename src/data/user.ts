@@ -7,15 +7,15 @@ export interface UserProfile {
   profilePic: string;
   // role: "Tourist" | "Tourist & Explorer" | "Local Guide";
   role: UserRole;
-  explorerVotes: number; // Explorer Trust Score එක සඳහා ලැබී ඇති ඡන්ද
-  ecoPoints: number; // Eco-Traveler Score එක සඳහා ලැබී ඇති ලකුණු
+  explorerVotes: number; // Explorer Trust Score 
+  ecoPoints: number; // Eco-Traveler Score 
 
   shopName?: string;
   inVerifiedMercant?: boolean;
   vehicleType?: string;
   inVerifiedGuide?: boolean;
 
-  // Medical Passport විස්තර (Dashboard එකෙන් පසුව සේව් කිරීමට)
+  // Medical Passport
   medicalPassport?: {
     bloodGroup: string;
     allergies: string;

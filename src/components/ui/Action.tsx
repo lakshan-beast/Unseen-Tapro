@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { db } from "../../lib/firebase"; // ඔබේ firebase setup path එක
+import { db } from "../../lib/firebase";
 import {
   doc,
   updateDoc,
@@ -8,6 +8,14 @@ import {
   addDoc,
   serverTimestamp,
 } from "firebase/firestore";
+
+import {
+  FaTriangleExclamation,
+  FaHeart,
+  FaRegHeart,
+  FaBookmark,
+  FaRegBookmark,
+} from "react-icons/fa6";
 
 interface PlaceCardProps {
   id: string;
@@ -23,7 +31,7 @@ export function CardActions({ id, title, likesCount = 0 }: PlaceCardProps) {
   const [reportReason, setReportReason] = useState("");
   const [isSubmittingReport, setIsSubmittingReport] = useState(false);
 
-  // 🔄 LocalStorage එකෙන් User කලින් Like/Save කරලාදැයි Load කිරීම
+  // 🔄 LocalStorage User Like/Save
   useEffect(() => {
     // Check if liked
     const likedPlaces = JSON.parse(
@@ -68,11 +76,11 @@ export function CardActions({ id, title, likesCount = 0 }: PlaceCardProps) {
     if (isSaved) {
       savedPlaces = savedPlaces.filter((placeId: string) => placeId !== id);
       setIsSaved(false);
-      alert("🔖 Saved places වලින් ඉවත් කරන ලදී.");
+      alert("🔖 Removed from saved places.");
     } else {
       savedPlaces.push(id);
       setIsSaved(true);
-      alert("⭐ ඔබගේ Saved places වලට සාර්ථකව එකතු කළා!");
+      alert("⭐ Successfully added to your saved places!");
     }
 
     localStorage.setItem("saved_places", JSON.stringify(savedPlaces));
@@ -85,7 +93,7 @@ export function CardActions({ id, title, likesCount = 0 }: PlaceCardProps) {
 
     setIsSubmittingReport(true);
     try {
-      // Firestore එකේ 'reports' collection එකට Save කිරීම
+      // Firestore 'reports' collection  Save 
       await addDoc(collection(db, "reports"), {
         placeId: id,
         placeTitle: title,
@@ -94,28 +102,33 @@ export function CardActions({ id, title, likesCount = 0 }: PlaceCardProps) {
         status: "unread",
       });
 
-      alert("🚩 ඔබගේ පැමිණිල්ල Admin වෙත යොමු කළා. ස්තූතියි!");
+      alert("🚩 Your complaint has been forwarded to Admin. Thank you!");
       setShowReportModal(false);
       setReportReason("");
     } catch (err) {
       console.error(err);
-      alert("❌ Report කිරීමට නොහැකි විය. නැවත උත්සාහ කරන්න.");
+      alert("❌ Report failed. Please try again.");
     } finally {
       setIsSubmittingReport(false);
     }
   };
 
   return (
-    <div className="flex items-center gap-3 pt-3 border-t border-white/10 text-xs font-bold">
+    <div className="flex items-center gap-1.5 pt-3 border-none border-white/10 text-xs font-bold">
       {/* ❤️ Like Button */}
       <button
         onClick={handleLike}
-        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border transition-all cursor-pointer ${
+        className={`flex items-center gap-3.5 px-3 py-1.5 rounded-xl border transition-all cursor-pointer ${
           isLiked
             ? "bg-red-500/20 text-red-400 border-red-500/40"
-            : "bg-zinc-900 text-zinc-400 border-white/10 hover:text-white"
+            : "bg-zinc-900 text-zinc-400 border-none hover:text-white"
         }`}>
-        <span>{isLiked ? "❤️" : "🤍"}</span>
+        {/* ❤️ React Icons */}
+        {isLiked ? (
+          <FaHeart className="text-red-500 text-sm" />
+        ) : (
+          <FaRegHeart className="text-zinc-400 text-sm" />
+        )}
         <span>{likes}</span>
       </button>
 
@@ -127,15 +140,22 @@ export function CardActions({ id, title, likesCount = 0 }: PlaceCardProps) {
             ? "bg-emerald-500/20 text-emerald-400 border-emerald-500/40"
             : "bg-zinc-900 text-zinc-400 border-white/10 hover:text-white"
         }`}>
-        <span>{isSaved ? "🔖 Saved" : "📑 Save"}</span>
+        {/* 🔖 Save/Bookmark  React Icons */}
+        {isSaved ? (
+          <FaBookmark className="text-emerald-400 text-xs" />
+        ) : (
+          <FaRegBookmark className="text-zinc-400 text-xs" />
+        )}
+        <span>{isSaved ? "Saved" : "Save"}</span>
       </button>
 
       {/* 🚩 Report Button */}
       <button
         onClick={() => setShowReportModal(true)}
-        className="ml-auto text-zinc-500 hover:text-amber-400 transition-colors p-1.5 cursor-pointer"
+        className="ml-auto text-zinc-500 hover:text-amber-400 transition-colors p-1.5 cursor-pointer flex justify-center items-center gap-2"
         title="Report issue">
-        🚩 Report
+        <FaTriangleExclamation size={15} />
+        Report
       </button>
 
       {/* 🚩 Report Popup Modal */}
@@ -146,7 +166,8 @@ export function CardActions({ id, title, likesCount = 0 }: PlaceCardProps) {
               🚩 Report Place
             </h3>
             <p className="text-xs text-zinc-400">
-              "{title}" ස්ථානය ගැන ඇති ගැටලුව හෝ වැරදි තොරතුර සටහන් කරන්න.
+              "{title}" Report a problem or incorrect information about the
+              location.
             </p>
 
             <form onSubmit={handleReportSubmit} className="space-y-3">

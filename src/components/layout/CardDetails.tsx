@@ -798,24 +798,12 @@ export default function CardDetails() {
             </span>
 
             {place.googleMapUrl ? (
-              // <a
-              //   href={place.googleMapUrl}
-              //   target="_blank"
-              //   rel="noreferrer"
-              //   className="w-full bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-extrabold py-3.5 px-4 rounded-xl text-xs tracking-wider uppercase text-center flex items-center justify-center gap-2 transition-all shadow-lg shadow-emerald-500/10 active:scale-95 cursor-pointer">
-              //   🛰️ Open in Google Maps
-              // </a>
-
               <iframe
                 src={place.googleMapUrl}
                 width="300"
                 height="300"
                 className="w-full border-0 rounded-2xl"
-                // allowfullscreen=""
-                loading="lazy"
-                // referrerpolicy="strict-origin-when-cross-origin"
-                // target="_blank"
-              ></iframe>
+                loading="lazy"></iframe>
             ) : (
               <p className="text-xs text-zinc-500 italic">
                 No direct map URL provided.

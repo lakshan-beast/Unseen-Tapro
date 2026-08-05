@@ -20,7 +20,7 @@ export interface MobilityService {
   category: "Cab" | "Aviation" | "Train";
 }
 
-// 🚖 1. ප්‍රධාන ප්‍රවාහන ආයතන වල දත්ත ලැයිස්තුව
+// 🚖 
 export const mobilityServices: MobilityService[] = [
   {
     id: 1,

@@ -9,6 +9,11 @@
 }
 
 @layer base {
+  * {
+    scroll-behavior: smooth;
+    scroll-margin-top: 6rem;
+  }
+
   /* 1. Scrollbar Styles */
   ::-webkit-scrollbar {
     width: 10px;
@@ -22,11 +27,6 @@
   }
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
-  }
-
-  * {
-    scroll-behavior: smooth;
-    scroll-margin-top: 6rem;
   }
 
   /* 2. specail font-family */

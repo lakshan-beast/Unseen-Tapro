@@ -1,5 +1,4 @@
 import { useState } from "react";
-// 🎨 Font Awesome 6 Icons Import කිරීම
 import {
   FaFacebookF,
   FaInstagram,
@@ -78,7 +77,6 @@ export default function ContributorsSlider() {
               <FaHandshakeSimple className="size-4.5 text-emerald-200 mr-1" />{" "}
               The Minds Behind The Lens
             </span>
-            {/* <span className="text-emerald-400 font-bold text-[10px] tracking-widest uppercase mb-2 block"></span> */}
             <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">
               Our Content <span className="text-emerald-400">Guardians</span>
             </h2>
@@ -122,7 +120,7 @@ export default function ContributorsSlider() {
                       <h3 className="text-white text-sm font-bold uppercase tracking-wide group-hover:text-emerald-400 transition-colors">
                         {person.name}
                       </h3>
-                      <span className="text-[5px] text-gray-500 uppercase font-semibold tracking-wider block mt-0.5">
+                      <span className="text-[10px] text-gray-500 uppercase font-semibold tracking-wider block mt-0.5">
                         {person.role}
                       </span>
                     </div>

@@ -24,7 +24,7 @@ const MarketPlaceMock = () => (
 export default function App() {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Ctrl + Shift + A එබූ විට
+      // Ctrl + Shift + A
       if (e.ctrlKey && e.shiftKey && e.key === "L") {
         window.location.href = "/admin-dashboard";
       }

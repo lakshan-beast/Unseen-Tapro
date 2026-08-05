@@ -6,11 +6,9 @@ import {
   FaTrashCan,
   FaRoute,
   FaShieldCat,
-  //   FaCircleInfo,
 } from "react-icons/fa6";
-import { db } from "../../lib/firebase"; // ඔබේ firebase.ts file path එක බලන්න
+import { db } from "../../lib/firebase"; 
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-
 // ⚠️ ImgBB API Key එක මෙතැනට යොදන්න
 const IMGBB_API_KEY = "976fcddf394f0cfbc94f30913118ae4e";
 
@@ -112,7 +110,7 @@ export const UserAddPlaceModal: React.FC<UserAddPlaceModalProps> = ({
     e.preventDefault();
 
     if (imageFiles.length === 0) {
-      alert("කරුණාකර අවම වශයෙන් ඡායාරූපයක් හෝ එකතු කරන්න!");
+      alert("Please add at least one photo!");
       return;
     }
 
@@ -159,12 +157,12 @@ export const UserAddPlaceModal: React.FC<UserAddPlaceModalProps> = ({
       await addDoc(collection(db, "pending_places"), pendingPlaceData);
 
       alert(
-        "🎉 ඔබගේ යෝජනාව සාර්ථකව යොමු කරන ලදී! Admin පරීක්ෂා කිරීමෙන් පසු පල කරනු ඇත.",
+        "🎉 Your suggestion has been submitted successfully! It will be posted after admin review.",
       );
       onClose();
     } catch (err) {
       console.error(err);
-      alert("❌ Submit කිරීමේදී දෝෂයක් සිදු විය. කරුණාකර නැවත උත්සාහ කරන්න.");
+      alert("❌ An error occurred while submitting. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -183,7 +181,7 @@ export const UserAddPlaceModal: React.FC<UserAddPlaceModalProps> = ({
           <FaLocationDot /> Submit a Hidden Spot
         </h2>
         <p className="text-xs text-zinc-400 mb-6">
-          ඔබගේ යෝජනාව අපගේ පරීක්ෂාවෙන් පසු වෙබ් අඩවියේ පල කරනු ලැබේ.
+          Your suggestion will be posted on the website after our review.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-6 text-xs">

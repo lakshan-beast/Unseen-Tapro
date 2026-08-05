@@ -4,7 +4,6 @@ import { FaCircleCheck, FaLeaf, FaLifeRing, FaUsers } from "react-icons/fa6";
 export default function TrustFeatures() {
   return (
     <>
-      {/* 🛡 2026 BENTO STYLE TRUST FEATURES BAR */}
       <section
         id="trust-score"
         className="max-w-7xl mx-auto px-6 md:px-12 py-16 mt-2">
